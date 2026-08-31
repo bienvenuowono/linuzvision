@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | LINUZVISION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#eae1dd",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#181c1d",
+                        "surface-container-highest": "#e0e3e3",
+                        "on-secondary-container": "#636564",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "inverse-on-surface": "#eef1f1",
+                        "outline": "#747878",
+                        "inverse-primary": "#c6c7c6",
+                        "primary-container": "#1a1c1c",
+                        "surface-variant": "#E3E2E2",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#cdc5c1",
+                        "tertiary-container": "#1f1b19",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#FAF9F9",
+                        "surface-container": "#ebeeee",
+                        "on-primary-container": "#828484",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f1f4f4",
+                        "surface-tint": "#5d5f5f",
+                        "inverse-surface": "#2d3131",
+                        "on-surface": "#181c1d",
+                        "secondary-container": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e5e9e8",
+                        "secondary": "#5d5f5e",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary": "#000000",
+                        "primary-fixed": "#e2e3e2",
+                        "primary-fixed-dim": "#c6c7c6",
+                        "on-tertiary-container": "#8a8380",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-dim": "#d7dbda",
+                        "tertiary": "#010000",
+                        "error-container": "#ffdad6",
+                        "background": "#FAF9F9",
+                        "on-surface-variant": "#434747",
+                        "surface-bright": "#f7fafa",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "mono-data": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF9F9; color: #181c1d; }
+        .hairline-b { border-bottom: 1px solid #747878; }
+        .hairline-t { border-top: 1px solid #747878; }
+        .hairline { border: 1px solid #747878; }
+        .section-line { height: 1px; background-color: #D4D4D4; width: 100%; margin: 80px 0; }
+        .glass-nav { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+        .hover-underline { position: relative; }
+        .hover-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 50%; background-color: currentColor; transition: all 0.3s ease; transform: translateX(-50%); }
+        .hover-underline:hover::after { width: 100%; }
+        
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface/95 text-primary dark:text-on-surface border-b border-outline-variant dark:border-outline-variant glass-nav transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md tracking-tighter text-primary dark:text-on-surface" href="#">LINUZVISION</a>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-caps text-label-caps text-primary dark:text-on-surface border-b border-primary pb-1" href="#evolution">Evolution</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover-underline hover:text-primary dark:hover:text-on-surface transition-colors duration-300" href="#mission">Mission</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover-underline hover:text-primary dark:hover:text-on-surface transition-colors duration-300" href="#expertise">Expertise</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover-underline hover:text-primary dark:hover:text-on-surface transition-colors duration-300" href="#tasha">TASHA</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover-underline hover:text-primary dark:hover:text-on-surface transition-colors duration-300" href="#principles">Principles</a>
+</div>
+<button class="font-label-caps text-label-caps hairline px-6 py-3 hover:bg-on-background hover:text-surface transition-colors duration-300 hidden md:block">Connect</button>
+<button class="md:hidden">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Full-Screen Hero -->
+<section class="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-primary text-on-primary">
+
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-container-max w-full">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-8 tracking-tighter uppercase fade-in-up">We Build Technology For What Comes Next.</h1>
+<div class="w-full max-w-4xl mx-auto aspect-video bg-surface-variant border border-outline relative fade-in-up" style="transition-delay: 0.2s;">
+<div class="w-full h-full bg-cover bg-center absolute inset-0 mix-blend-overlay opacity-80" data-alt="A cinematic, high-contrast video placeholder image showing a stark, modern architectural data center interior. The scene is illuminated by striking white volumetric lighting against deep shadows, embodying a brutalist, minimalist aesthetic. Metallic structures and glass panels reflect cold, precise intelligence. The overall tone is sophisticated, monumental, and cutting-edge." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBydz0OcjIwEQdOad7G3z87TEe8m3B3tIbuXpOx5mx2GEjdnQ_j-P4FetWzHcN4ZpJJjYPEdUAowViebBKyFWBI8za3fDPu714_81Aj56GxsbOQLx8P08qEZKY-KdrKLodq9wCtrCQF2g0UhJDLWfr4fycVV3wFiziAJkAT2XdhgXzd68ZdHJ0UBZD7HsSHK2x_gcg6VRSI3JDNd_mmbhY6HoHl0aHam_S7hhmsKKEEufRPQa1QYgQ2')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 rounded-full border border-on-background bg-surface/10 backdrop-blur-sm flex items-center justify-center hover:bg-on-background hover:text-surface transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Manifesto -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface" id="mission">
+<div class="max-w-4xl mx-auto text-center fade-in-up">
+<span class="font-mono-data text-mono-data text-on-surface-variant block mb-8 tracking-widest">MISSION &amp; MANIFESTO</span>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">To empower businesses, organizations and governments with secure, intelligent, and innovative technology solutions that simplify operations, accelerate growth, and prepare them for the future.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">We are committed to being a trusted partner, delivering secure, scalable, and affordable technologies—from AI and Cloud to Automation and Cybersecurity. Our goal is to make advanced technology accessible to organizations of all sizes, increasing productivity and protecting digital assets.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter fade-in-up" style="transition-delay: 0.2s;">
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl mb-6 block" data-icon="security">security</span>
+<h3 class="font-headline-md text-headline-md mb-4">Secure &amp; Scalable</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Uncompromising protection for digital assets with infrastructure built to scale seamlessly.</p>
+</div>
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl mb-6 block" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md mb-4">Accelerate Growth</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Streamlining operations and leveraging automation to propel organizations forward.</p>
+</div>
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl mb-6 block" data-icon="public">public</span>
+<h3 class="font-headline-md text-headline-md mb-4">Accessible Innovation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Democratizing advanced technologies for entities of all scales and sectors.</p>
+</div>
+</div>
+<div class="section-line"></div>
+</section>
+<!-- Story & Evolution -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="evolution">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-4 fade-in-up">
+<h2 class="font-headline-lg text-headline-lg mb-4">25+ YEARS OF TECHNOLOGY EXPERIENCE</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">A relentless trajectory of adaptation and mastery. Our deep heritage dates back to 1999, evolving through every major paradigm shift in modern computing.</p>
+</div>
+<div class="col-span-1 md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-unit fade-in-up" style="transition-delay: 0.2s;">
+<!-- Evolution Grid -->
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300 flex flex-col justify-between min-h-[240px]">
+<div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">STAGE 01 | 1999</span>
+<h3 class="font-headline-md text-headline-md mt-2">IT Systems</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Foundational mastery of hardware and localized network architectures.</p>
+</div>
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300 flex flex-col justify-between min-h-[240px]">
+<div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">STAGE 02</span>
+<h3 class="font-headline-md text-headline-md mt-2">Infrastructure</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Scaling robust, interconnected enterprise-grade backbones.</p>
+</div>
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300 flex flex-col justify-between min-h-[240px]">
+<div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">STAGE 03</span>
+<h3 class="font-headline-md text-headline-md mt-2">Data Centers</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Architecting massive, high-availability physical storage and compute facilities.</p>
+</div>
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300 flex flex-col justify-between min-h-[240px]">
+<div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">STAGE 04</span>
+<h3 class="font-headline-md text-headline-md mt-2">Cloud</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Virtualizing workloads for borderless scalability and resilience.</p>
+</div>
+<div class="hairline p-8 hover:bg-surface-variant transition-colors duration-300 flex flex-col justify-between min-h-[240px] bg-primary text-on-primary sm:col-span-2">
+<div>
+<span class="font-mono-data text-mono-data opacity-70">PRESENT / FUTURE</span>
+<h3 class="font-headline-lg text-headline-lg mt-4">AI &amp; Automation</h3>
+</div>
+<p class="font-body-lg text-body-lg mt-4 max-w-2xl text-outline-variant">Integrating agentic intelligence and cybersecurity to orchestrate complex infrastructural systems autonomously.</p>
+</div>
+</div>
+</div>
+<div class="section-line"></div>
+</section>
+<!-- Global Network -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface" id="global">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="md:pr-16 fade-in-up">
+<span class="font-mono-data text-mono-data text-on-surface-variant block mb-4 tracking-widest">THE GLOBAL NETWORK</span>
+<h2 class="font-display-xl-mobile md:font-headline-lg text-display-xl-mobile md:text-headline-lg mb-6">Unbounded Reach.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Our operational footprint spans continents, delivering unwavering infrastructural support and strategic intelligence worldwide.</p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-headline-md text-headline-md border-b border-outline-variant pb-2 mb-2">United States</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Headquarters &amp; Innovation Hub</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md border-b border-outline-variant pb-2 mb-2">Africa</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Strategic Expansion &amp; Infrastructure</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md border-b border-outline-variant pb-2 mb-2">Europe</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Data Governance &amp; Cloud Nodes</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md border-b border-outline-variant pb-2 mb-2">Asia</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Scaling Operations &amp; Connectivity</p>
+</div>
+</div>
+</div>
+<div class="fade-in-up h-full min-h-[400px] relative" style="transition-delay: 0.2s;">
+<div class="absolute inset-0 bg-cover bg-center hairline grayscale" data-alt="Cinematic architectural shot of a global data map visualized on a massive glass screen in a dark room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBy7c-iCfRwjY6zYvtOjpOMj4Rv5zbDNh508e_VEkbRufveL_M37HldZsGoohi-zFPzhiMuVrpKVZOjVWK-ccxsUJ7QjSsselYP_A9ZlCkZEqiUaW2whOKX8t3jBEYIHrBwFE4LFKWTn-ZfWr6MT6GgGvo5CohHHEMsOGQ84zZ3IgUt3pBan_sK7s9MsVbUYAmdE8yChlcyh_ltsvhFxqz9Axkj_vSYQW-Sqz0tWUisDS5sZum888wa')"></div>
+</div>
+</div>
+</section>
+<!-- Geographic Bridge -->
+<section class="relative h-[716px] flex items-center justify-center bg-inverse-surface text-inverse-on-surface overflow-hidden">
+
+<div class="relative z-10 text-center px-margin-desktop fade-in-up">
+<span class="font-mono-data text-mono-data tracking-widest block mb-4">CORE AXIS</span>
+<h2 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl uppercase">Africa <span class="text-outline-variant font-light px-4">↔</span> America</h2>
+<p class="font-body-lg text-body-lg mt-8 max-w-2xl mx-auto text-outline-variant">Bridging our primary continents through unyielding architectural intelligence and infrastructural precision, forming the spine of our global network.</p>
+</div>
+</section>
+<!-- TASHA -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="tasha">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="fade-in-up">
+<img class="w-full h-auto hairline object-cover aspect-square grayscale" data-alt="Abstract representation of an AI agent named TASHA. A stark, minimalist composition featuring sharp geometric nodes interconnected by thin, precise hairlines on a stark white background. The central node glows subtly with a monochromatic intensity, symbolizing centralized intelligence and autonomy. High contrast, architectural brutalism style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_tktzC9x5Mcg-0k4DE6E7U5n3_XH-_pd1kFsZ2vVZQzP5s_Tz1B1Mldl8TQtexhKro0_jUtf3eTWjTolT-1REtNVVNFD3EdBBTvL9hNMy5x6of0J5L2CvH4Tq602D79fGvi8Juhpgwp2LTAk4X90I62yjvZKLQpGjP6W2n0u_LyRr9OneICd7Z0wzIgG-UVgIe6wxyOuowndOt0fyHcaojhQ2Hpze_ifDWnAcqnkl59TLYZRfpNPV"/>
+</div>
+<div class="md:pl-16 fade-in-up" style="transition-delay: 0.2s;">
+<span class="font-mono-data text-mono-data text-on-surface-variant">PROPRIETARY TECHNOLOGY</span>
+<h2 class="font-display-xl-mobile md:font-headline-lg text-display-xl-mobile md:text-headline-lg mt-4 mb-6">Meet TASHA.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Our proprietary AI agentic technology. Designed not just to assist, but to operate, optimize, and orchestrate complex infrastructural systems autonomously.</p>
+<ul class="space-y-4">
+<li class="flex items-center font-body-md text-body-md">
+<span class="w-3 h-3 bg-primary mr-4 flex-shrink-0"></span> Autonomous Operations
+                        </li>
+<li class="flex items-center font-body-md text-body-md">
+<span class="w-3 h-3 bg-primary mr-4 flex-shrink-0"></span> Predictive Infrastructure
+                        </li>
+<li class="flex items-center font-body-md text-body-md">
+<span class="w-3 h-3 bg-primary mr-4 flex-shrink-0"></span> Unyielding Security
+                        </li>
+</ul>
+</div>
+</div>
+<div class="section-line"></div>
+</section>
+<!-- Final Statement -->
+<section class="h-screen bg-primary text-on-primary flex flex-col justify-center items-center px-margin-mobile text-center">
+<div class="space-y-8 fade-in-up">
+<p class="font-headline-md text-headline-md text-outline-variant">25+ YEARS OF EXPERIENCE.</p>
+<p class="font-headline-lg text-headline-lg">ONE CONSTANT: EVOLUTION.</p>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-surface dark:bg-surface border-t border-outline dark:border-outline mt-section-gap transition-opacity duration-300">
+<div class="flex flex-col md:flex-row justify-between items-center py-unit px-margin-desktop max-w-container-max mx-auto">
+<span class="font-headline-md text-headline-md text-primary dark:text-on-surface mb-4 md:mb-0">LINUZVISION</span>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="font-mono-data text-mono-data text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-surface underline" href="#">Privacy Policy</a>
+<a class="font-mono-data text-mono-data text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-surface underline" href="#">Terms of Service</a>
+<a class="font-mono-data text-mono-data text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-surface underline" href="#">Infrastructure</a>
+<a class="font-mono-data text-mono-data text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-surface underline" href="#">AI Research</a>
+</div>
+<span class="font-mono-data text-mono-data text-primary dark:text-on-surface text-center md:text-right">© 2024 LINUZVISION. ARCHITECTURAL INTELLIGENCE.</span>
+</div>
+</footer>
+<!-- Persistent FAB (WhatsApp) -->
+<a class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors duration-300 z-50 hairline" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</a>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body></html>

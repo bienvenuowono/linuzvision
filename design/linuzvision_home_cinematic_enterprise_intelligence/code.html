@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LINUZVISION | Intelligence That Moves Business Forward</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300..400,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#010000",
+                        "on-secondary-container": "#636564",
+                        "inverse-on-surface": "#eef1f1",
+                        "on-surface-variant": "#434747",
+                        "surface-variant": "#E3E2E2",
+                        "on-primary-fixed": "#1a1c1c",
+                        "outline-variant": "#c4c7c7",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-container": "#828484",
+                        "primary-container": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e2e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary": "#000000",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f1f4f4",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-container": "#ebeeee",
+                        "on-surface": "#1A1C1C",
+                        "surface-container-highest": "#e0e3e3",
+                        "tertiary-fixed-dim": "#cdc5c1",
+                        "error-container": "#ffdad6",
+                        "outline": "#747878",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e2e3e2",
+                        "secondary": "#5d5f5e",
+                        "surface-bright": "#f7fafa",
+                        "on-background": "#181c1d",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "inverse-primary": "#c6c7c6",
+                        "surface-tint": "#5d5f5f",
+                        "surface-dim": "#d7dbda",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "tertiary-fixed": "#eae1dd",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#FAF9F9",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3131",
+                        "on-tertiary-container": "#8a8380",
+                        "surface-container-high": "#e5e9e8",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#1f1b19",
+                        "primary-fixed-dim": "#c6c7c6",
+                        "background": "#FAF9F9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "24px",
+                        "section-gap": "160px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "mono-data": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "display-xl": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "display-xl-mobile": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "mono-data": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF9F9; color: #181c1d; }
+        .hairline-b { border-bottom: 1px solid #c4c7c7; }
+        .hairline-t { border-top: 1px solid #c4c7c7; }
+        .hairline-x { border-left: 1px solid #c4c7c7; border-right: 1px solid #c4c7c7; }
+        .node-marker { width: 12px; height: 12px; border: 1px solid #181c1d; display: flex; align-items: center; justify-content: center; }
+        .node-dot { width: 4px; height: 4px; background-color: #181c1d; }
+        .btn-primary { border: 1px solid #181c1d; background: transparent; color: #181c1d; transition: all 0.3s ease; }
+        .btn-primary:hover { background: #181c1d; color: #FAF9F9; }
+        .section-line { height: 1px; background-color: #D4D4D4; width: 100%; margin-top: 160px; margin-bottom: 160px; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background-color: #181c1d; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active::after { width: 100%; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-surface-variant selection:text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-tertiary/95 border-b border-outline-variant dark:border-on-surface-variant flat no shadows">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-white" href="#">LINUZVISION</a>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps tracking-widest text-primary dark:text-white border-b border-primary dark:border-white pb-1 active" href="#">HOME</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-white transition-colors duration-300" href="#">TASHA</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-white transition-colors duration-300" href="#">SOLUTIONS</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-white transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-white transition-colors duration-300" href="#">CLOUD</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-white transition-colors duration-300" href="#">CONTACT</a>
+</nav>
+<button class="hidden md:block btn-primary px-6 py-3 font-label-caps text-label-caps tracking-widest">START A CONVERSATION</button>
+<button class="md:hidden"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Section 1: Hero -->
+<section class="min-h-screen flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative pt-32 pb-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-16">
+<div class="md:col-span-10">
+<h1 class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-display-xl uppercase tracking-tighter text-on-background">
+                        INTELLIGENCE<br/>THAT MOVES<br/>BUSINESS<br/>FORWARD.
+                    </h1>
+</div>
+</div>
+<div class="w-full aspect-video border border-outline relative group overflow-hidden bg-surface-variant">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-label-caps text-label-caps tracking-widest text-on-surface-variant">SYSTEM INITIALIZING...</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center grayscale opacity-80 mix-blend-multiply transition-transform duration-700 group-hover:scale-105" data-alt="A stark, minimalist architectural interior. Massive concrete pillars stretch vertically against a pure white background. The scene is illuminated by harsh, angular white light casting sharp geometric shadows. The overall aesthetic is brutalist yet refined, using strictly a grayscale palette to convey raw structural power." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCX-AFlR90ntaAzFiFIfFm6d5n02ABmlb1z_DStCC-PxAAQC4TaB7fBdhhRXSsG0_kzamp1P-bsvboarHXTXt5u0cT3Qjd7IIYGswBWVAe2XTyiLTVLArIkktk232QspUi7DwVmYZ1M0Q4FVrVPJIaEsV5-U8l8OJ3XTFKZSdCvIr6ZQ3s7bw7xA1BMyCA_zGFnGyz-yARWIJu8sQMDzoAVAE6Ob_Z7UMpIcPIdWbxVyULedax4bzN_')"></div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-12 gap-8">
+<div class="flex items-center gap-4">
+<div class="node-marker"><div class="node-dot"></div></div>
+<span class="font-mono-data text-mono-data uppercase">System Active / Latency: 12ms</span>
+</div>
+<button class="btn-primary px-8 py-4 font-label-caps text-label-caps tracking-widest flex items-center gap-2 group">
+                    EXPLORE TASHA 
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+<div class="section-line"></div>
+<!-- Section 2: Narrative Transition -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-gap relative">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-start-3 md:col-span-8 text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg uppercase text-on-background tracking-tighter">
+                        BUSINESS IS ENTERING A NEW ERA.
+                    </h2>
+<p class="mt-8 font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                        The architecture of commerce is shifting from static structures to dynamic, self-optimizing ecosystems. Intelligence is no longer an add-on; it is the foundation.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-surface dark:bg-tertiary border-t border-outline dark:border-on-surface-variant flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-16 max-w-container-max mx-auto">
+<div class="md:col-span-4 flex flex-col gap-8">
+<span class="font-headline-md text-headline-md text-primary dark:text-white font-bold">LINUZVISION</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant">© 2024 LINUZVISION. AFRICA ↔ AMERICA</span>
+</div>
+<div class="md:col-start-9 md:col-span-4 flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-secondary-container dark:text-outline-variant hover:text-primary dark:hover:text-white transition-all" href="#">INSIGHTS</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container dark:text-outline-variant hover:text-primary dark:hover:text-white transition-all" href="#">CYBERSECURITY</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container dark:text-outline-variant hover:text-primary dark:hover:text-white transition-all" href="#">TRAINING</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container dark:text-outline-variant hover:text-primary dark:hover:text-white transition-all" href="#">ABOUT</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-8 right-8 w-12 h-12 bg-on-background text-surface flex items-center justify-center z-50 hover:bg-surface-variant hover:text-on-background border border-on-background transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+<script>
+        // Simple scroll reveal logic could go here
+    </script>
+</body></html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CYBERSECURITY - LinuZvision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container": "#ebeeee",
+                        "on-secondary-container": "#636564",
+                        "outline-variant": "#D4D4D4",
+                        "tertiary": "#010000",
+                        "background": "#FFFFFF",
+                        "on-primary-fixed-variant": "#454747",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#2B2B2B",
+                        "on-surface-variant": "#434747",
+                        "tertiary-fixed-dim": "#cdc5c1",
+                        "primary": "#2B2B2B",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e5e9e8",
+                        "on-surface": "#2B2B2B",
+                        "primary-container": "#1a1c1c",
+                        "surface-bright": "#f7fafa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1f1b19",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "tertiary-fixed": "#eae1dd",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e2e3e2",
+                        "surface-tint": "#5d5f5f",
+                        "secondary": "#5d5f5e",
+                        "surface-container-low": "#f1f4f4",
+                        "surface-dim": "#d7dbda",
+                        "on-tertiary-container": "#8a8380",
+                        "on-primary-container": "#828484",
+                        "inverse-surface": "#2B2B2B",
+                        "surface-variant": "#E3E2E2",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary-fixed-dim": "#c6c7c6",
+                        "inverse-primary": "#c6c7c6",
+                        "inverse-on-surface": "#FFFFFF",
+                        "surface": "#FFFFFF",
+                        "outline": "#747878",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "surface-container-highest": "#e0e3e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "section-gap": "160px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "mono-data": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "mono-data": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2B2B2B; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .btn-primary { border: 1px solid #2B2B2B; background: transparent; color: #2B2B2B; transition: all 0.3s ease; }
+        .btn-primary:hover { background: #2B2B2B; color: #FFFFFF; }
+        .btn-inverse { border: 1px solid #FFFFFF; background: transparent; color: #FFFFFF; transition: all 0.3s ease; }
+        .btn-inverse:hover { background: #FFFFFF; color: #2B2B2B; }
+        .section-line { height: 1px; background-color: #2B2B2B; width: 100%; margin-bottom: 32px; opacity: 0.2; }
+        .section-line-inverse { height: 1px; background-color: #FFFFFF; width: 100%; margin-bottom: 32px; opacity: 0.2; }
+        .bento-card { border: 1px solid rgba(43, 43, 43, 0.2); padding: 48px; transition: all 0.3s ease; }
+        .bento-card:hover { border-color: #2B2B2B; }
+        .bento-card-inverse { border: 1px solid rgba(255, 255, 255, 0.2); padding: 48px; transition: all 0.3s ease; }
+        .bento-card-inverse:hover { border-color: #FFFFFF; }
+        .stat-box { border-left: 2px solid #2B2B2B; padding-left: 24px; }
+        .stat-box-inverse { border-left: 2px solid #FFFFFF; padding-left: 24px; }
+    </style>
+</head>
+<body class="antialiased font-body-md text-on-background relative pt-20 selection:bg-[#2B2B2B] selection:text-white">
+<!-- TopNavBar component -->
+<nav class="bg-surface/95 dark:bg-surface/95 border-b border-outline-variant/20 dark:border-outline-variant fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto md:flex hidden backdrop-blur-sm">
+<div class="text-body-lg font-headline-lg tracking-tighter text-on-background dark:text-on-background">LinuZvision</div>
+<div class="flex gap-8 items-center">
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary transition-colors duration-300" href="#">TASHA</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary transition-colors duration-300" href="#">SERVICES</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary transition-colors duration-300" href="#">CLOUD</a>
+<a class="text-label-caps font-label-caps text-primary dark:text-primary font-semibold border-b border-primary pb-1" href="#">CYBERSECURITY</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary transition-colors duration-300" href="#">ABOUT</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary transition-colors duration-300" href="#">INSIGHTS</a>
+</div>
+<button class="btn-primary px-6 py-3 text-label-caps font-label-caps uppercase">START A CONVERSATION</button>
+</nav>
+<!-- SideNavBar Component (WhatsApp) -->
+<div class="bg-surface dark:bg-surface text-on-background dark:text-on-background fixed bottom-8 right-8 z-50 flex items-center justify-center border border-on-background/20 dark:border-outline hover:bg-on-background hover:text-surface transition-all duration-300 w-16 h-16 rounded-full group cursor-pointer shadow-none">
+<span class="material-symbols-outlined">chat</span>
+<div class="absolute right-20 opacity-0 group-hover:opacity-100 transition-opacity bg-on-background text-surface px-4 py-2 text-label-caps font-label-caps whitespace-nowrap pointer-events-none">Discuss your security</div>
+</div>
+<main class="w-full mx-auto overflow-hidden">
+<!-- Hero Section -->
+<section class="min-h-[90vh] flex flex-col justify-center relative mb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="z-10 relative max-w-5xl mt-20">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-8 uppercase tracking-widest flex items-center gap-4">
+<span class="w-12 h-[1px] bg-on-background"></span> Enterprise Architecture
+            </p>
+<h1 class="text-display-xl-mobile md:text-display-xl font-display-xl text-on-background uppercase mb-12 leading-[0.9]">SECURITY THAT MOVES WITH YOUR BUSINESS.</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-16 text-xl">Building resilient ecosystems across hybrid infrastructures, autonomous agents, and global markets. Absolute precision. Zero compromise.</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="btn-primary px-8 py-4 text-label-caps font-label-caps uppercase w-full sm:w-auto text-center tracking-widest">ASSESS POSTURE</button>
+<button class="px-8 py-4 text-label-caps font-label-caps uppercase w-full sm:w-auto text-center border-b border-transparent hover:border-on-background transition-colors duration-300">EXPLORE ARCHITECTURE</button>
+</div>
+</div>
+</section>
+<!-- 1. Zero-Trust Architecture Deep-Dive -->
+<section class="mb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="section-line"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="text-headline-md font-headline-md text-on-background uppercase sticky top-32">Zero-Trust Framework</h2>
+</div>
+<div class="md:col-span-8">
+<h3 class="text-headline-lg font-headline-lg mb-8 max-w-2xl">VERIFY EXPLICITLY. ENFORCE LEAST PRIVILEGE. ASSUME BREACH.</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-12 max-w-2xl">Our zero-trust architecture fundamentally shifts the security paradigm from traditional perimeter defense to a dynamic, identity-aware model. Every request is fully authenticated, authorized, and encrypted before granting access, regardless of origin.</p>
+<div class="w-full aspect-video bg-surface-variant mb-12 overflow-hidden border border-on-background/10">
+<img alt="Zero-Trust Visualization" class="w-full h-full object-cover grayscale opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzGrWGvkzIj0G9Fy99VPo5OM02_ngOOArC-jId8ONwzAKVtQ38VKGNZBtdLNQfmeIBYQCu5U2GH5kn0IvSMB-dCUrgdgQIoYdIHap6OX0j4l6QEiVp6gH9HYz8oYdkn9R_dH5e5FV3J0FeFAzdrhxoW95ZqsSnzyDhaiiGX2e6TrhvNDB-ivYRsJ7RUo_GnboChiScwUnxks1dnqqgGYhp4FjT1F2BZnLg7x7CVsResW6PRDASqAh0"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h4 class="text-label-caps font-label-caps uppercase mb-4 border-b border-on-background/20 pb-2">Identity-Aware Access</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Granular access controls based on user identity, device health, and real-time context. Multi-factor authentication enforced at every node.</p>
+</div>
+<div>
+<h4 class="text-label-caps font-label-caps uppercase mb-4 border-b border-on-background/20 pb-2">Microsegmentation</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Isolating workloads and enforcing strict lateral movement restrictions. Containing potential breaches to isolated zones.</p>
+</div>
+<div>
+<h4 class="text-label-caps font-label-caps uppercase mb-4 border-b border-on-background/20 pb-2">E2E Encryption</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Data is encrypted in transit and at rest using AES-256 standards, ensuring confidentiality across all communication channels.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. AI-Driven Defense (TASHA) -->
+<section class="mb-section-gap bg-[#2B2B2B] text-[#FFFFFF] py-32 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="section-line-inverse"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="text-headline-md font-headline-md uppercase sticky top-32">Autonomous Defense</h2>
+<div class="mt-8">
+<span class="text-mono-data font-mono-data text-white/50 tracking-widest">SYSTEM: TASHA</span><br/>
+<span class="text-mono-data font-mono-data text-white/50 tracking-widest">STATUS: ACTIVE_MONITORING</span>
+</div>
+</div>
+<div class="md:col-span-8">
+<h3 class="text-headline-lg font-headline-lg mb-8 max-w-2xl">MACHINE SPEED REACTION. PREDICTIVE MITIGATION.</h3>
+<p class="text-body-lg font-body-lg text-white/70 mb-12 max-w-2xl">TASHA ingests millions of telemetry events per second, utilizing advanced machine learning models to detect anomalies, predict attack vectors, and autonomously self-heal infrastructure before threats escalate.</p>
+<div class="w-full aspect-[21/9] bg-black mb-12 overflow-hidden border border-white/10">
+<img alt="TASHA AI Defense" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhAwQCBULOJpWE-7V7UWp0jcXw_XS_nSM_y8Tvw5geQmY6L1g2OXI2Z4cLd3BQzrhUcniz_FtXk1HQrsoMsGX5J_LvpX17KgBitaKnfxJlddXYxseSBUhaglf28QZfzeQnUmBQCu1kT_BXdGRS5qb8JEq2Gp4CpBbs-bHxMZAqU5CGZjPtG1Dxz9XscDSc2u91Y8ve8iHSAOE8NiNaKF3AkESCmjsiKlvnhL2s33Dgrg5rPziWuQY2"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card-inverse bg-black/20">
+<span class="material-symbols-outlined text-4xl mb-6 block text-white/70">neurology</span>
+<h3 class="text-body-lg font-body-lg font-bold mb-4">Behavioral Analytics</h3>
+<p class="text-body-md font-body-md text-white/70">Establishing baseline behavioral models for all entities to identify subtle deviations indicative of sophisticated attacks.</p>
+</div>
+<div class="bento-card-inverse bg-black/20">
+<span class="material-symbols-outlined text-4xl mb-6 block text-white/70">auto_fix</span>
+<h3 class="text-body-lg font-body-lg font-bold mb-4">Autonomous Remediation</h3>
+<p class="text-body-md font-body-md text-white/70">Automated isolation of compromised assets, dynamic rule updates, and instant patching without human intervention.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Resilient Infrastructure -->
+<section class="mb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="section-line"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="text-headline-md font-headline-md text-on-background uppercase sticky top-32">Architectural Resilience</h2>
+</div>
+<div class="md:col-span-8">
+<div class="w-full aspect-[3/4] md:aspect-video bg-surface-variant mb-12 overflow-hidden border border-on-background/10 relative">
+<img alt="Secure Infrastructure" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2KHFHx9ZAxCgUyjLc3NKQ9XnI-XkNXhYV-vi5TXtKprSk-vUQNMvt-BKkcKVWNskQkOJWjJs_VuAlDYUgFkdUxdT9bNdDGGE5wkYG32HfCD_92-mKLW4bJXcOP39QvRAL6Ne9SVihYGj0lo_9LngYKaX7Shnv1f9NY5O3xi2pFK7k6nOaF6yRqe1e9Qx_lu1yrlA3B-NhsRf1DjrCxnCfJCbT3whwcX4XyX-KNj5YA2GXmGtanYjU"/>
+<div class="absolute bottom-0 left-0 p-8 bg-white/90 backdrop-blur-sm m-8 max-w-sm border border-on-background/20">
+<p class="text-label-caps font-label-caps uppercase mb-2">Hardware-Rooted Security</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Silicon-level trust boundaries ensuring workload integrity from the ground up.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="stat-box">
+<div class="text-display-xl-mobile font-display-xl mb-2">99.999%</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Uptime SLA</div>
+</div>
+<div class="stat-box">
+<div class="text-display-xl-mobile font-display-xl mb-2">Tier IV</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Data Centers</div>
+</div>
+<div class="stat-box">
+<div class="text-display-xl-mobile font-display-xl mb-2">N+2</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Redundancy</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Africa ↔ America Security Bridge -->
+<section class="mb-section-gap bg-surface py-24 px-margin-mobile md:px-margin-desktop border-y border-on-background/10">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-6 uppercase tracking-widest">Global Data Sovereignty</p>
+<h2 class="text-headline-lg font-headline-lg text-on-background uppercase mb-6">Securing the Transatlantic Data Flow</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8">Navigating the complex regulatory landscapes of intercontinental data transfer. We architect secure bridges ensuring strict compliance with local data sovereignty laws while maintaining seamless operational continuity between Africa and the Americas.</p>
+<ul class="flex flex-col gap-4 text-body-md font-body-md mb-8">
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-on-background">check</span> Localized Data Residency Options</li>
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-on-background">check</span> Cross-Border Compliance Auditing</li>
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-on-background">check</span> Latency-Optimized Encrypted Routing</li>
+</ul>
+</div>
+<div class="relative h-[600px] border border-on-background/20 bg-white flex flex-col justify-between p-12">
+<div class="text-right">
+<div class="text-mono-data font-mono-data tracking-widest mb-2">NODE: US-EAST</div>
+<div class="text-label-caps font-label-caps">ENCRYPTED UPLINK ESTABLISHED</div>
+</div>
+<div class="flex-grow flex items-center justify-center relative">
+<div class="w-px h-full bg-on-background/20 absolute left-1/2 -translate-x-1/2"></div>
+<div class="w-full h-px bg-on-background/20 absolute top-1/2 -translate-y-1/2"></div>
+<div class="w-32 h-32 border border-on-background rounded-full flex items-center justify-center bg-white z-10 relative">
+<span class="material-symbols-outlined text-4xl">sync_lock</span>
+</div>
+</div>
+<div>
+<div class="text-mono-data font-mono-data tracking-widest mb-2">NODE: AF-SOUTH</div>
+<div class="text-label-caps font-label-caps">SECURE HANDSHAKE VERIFIED</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Incident Response & Recovery -->
+<section class="mb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="section-line"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="text-headline-md font-headline-md text-on-background uppercase sticky top-32">Response Protocols</h2>
+</div>
+<div class="md:col-span-8">
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-16 max-w-2xl">Precision execution when milliseconds matter. Our incident response frameworks are rehearsed, automated, and ruthless in containing threats and restoring nominal operations.</p>
+<div class="flex flex-col gap-8">
+<div class="flex flex-col md:flex-row gap-8 items-start group">
+<div class="text-headline-lg font-headline-lg text-on-background/30 group-hover:text-on-background transition-colors duration-300 w-24">01</div>
+<div class="flex-grow border-b border-on-background/10 pb-8">
+<h4 class="text-headline-md font-headline-md uppercase mb-4">Detect &amp; Isolate</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Immediate identification via TASHA telemetry. Compromised nodes are instantly microsegmented from the core network to prevent lateral spread.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start group">
+<div class="text-headline-lg font-headline-lg text-on-background/30 group-hover:text-on-background transition-colors duration-300 w-24">02</div>
+<div class="flex-grow border-b border-on-background/10 pb-8">
+<h4 class="text-headline-md font-headline-md uppercase mb-4">Analyze &amp; Contain</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Forensic data capture and threat vector analysis. Deploying tailored countermeasures and updating global firewall rulesets.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start group">
+<div class="text-headline-lg font-headline-lg text-on-background/30 group-hover:text-on-background transition-colors duration-300 w-24">03</div>
+<div class="flex-grow border-b border-on-background/10 pb-8">
+<h4 class="text-headline-md font-headline-md uppercase mb-4">Eradicate &amp; Recover</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Complete removal of malicious artifacts. Automated rebuilding of infrastructure from clean, immutable backups ensuring zero data loss.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Technical Specifications (Dashboard) -->
+<section class="mb-section-gap bg-[#2B2B2B] text-white py-32 px-margin-mobile md:px-margin-desktop font-mono-data">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16 flex justify-between items-end border-b border-white/20 pb-8">
+<h2 class="text-headline-md font-headline-md uppercase font-sans">System Specifications</h2>
+<span class="text-white/50 tracking-widest">LIVE_TELEMETRY_DASHBOARD</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/20 border border-white/20">
+<div class="bg-[#2B2B2B] p-8 flex flex-col gap-4">
+<div class="text-white/50 uppercase tracking-widest text-xs">Encryption Standard</div>
+<div class="text-2xl">AES-256-GCM</div>
+<div class="text-xs text-white/50 border-t border-white/10 pt-4 mt-auto">FIPS 140-2 Validated</div>
+</div>
+<div class="bg-[#2B2B2B] p-8 flex flex-col gap-4">
+<div class="text-white/50 uppercase tracking-widest text-xs">DDoS Mitigation</div>
+<div class="text-2xl">65 Tbps Capacity</div>
+<div class="text-xs text-white/50 border-t border-white/10 pt-4 mt-auto">Sub-second Mitigation SLA</div>
+</div>
+<div class="bg-[#2B2B2B] p-8 flex flex-col gap-4">
+<div class="text-white/50 uppercase tracking-widest text-xs">Compliance Frameworks</div>
+<div class="text-lg leading-tight">SOC 2 Type II<br/>ISO 27001<br/>GDPR Compliant</div>
+<div class="text-xs text-white/50 border-t border-white/10 pt-4 mt-auto">Annual Third-Party Audits</div>
+</div>
+<div class="bg-[#2B2B2B] p-8 flex flex-col gap-4">
+<div class="text-white/50 uppercase tracking-widest text-xs">Incident Response SLA</div>
+<div class="text-2xl">&lt; 15 Minutes</div>
+<div class="text-xs text-white/50 border-t border-white/10 pt-4 mt-auto">Critical Severity Engagements</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="py-40 bg-[#FFFFFF] text-[#2B2B2B] px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center border-t border-on-background/10">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-8 uppercase tracking-widest">Initiate Engagement</p>
+<h2 class="text-headline-lg font-headline-lg uppercase mb-12 max-w-4xl leading-[1.1]">THREATS EVOLVE. YOUR SECURITY SHOULD TOO. BUILD FOR RESILIENCE.</h2>
+<button class="btn-primary px-12 py-6 text-label-caps font-label-caps uppercase tracking-widest text-sm">START A CONVERSATION</button>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface dark:bg-surface text-on-background dark:text-on-background border-t border-outline-variant/20 dark:border-outline-variant w-full px-margin-desktop py-16 flex flex-col items-center gap-12">
+<div class="text-headline-md font-headline-md tracking-tighter">LinuZvision</div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors tracking-widest" href="#">Privacy Policy</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors tracking-widest" href="#">Terms of Service</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors tracking-widest" href="#">Security Disclosure</a>
+<a class="text-label-caps font-label-caps text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors tracking-widest" href="#">Global Offices</a>
+</div>
+<div class="text-body-md font-body-md text-secondary mt-8">© 2024 LinuZvision Infrastructure. All rights reserved.</div>
+</footer>
+</body></html>
