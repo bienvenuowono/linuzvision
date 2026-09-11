@@ -1,6 +1,7 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { TashaHeroVideo } from "./TashaHeroVideo";
 import { WhatsappButton } from "./WhatsappButton";
 
 const specializedAgents = [
@@ -22,12 +23,19 @@ export function TashaPage() {
     <>
       <Header active="TASHA" />
       <main className="tasha-page">
-        <section className="tasha-hero shell">
-          <div className="tasha-hero-grid">
-            <h1>INTELLIGENCE<br />THAT EXECUTES.</h1>
-            <div><p>TASHA combines a conversational entry point with an agentic intelligence core. It understands context, decides within approved boundaries and coordinates specialized agents across business workflows.</p><a className="button" href="#architecture">EXPLORE THE ARCHITECTURE <ArrowIcon /></a></div>
+        <section className="tasha-hero">
+          <div className="tasha-hero-visual">
+            <TashaHeroVideo />
           </div>
-          <div className="tasha-hero-visual"><img src="/images/human-machine-synergy.png" alt="Technical topology showing human capability connected to an AI operating layer" /><div className="tasha-core"><span>TASHA</span><small>AGENTIC INTELLIGENCE</small></div><div className="axis axis-x" /><div className="axis axis-y" /><div className="tasha-scan" /></div>
+          <div className="shell tasha-hero-content">
+            <div className="tasha-hero-grid">
+              <h1>INTELLIGENCE<br />THAT EXECUTES.</h1>
+              <div>
+                <p>TASHA combines a conversational entry point with an agentic intelligence core. It understands context, decides within approved boundaries and coordinates specialized agents across business workflows.</p>
+                <a className="button" href="#architecture">EXPLORE THE ARCHITECTURE <ArrowIcon /></a>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="paradigm section-rule"><div className="shell paradigm-grid"><div><h2>FROM CONVERSATION.<br />TO COORDINATED ACTION.</h2><p>The assistant receives a request in natural language. TASHA&apos;s agentic core interprets the objective, chooses the appropriate capability and coordinates an authorized action without losing human oversight.</p></div><div className="paradigm-switch"><div><span>CONVERSATIONAL LAYER</span><strong>COMMUNICATES</strong></div><div><span>AGENTIC LAYER</span><strong>COORDINATES</strong></div></div></div></section>
@@ -47,7 +55,7 @@ export function TashaPage() {
 
         <section className="deployments shell"><div className="tasha-section-title"><h2>DESIGNED FOR<br />REAL OPERATIONS.</h2><p>One intelligence layer, adapted to the requirements of each organization.</p></div><div className="deployment-grid"><article><h3>CUSTOMER &amp; FINANCIAL OPERATIONS</h3><p>Prospect qualification, customer assistance, document workflows, service requests and operational follow-up.</p><div><span>CONTROLLED CONTEXT</span><span>HUMAN ESCALATION</span><span>TRACEABLE ACTIONS</span></div></article><article><h3>ENTERPRISE WORKFLOWS</h3><p>Lead capture, CRM updates, email coordination, scheduling, reporting and repetitive work across connected systems.</p><div><span>WORKFLOW INTEGRATION</span><span>MULTILINGUAL</span><span>ROLE-BASED CONTROL</span></div></article></div></section>
 
-        <section className="tasha-corridor section-rule"><div className="shell corridor-grid"><div className="corridor-map"><video src="/images/tasha-2.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Network corridor video connecting Africa and America" /><div><span>AFRICA</span><i /><b>TASHA</b><i /><span>AMERICA</span></div></div><div><h2>ONE SYSTEM.<br />DIFFERENT CONTEXTS.</h2><p>TASHA is conceived for organizations operating across African and American markets, where language, infrastructure, regulation and customer expectations can differ significantly.</p><p>Adaptation does not mean unchecked autonomy. Context, permissions and human oversight remain part of the operating model.</p></div></div></section>
+        <section className="tasha-corridor section-rule"><div className="shell corridor-grid"><div className="corridor-map"><video src="/images/tasha-2.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Network corridor video connecting America, Africa and Europe" /><div><span>AMERICA</span><i /><b>AFRICA</b><i /><span>EUROPE</span></div></div><div><h2>ONE SYSTEM.<br />DIFFERENT CONTEXTS.</h2><p>TASHA is conceived for organizations operating across African and American markets, where language, infrastructure, regulation and customer expectations can differ significantly.</p><p>Adaptation does not mean unchecked autonomy. Context, permissions and human oversight remain part of the operating model.</p></div></div></section>
 
         <section className="tasha-principles"><div className="shell principles-inner"><h2>POWERFUL.<br />GOVERNED.<br />HUMAN-AWARE.</h2><div><span>SECURITY</span><span>PRIVACY</span><span>TRANSPARENCY</span><span>HUMAN OVERSIGHT</span></div></div></section>
         <section className="tasha-final"><div className="shell"><h2>FROM REQUEST.<br />TO RESPONSIBLE ACTION.</h2><p>Explore how TASHA could participate in your approved business workflows.</p><a className="button button-light" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>

@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
   { type: "link", label: "HOME", href: "/", activeKey: "HOME" },
   { type: "link", label: "TASHA", href: "/tasha", activeKey: "TASHA" },
   { type: "link", label: "AI SOLUTIONS", href: "/solutions", activeKey: "SOLUTIONS" },
+  { type: "link", label: "DATACENTER ENGINEERING", href: "/datacenter", activeKey: "DATACENTER" },
   { type: "link", label: "INSIGHTS", href: "/insights", activeKey: "INSIGHTS" },
   {
     type: "group",
@@ -63,6 +64,7 @@ export function Header({ active = "HOME" }: { active?: string }) {
           if (item.type === "link") {
             const isActive =
               active === item.activeKey ||
+              (item.activeKey === "DATACENTER" && (active === "DATACENTER" || active === "DATACENTER ENGINEERING")) ||
               (item.activeKey === "SOLUTIONS" && active === "AI SOLUTIONS") ||
               (item.activeKey === "ABOUT" && active === "ABOUT") ||
               (item.activeKey === "CONTACT" && active === "CONTACT");

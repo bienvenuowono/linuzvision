@@ -2,13 +2,13 @@
 name: LinuZvision — Void and Form
 description: Infrastructure-grade intelligence expressed through an architectural system with a disciplined blue-teal identity.
 colors:
-  paper: "#faf9f9"
+  paper: "#eff2f2"
   ink: "#0A3874"
   action-hover: "#0190A5"
   action-hover-text: "#060707"
   muted: "#626767"
-  line: "#d4d4d4"
-  panel: "#e7e8e8"
+  line: "#d0d5d5"
+  panel: "#e2e6e6"
   void: "#060707"
   void-text: "#f6f6f4"
   void-muted: "#b9bcbc"

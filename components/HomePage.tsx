@@ -9,7 +9,7 @@ import { HomeScrollNarrative } from "./HomeScrollNarrative";
 
 const activities = [
   {
-    href: "/services",
+    href: "/datacenter",
     code: "ACT-01",
     title: "DATACENTER INFRASTRUCTURE & SUPPORT",
     text: "Physical server deployment, racking, cabling, hardware diagnostics, and mission-critical datacenter facility support.",
@@ -369,8 +369,8 @@ export function HomePage({ insights }: { insights: Insight[] }) {
             </div>
             <div className="security-visual" data-reveal-item style={{ "--reveal-order": 1 } as CSSProperties}>
               <img
-                src="/images/ai-security-matrix.png"
-                alt="Autonomous AI security matrix and zero-trust verification framework"
+                src="/images/continuous-monitoring-security.jpg"
+                alt="Continuous monitoring security center with holographic threat intelligence shield"
               />
               <div className="visual-caption">
                 <span>SECURITY ARCHITECTURE & THREAT INTELLIGENCE</span>

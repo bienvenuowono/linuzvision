@@ -286,6 +286,7 @@ Après `ship` :
 | About / Our Story | `/about` | `components/AboutPage.tsx` | validée `ship` |
 | Insights | `/insights` | `components/InsightsPage.tsx` | validée `ship` |
 | Contact | `/contact` | `components/ContactPage.tsx` | validée `ship` |
+| Datacenter Engineering | `/datacenter` | `components/DatacenterPage.tsx` | validée `ship` |
 
 ## 10. Ordre recommandé pour la suite
 

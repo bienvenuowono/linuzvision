@@ -7,7 +7,7 @@ const ecosystem = [
   ["AI & AUTOMATION", "/solutions"],
   ["TASHA PROTOCOL", "/tasha"],
   ["IT SUPPORT", "/training"],
-  ["DATA CENTER", "#security"],
+  ["DATA CENTER", "/datacenter"],
   ["CLOUD INFRA", "/cloud"],
   ["CYBERSECURITY", "#security"],
 ];
