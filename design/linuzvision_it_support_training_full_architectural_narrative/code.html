@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IT Support &amp; Training | LinuZvision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "background": "#FAF9F9",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#636564",
+                      "on-secondary-fixed-variant": "#454747",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-background": "#181c1d",
+                      "outline": "#747878",
+                      "surface-container-highest": "#e0e3e3",
+                      "surface-variant": "#e0e3e3",
+                      "on-primary-container": "#828484",
+                      "on-surface": "#181c1d",
+                      "tertiary-container": "#1f1b19",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "inverse-surface": "#2d3131",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#8a8380",
+                      "tertiary": "#010000",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#1a1c1c",
+                      "on-error": "#ffffff",
+                      "surface": "#FAF9F9",
+                      "outline-variant": "#D4D4D4",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-container-low": "#f1f4f4",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e2e3e2",
+                      "on-tertiary-fixed-variant": "#4b4643",
+                      "inverse-on-surface": "#eef1f1",
+                      "surface-bright": "#f7fafa",
+                      "primary-fixed-dim": "#c6c7c6",
+                      "surface-container": "#ebeeee",
+                      "on-primary-fixed": "#1a1c1c",
+                      "surface-dim": "#d7dbda",
+                      "on-tertiary-fixed": "#1f1b19",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#cdc5c1",
+                      "tertiary-fixed": "#eae1dd",
+                      "on-primary-fixed-variant": "#454747",
+                      "on-surface-variant": "#434747",
+                      "secondary-container": "#e2e2e2",
+                      "primary": "#000000",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e5e9e8",
+                      "secondary": "#5d5f5e",
+                      "surface-tint": "#5d5f5f",
+                      "inverse-primary": "#c6c7c6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "section-gap": "160px",
+                      "margin-mobile": "24px",
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-xl-mobile": [
+                              "Inter"
+                      ],
+                      "mono-data": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "display-xl": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-xl-mobile": [
+                              "56px",
+                              {
+                                      "lineHeight": "60px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "mono-data": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "120px",
+                              {
+                                      "lineHeight": "110px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2B2B2B; }
+        .bg-surface { background-color: #FFFFFF; }
+        .text-on-background { color: #2B2B2B; }
+        .bg-on-background { background-color: #2B2B2B; }
+        .text-surface { color: #FFFFFF; }
+        .border-on-background { border-color: #2B2B2B; }
+        .border-outline-variant { border-color: #D4D4D4; }
+        .bg-inverse-surface { background-color: #2B2B2B; }
+        
+        .hairline-border { border-width: 1px; }
+        .nav-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .nav-underline:hover::after, .nav-underline.active::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* Smooth reveal animations */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+        .scroll-reveal:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-on-background selection:text-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-none border-b border-outline-variant transition-all duration-300 ease-in-out">
+<a class="font-headline-md text-headline-md tracking-tighter text-on-background" href="/">LINUZVISION</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors relative nav-underline" href="#">TASHA</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors relative nav-underline" href="#">SOLUTIONS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors relative nav-underline" href="#">INFRASTRUCTURE</a>
+<a class="font-label-caps text-label-caps text-on-background font-bold border-on-background relative nav-underline active" href="#">AI TRAINING</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors relative nav-underline" href="#">ABOUT</a>
+</div>
+<a class="hidden md:inline-flex font-label-caps text-label-caps text-primary border hairline-border border-on-background px-6 py-3 hover:bg-on-background hover:text-surface transition-colors" href="#">TALK TO US</a>
+<button class="md:hidden text-on-background">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="w-full max-w-container-max mx-auto pt-20">
+<!-- 1. Hero Evolution -->
+<section class="relative min-h-[90vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+<div class="relative z-10 max-w-5xl mx-auto text-center space-y-4">
+<div class="overflow-hidden">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background reveal-text">TECHNOLOGY</h1>
+</div>
+<div class="overflow-hidden">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background reveal-text delay-100">SHOULD HELP</h1>
+</div>
+<div class="overflow-hidden">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background reveal-text delay-200">YOUR PEOPLE</h1>
+</div>
+<div class="overflow-hidden">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background reveal-text delay-300">MOVE FASTER.</h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-12 reveal-text delay-300">
+                    Empowering teams with seamless IT support and advanced AI training. We bridge the gap between human potential and technological capability.
+                </p>
+</div>
+</section>
+<!-- 2. The LinuZvision Approach -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter border-b border-outline-variant">
+<div class="md:col-span-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background sticky top-32">
+                    IT IS MORE THAN FIXING PROBLEMS.
+                </h2>
+</div>
+<div class="md:col-span-8 space-y-12">
+<p class="font-body-lg text-body-lg text-on-surface-variant text-xl leading-relaxed">
+                    True technical support transcends the helpdesk. It is an architectural foundation that connects infrastructure, knowledge, and artificial intelligence to create a resilient operational environment. We don't just react to tickets; we engineer systems that prevent them. Our approach integrates proactive monitoring, robust infrastructure design, and continuous workforce education to ensure technology acts as a catalyst for your business, not a bottleneck.
+                </p>
+<div class="w-full aspect-video bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-luminosity opacity-90" data-alt="A cinematic, high-contrast, black and white photograph of a diverse, modern corporate team interacting seamlessly with advanced technological interfaces in a minimalist, architectural workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAic731l2cZTZAn6jnktytNZJOzmYicEPcQWBnqcK4Qtr6p_wYwYL4Of6U0_F2-fTZesE1xc4osAlxw9TKFZLBAt5wbo_x2gN6CEyLoJeENm-SPFAVO57uoZUZGlC4gRFJoisyReVMtfjBcRDOemBKJFYeR2ImTWnJq8oLlYmDgkLTcMv6sp3hk3ptowkZIs_BtaoBzP2tmGZ9TauOA1sOwTeqb2og4AIAd1CIkDNyFUgWcPkg-K8Qe"/>
+</div>
+</div>
+</section>
+<!-- 3. Core Services Ecosystem -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">CORE SERVICES ECOSYSTEM</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A systemic approach to identifying friction and engineering resolution.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border hairline-border border-outline-variant">
+<div class="p-12 border-b md:border-b-0 md:border-r hairline-border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-background mb-8 !text-3xl">radar</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Proactive Monitoring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Detecting friction points and workflow interruptions before they escalate into systemic issues.</p>
+</div>
+<div class="p-12 border-b md:border-b-0 md:border-r hairline-border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-background mb-8 !text-3xl">architecture</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Architectural Resolution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Implementing structural fixes rather than temporary patches to ensure long-term stability.</p>
+</div>
+<div class="p-12 border-b hairline-border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-background mb-8 !text-3xl">model_training</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Enterprise AI Training</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive programs to drive AI adoption and literacy across your entire organization.</p>
+</div>
+<div class="p-12 border-b md:border-b-0 md:border-r hairline-border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-background mb-8 !text-3xl">dns</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Infrastructure Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Maintaining the silent framework that enables every digital action securely and efficiently.</p>
+</div>
+<div class="p-12 border-b md:border-b-0 md:border-r hairline-border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-background mb-8 !text-3xl">security</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Cybersecurity Alignment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Integrating robust security protocols that align with operational workflows without causing friction.</p>
+</div>
+<div class="p-12 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-background mb-8 !text-3xl">policy</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Data Sovereignty</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Consulting on data residency, compliance, and governance across global operational footprints.</p>
+</div>
+</div>
+</section>
+<!-- 4. Human-Machine Synergy -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-inverse-surface text-surface border-b border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="order-2 md:order-1 h-full min-h-[500px] bg-surface/10 flex items-center justify-center p-8 overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-screen opacity-70" data-alt="A minimalist, monochromatic depiction of a sophisticated corporate training session. Professionals are engaged with sleek, transparent digital interfaces displaying data nodes and architectural diagrams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC94uZiI1glcvUVPFc3Qo2hgd1nESY_Y9JHZxfuzzlOzURZ_WZkRRLncn3hdsCgvpQ43PwW5K-iibzEEI0pMY8H20eWhrskrEndbX9-x9tLc50rAmI1ECU_les5pMiF_EfLVudzUcINLsjPySn82T9k-Q7xhcDJrSkCQbLh10GfFRiCCAxeXfR2aVkKNW6vfslw1CEc_8PtTCZoXW5jZvyKdOXL-861NRSaGBeyCaCE-D5cTPMDNjX0"/>
+</div>
+<div class="order-1 md:order-2 pl-0 md:pl-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">HUMAN-MACHINE SYNERGY</h2>
+<p class="font-body-lg text-body-lg text-surface-variant mb-6 text-xl">
+                        At the core of our support architecture is TASHA, an advanced AI entity that assists our support teams to resolve issues at machine speed.
+                    </p>
+<p class="font-body-lg text-body-lg text-surface-variant mb-12">
+                        TASHA doesn't replace human expertise; she amplifies it. By rapidly analyzing logs, identifying patterns, and suggesting remediation strategies, TASHA allows our human architects to focus on complex, high-level problem-solving. This synergy guarantees unparalleled resolution velocity.
+                    </p>
+<a class="inline-flex font-label-caps text-label-caps text-surface border hairline-border border-surface px-6 py-3 hover:bg-surface hover:text-on-background transition-colors" href="#">MEET TASHA</a>
+</div>
+</div>
+</section>
+<!-- 5. The Africa ↔ America Bridge -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-on-background mb-8 !text-5xl">public</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-8">THE AFRICA ↔ AMERICA BRIDGE</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-xl leading-relaxed">
+                    LinuZvision operates seamlessly across continents, providing organizations with localized expertise backed by global standards. We understand the nuanced infrastructure challenges and compliance requirements in both African and American markets, delivering unified support strategies that bridge the geographic and technological divide.
+                </p>
+</div>
+</section>
+<!-- 6. Training & Transformation Curriculum -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant bg-surface-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-8 sticky top-32">
+                        TRAINING &amp;<br/>TRANSFORMATION
+                    </h2>
+</div>
+<div class="md:col-span-7 space-y-12">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                        Adopting artificial intelligence is not merely a software update; it is a fundamental shift in cognitive operations. Our curriculum is designed to build literacy, confidence, and mastery.
+                    </p>
+<div class="space-y-8">
+<div class="pb-8 border-b border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 flex items-center justify-between">
+                                AI Literacy Fundamentals
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Establishing a baseline understanding of LLMs, prompt engineering, and the ethical use of AI in daily corporate environments.</p>
+</div>
+<div class="pb-8 border-b border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 flex items-center justify-between">
+                                Advanced Productivity Tools
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep dives into integrating AI copilots and automated workflows within existing enterprise software ecosystems.</p>
+</div>
+<div class="pb-8 border-b border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 flex items-center justify-between">
+                                Digital Transformation Workshops
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Executive sessions focused on restructuring team operations and redefining KPIs in an AI-augmented workspace.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Technical Benchmarks -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-16 text-center">TECHNICAL BENCHMARKS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 border hairline-border border-outline-variant flex flex-col items-center justify-center text-center">
+<div class="font-display-xl-mobile text-display-xl-mobile text-on-background mb-4">&lt; 15m</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">AVERAGE RESOLUTION VELOCITY</div>
+</div>
+<div class="p-8 border hairline-border border-outline-variant flex flex-col items-center justify-center text-center">
+<div class="font-display-xl-mobile text-display-xl-mobile text-on-background mb-4">99.99%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">UPTIME GUARANTEE</div>
+</div>
+<div class="p-8 border hairline-border border-outline-variant flex flex-col items-center justify-center text-center">
+<div class="font-display-xl-mobile text-display-xl-mobile text-on-background mb-4">L3</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">DEFAULT SUPPORT TIER</div>
+</div>
+</div>
+</section>
+<!-- 8. Final Narrative Sequence -->
+<section class="min-h-screen flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop bg-on-background text-surface py-32">
+<div class="space-y-16 text-center w-full">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl scroll-reveal">IT SYSTEMS...</h1>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl scroll-reveal">INFRASTRUCTURE...</h1>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl scroll-reveal">PEOPLE...</h1>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-surface">INTELLIGENCE.</h1>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter bg-on-background border-t border-outline">
+<div class="md:col-span-6 flex flex-col justify-between">
+<div class="font-headline-lg text-headline-lg text-surface mb-12">LINUZVISION</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant">© 2024 LINUZVISION, LLC. ARCHITECTURAL INTELLIGENCE.</div>
+</div>
+<div class="md:col-span-6 flex flex-col md:items-end space-y-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-surface transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-surface transition-colors" href="#">TERMS OF SERVICE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-surface transition-colors" href="#">NETWORK STATUS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-surface transition-colors" href="#">CONTACT</a>
+</div>
+</footer>
+<!-- Fixed WhatsApp CTA -->
+<a class="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-on-background text-surface px-6 py-4 rounded-none shadow-[0_0_0_1px_rgba(255,255,255,0.1)] hover:bg-surface hover:text-on-background border hairline-border border-on-background transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">forum</span>
+<span class="font-label-caps text-label-caps">Discuss your IT needs</span>
+</a>
+</body></html>

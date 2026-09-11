@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INSIGHTS | LinuZvision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#454747",
+                        "outline": "#747878",
+                        "outline-variant": "#D4D4D4",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#010000",
+                        "on-primary-container": "#828484",
+                        "on-tertiary-container": "#8a8380",
+                        "surface-container-highest": "#e0e3e3",
+                        "surface-variant": "#E3E2E2",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c6c7c6",
+                        "surface-tint": "#5d5f5f",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#eae1dd",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface": "#FAF9F9",
+                        "on-secondary-container": "#636564",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7fafa",
+                        "background": "#FAF9F9",
+                        "tertiary-container": "#1f1b19",
+                        "primary-container": "#1a1c1c",
+                        "surface-container-high": "#e5e9e8",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e2e3e2",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "secondary": "#5d5f5e",
+                        "on-surface": "#181c1d",
+                        "inverse-on-surface": "#eef1f1",
+                        "tertiary-fixed-dim": "#cdc5c1",
+                        "surface-container": "#ebeeee",
+                        "on-surface-variant": "#434747",
+                        "surface-container-low": "#f1f4f4",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-fixed-dim": "#c6c7c6",
+                        "inverse-surface": "#2d3131",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d7dbda",
+                        "primary": "#000000",
+                        "on-background": "#181c1d",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "secondary-container": "#e2e2e2"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1440px",
+                        "section-gap": "160px",
+                        "margin-mobile": "24px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Inter"],
+                        "mono-data": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-xl": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "500" }],
+                        "mono-data": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }],
+                        "display-xl-mobile": ["56px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "display-xl": ["120px", { lineHeight: "110px", letterSpacing: "-0.04em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hairline-b { border-bottom: 1px solid #D4D4D4; }
+        .hairline-t { border-top: 1px solid #D4D4D4; }
+        .hairline-l { border-left: 1px solid #D4D4D4; }
+        .hairline-r { border-right: 1px solid #D4D4D4; }
+        .clip-reveal { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
+        .clip-revealed { clip-path: inset(0 0 0 0); }
+        .word-rotate-container { height: 1em; overflow: hidden; position: relative; }
+        .word-rotate-list { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden relative">
+<!-- Subtle Shader Background -->
+<div class="fixed inset-0 w-full h-full -z-10 opacity-20 pointer-events-none mix-blend-multiply grayscale">
+<!-- STITCH_SHADER_START:ANIMATION_66 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_66" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_66');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+// Simplex 2D noise
+vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+float snoise(vec2 v){
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+           -0.577350269189626, 0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+  + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+    dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = uv * 2.0 - 1.0;
+    p.x *= u_resolution.x / u_resolution.y;
+    
+    // Smooth, slow movement for an editorial feel
+    float t = u_time * 0.05;
+    float noise = snoise(p * 0.8 + t);
+    float noise2 = snoise(p * 2.0 - t * 1.5);
+    
+    float finalNoise = mix(noise, noise2, 0.3);
+    
+    // LinuZvision Palette
+    vec3 color1 = vec3(0.168, 0.168, 0.168); // #2B2B2B
+    vec3 color2 = vec3(1.0, 1.0, 1.0); // #FFFFFF
+    
+    // Very subtle influence to keep text readable
+    vec3 color = mix(color1, color2, finalNoise * 0.08 + 0.02);
+    
+    // Subtle grain/noise
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    color += grain * 0.01;
+    
+    // Vignette
+    float d = length(p);
+    float vignette = smoothstep(1.5, 0.5, d);
+    color *= vignette;
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_66 -->
+</div>
+<!-- Top Navigation -->
+<nav class="bg-surface/95 dark:bg-surface/95 text-primary dark:text-on-surface font-label-caps text-label-caps tracking-widest docked full-width top-0 sticky border-b border-outline-variant/30 flat no shadows flex justify-between items-center h-16 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto z-50 backdrop-blur-md">
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background dark:text-surface-bright">LinuZvision</span>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-on-background transition-colors hover:bg-on-surface hover:text-surface transition-all duration-300 scale-95 duration-200 ease-in-out px-2 py-1" href="#">Intelligence</a>
+<a class="text-on-background border-b border-on-background pb-1 hover:bg-on-surface hover:text-surface transition-all duration-300 scale-95 duration-200 ease-in-out px-2 py-1" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-on-background transition-colors hover:bg-on-surface hover:text-surface transition-all duration-300 scale-95 duration-200 ease-in-out px-2 py-1" href="#">Enterprise</a>
+<a class="text-on-surface-variant hover:text-on-background transition-colors hover:bg-on-surface hover:text-surface transition-all duration-300 scale-95 duration-200 ease-in-out px-2 py-1" href="#">Regions</a>
+<a class="text-on-surface-variant hover:text-on-background transition-colors hover:bg-on-surface hover:text-surface transition-all duration-300 scale-95 duration-200 ease-in-out px-2 py-1" href="#">Global Operations</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary-container transition-colors">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary-container transition-colors">chat_bubble</span>
+<button class="border border-on-background px-4 py-2 hover:bg-on-background hover:text-surface transition-colors font-label-caps uppercase">Connect</button>
+</div>
+</nav>
+<!-- Scroll Hero -->
+<header class="relative min-h-[90vh] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center overflow-hidden pt-32">
+<div class="w-full h-[60vh] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-30 grayscale saturate-0 blur-sm mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="A stark, minimalist architectural interior of a data center or modern gallery space. Immense white structural columns and deep black shadows. High contrast, sharp geometric lines, brutalist aesthetics. Monochromatic palette with a solitary, intense white light source." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxt2FYqpQK11Qrp8UYQ3XmS80NVFKHMSC5Hc7yBqlXFC_lHw3R7lLj9ZDJseB-Vmqlg1cNvbQTpIy1cjjJBlJZXn5nmJ3ThChH-Gb6XBoDsHXkKgyU-aQid7yjwupkoMb5xuqAMSpxEOxoN4ggeyA2x3YZl0zQgBqriKamOdMdm7oAFcQ-UyMrEi86qYH3qYZW9VcwjjVGKKlvb5u5zqSHFbYh_MdwYv1LMf1Ycko5tXMUNg3ynYMN"/>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background uppercase tracking-tighter flex flex-col md:flex-row items-center gap-4">
+<span>FROM</span>
+<div class="word-rotate-container min-w-[300px] text-left border-b-2 border-on-background relative overflow-hidden" id="hero-word-container">
+<div class="word-rotate-list absolute inset-0 flex flex-col" id="hero-word-list">
+<span>INSIGHTS</span>
+<span>IDEAS</span>
+<span>KNOWLEDGE</span>
+<span>EXPERIENCE</span>
+<span>INTELLIGENCE</span>
+<span>ACTION</span>
+</div>
+</div>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-8 text-center uppercase tracking-widest text-xs">
+            Strategic perspectives on artificial intelligence, autonomous systems, and global infrastructure.
+        </p>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 text-on-surface-variant">
+<span class="font-label-caps text-label-caps text-[10px]">SCROLL TO EXPLORE</span>
+<span class="material-symbols-outlined">arrow_downward</span>
+</div>
+</header>
+<div class="w-full h-px bg-outline-variant max-w-container-max mx-auto"></div>
+<!-- Featured Insight -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 flex flex-col justify-center pr-0 lg:pr-12">
+<span class="font-mono-data text-mono-data uppercase tracking-widest text-outline mb-4 flex items-center gap-2">
+<span class="w-8 h-px bg-outline"></span> FEATURED INTELLIGENCE
+                </span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-background mb-6 uppercase tracking-tight">THE RISE OF AUTONOMOUS AI AGENTS IN BUSINESS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 border-l border-outline-variant pl-4">
+                    Exploring the shift from passive tools to active systems. How autonomous architectures are redefining enterprise efficiency, decision-making, and structural workflows across global sectors.
+                </p>
+<div class="flex items-center gap-6 font-mono-data text-mono-data uppercase text-outline">
+<span>Oct 24, 2024</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span>12 Min Read</span>
+</div>
+<a class="mt-8 border border-on-background px-6 py-3 hover:bg-on-background hover:text-surface transition-colors font-label-caps uppercase w-max flex items-center gap-2" href="#">
+                    Read Report <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-7 mt-12 lg:mt-0 relative h-[600px] overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container-high transition-transform duration-700 ease-out clip-reveal" id="featured-img-container">
+<img class="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105" data-alt="A highly abstract, monochromatic visualization of autonomous systems. Countless interconnected geometric nodes floating in a stark white void, connected by razor-thin black lines. The composition suggests complex data processing and automated intelligence. Minimalist, sophisticated, tech-editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ccUNxaYcHYe5hiF0jwnr5cx1Ucm_GCRzUw8UqnWU6YswAHykBbbp3j2sqx3LHvRLZsNmOJLwd0WYPgRuiYd5hVXMyfvv-iPR9Am_oS1NbNdQWsuNA1d-RU9K6RCYZYJ40WkieQfawMPP1BYqj6CTRYCwp2Qj8vD-qN43QvQpZPZOReermfR8Mvo21aJdoHp2AhnSgW32BiyBIVf1bUqaqB8v41nSgFXCNndE4LQM5aWEO2WjePi_"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface text-primary dark:text-on-primary-fixed font-mono-data text-mono-data uppercase tracking-widest full-width py-section-gap border-t border-outline-variant flat no shadows grid grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4 mb-8 md:mb-0">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface dark:text-surface-bright mb-4">LinuZvision</div>
+<div class="text-on-surface-variant">© 2024 LinuZvision, LLC. Intelligence Across Frontiers.</div>
+</div>
+<div class="col-span-12 md:col-span-8 flex flex-wrap gap-8 justify-end">
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity cursor-pointer" href="#">Strategic Regions: Africa</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity cursor-pointer" href="#">Strategic Regions: America</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity cursor-pointer" href="#">Privacy Protocol</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity cursor-pointer" href="#">Legal Framework</a>
+<a class="text-primary font-bold hover:opacity-70 transition-opacity cursor-pointer" href="#">Infrastructure</a>
+</div>
+</footer>
+<script>
+        // Simple scroll rotation logic for hero
+        const wordList = document.getElementById('hero-word-list');
+        const words = wordList.children.length;
+        let currentWordIndex = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const threshold = 150; // pixels per word change
+            
+            let newIndex = Math.floor(scrollPos / threshold);
+            if (newIndex >= words) newIndex = words - 1;
+            
+            if (newIndex !== currentWordIndex) {
+                currentWordIndex = newIndex;
+                const translateY = -(currentWordIndex * 100);
+                wordList.style.transform = `translateY(${translateY}%)`;
+            }
+        });
+
+        // Intersection Observer for image reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('clip-revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const revealElements = document.querySelectorAll('.clip-reveal');
+        revealElements.forEach(el => observer.observe(el));
+    </script>
+</body></html>

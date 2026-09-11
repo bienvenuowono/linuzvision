@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinuZvision | Intelligence That Moves Business Forward</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-tint": "#5d5f5f",
+                            "tertiary": "#010000",
+                            "outline-variant": "#D4D4D4",
+                            "secondary-fixed-dim": "#c6c6c6",
+                            "tertiary-fixed-dim": "#cdc5c1",
+                            "primary": "#000000",
+                            "surface-container-highest": "#e0e3e3",
+                            "on-error": "#ffffff",
+                            "on-tertiary-fixed-variant": "#4b4643",
+                            "on-secondary-container": "#636564",
+                            "on-secondary": "#ffffff",
+                            "surface-dim": "#d7dbda",
+                            "on-surface": "#1A1C1C",
+                            "on-surface-variant": "#434747",
+                            "on-background": "#181c1d",
+                            "primary-fixed": "#e2e3e2",
+                            "surface-bright": "#f7fafa",
+                            "surface": "#FAF9F9",
+                            "error-container": "#ffdad6",
+                            "surface-variant": "#E3E2E2",
+                            "on-secondary-fixed": "#1a1c1c",
+                            "outline": "#747878",
+                            "inverse-on-surface": "#eef1f1",
+                            "on-tertiary-fixed": "#1f1b19",
+                            "error": "#ba1a1a",
+                            "background": "#FAF9F9",
+                            "on-tertiary-container": "#8a8380",
+                            "tertiary-container": "#1f1b19",
+                            "inverse-primary": "#c6c7c6",
+                            "on-primary-fixed-variant": "#454747",
+                            "on-secondary-fixed-variant": "#454747",
+                            "surface-container-high": "#e5e9e8",
+                            "on-primary-fixed": "#1a1c1c",
+                            "primary-container": "#1a1c1c",
+                            "on-primary": "#ffffff",
+                            "secondary-container": "#e2e2e2",
+                            "on-error-container": "#93000a",
+                            "on-primary-container": "#828484",
+                            "surface-container-low": "#f1f4f4",
+                            "primary-fixed-dim": "#c6c7c6",
+                            "inverse-surface": "#2d3131",
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-fixed": "#e2e2e2",
+                            "tertiary-fixed": "#eae1dd",
+                            "on-tertiary": "#ffffff",
+                            "surface-container": "#ebeeee",
+                            "secondary": "#5d5f5e"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "gutter": "24px",
+                            "margin-mobile": "24px",
+                            "container-max": "1440px",
+                            "section-gap": "160px",
+                            "margin-desktop": "64px",
+                            "unit": "8px"
+                    },
+                    "fontFamily": {
+                            "label-caps": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "body-lg": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "display-xl": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "mono-data": [
+                                    "Inter", "monospace"
+                            ],
+                            "headline-md": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "headline-lg": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "display-xl-mobile": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "body-md": [
+                                    "Inter", "sans-serif"
+                            ]
+                    },
+                    "fontSize": {
+                            "label-caps": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "letterSpacing": "0.1em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "letterSpacing": "0em",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "display-xl": [
+                                    "120px",
+                                    {
+                                            "lineHeight": "110px",
+                                            "letterSpacing": "-0.04em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "mono-data": [
+                                    "11px",
+                                    {
+                                            "lineHeight": "14px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "letterSpacing": "-0.01em",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "display-xl-mobile": [
+                                    "56px",
+                                    {
+                                            "lineHeight": "60px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "letterSpacing": "0em",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+                }
+        }
+    </script>
+<style>
+        body { background-color: #FAF9F9; color: #181c1d; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .hairline-b { border-bottom: 1px solid #D4D4D4; }
+        .hairline-t { border-top: 1px solid #D4D4D4; }
+        .hairline-l { border-left: 1px solid #D4D4D4; }
+        .hairline-r { border-right: 1px solid #D4D4D4; }
+        
+        /* Minimalist Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF9F9; }
+        ::-webkit-scrollbar-thumb { background: #D4D4D4; }
+        ::-webkit-scrollbar-thumb:hover { background: #747878; }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .hover-flip {
+            transition: all 0.3s ease;
+        }
+        .hover-flip:hover {
+            background-color: #181c1d;
+            color: #FAF9F9;
+        }
+        
+        .animated-underline {
+            position: relative;
+        }
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 50%;
+            background-color: #181c1d;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .animated-underline:hover::after, .active-nav::after {
+            width: 100%;
+        }
+
+        .scroll-text-seq span {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .scroll-text-seq span.visible {
+            display: inline;
+            opacity: 1;
+        }
+
+        .tasha-seq span { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .tasha-seq span.in-view { opacity: 1; transform: translateY(0); }
+
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 100%;
+            animation: ticker 40s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-surface">
+<!-- WebGL Background Motif -->
+<div class="fixed inset-0 z-[-1] opacity-40 pointer-events-none grayscale mix-blend-multiply">
+
+</div>
+<!-- GLOBAL HEADER (from JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 hairline-b flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto backdrop-blur-sm">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">
+            LINUZVISION
+        </div>
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps tracking-widest text-primary pb-1 active-nav border-b border-primary" href="#">HOME</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">TASHA</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">SOLUTIONS</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">CLOUD</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">CONTACT</a>
+</div>
+<button class="font-label-caps text-label-caps tracking-widest border border-primary px-6 py-3 hover-flip hidden md:block">
+            START A CONVERSATION
+        </button>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+</nav>
+<!-- HERO -->
+<section class="min-h-screen pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop flex flex-col justify-center max-w-container-max mx-auto relative">
+<div class="w-full mb-12">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-primary max-w-5xl uppercase leading-none">
+                INTELLIGENCE THAT MOVES BUSINESS FORWARD.
+            </h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full">
+<div class="md:col-span-5 md:col-start-8 flex flex-col justify-end">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                    LinuZvision builds intelligent AI, automation and technology solutions that help businesses and financial institutions operate smarter, faster and more efficiently.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="font-label-caps text-label-caps tracking-widest border border-primary bg-primary text-surface px-6 py-4 hover:bg-surface hover:text-primary transition-colors">
+                        EXPLORE OUR AI SOLUTIONS
+                    </button>
+<button class="font-label-caps text-label-caps tracking-widest border border-primary px-6 py-4 hover-flip flex items-center justify-center gap-2">
+                        MEET TASHA <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full mt-24 aspect-video relative border border-outline-variant bg-surface-variant overflow-hidden group">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<button class="w-20 h-20 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center border border-outline hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<img class="w-full h-full object-cover filter grayscale opacity-80 group-hover:opacity-100 transition-opacity duration-700" data-alt="A cinematic, high-contrast monochrome wide shot of a modern, brutalist server room or architectural office space. Pristine white lighting, sharp geometric lines, volumetric light rays. The aesthetic is cold, sophisticated, and highly technical. Empty of people, focusing on the infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWV7krHirexstA9EAVCEjeZZ-dILSYlFAfQ8QC_dSuduWW5w_KqxOKcwDrgj2DO0dcKJKZjeFlwlPbQCYTRiwqcng5GuFc_NjUwQ11ajm3m9blpj2ouYV0OYYSkEKXhSgBTxOgHeB1lSVbXkQ-ozYIYSZT2q3RSYZAStqLaGSIj2-as_sdxdP7fIWTAShSs1rbn4U9sqsdXIbkIqz_0tFxsT6Jv-sclPY9nFxwaQ19_31Wi5E4RI2k"/>
+<!-- decorative nodes -->
+<div class="absolute top-4 left-4 w-3 h-3 border border-primary flex items-center justify-center"><div class="w-1 h-1 bg-primary"></div></div>
+<div class="absolute bottom-4 right-4 w-3 h-3 border border-primary flex items-center justify-center"><div class="w-1 h-1 bg-primary"></div></div>
+</div>
+</section>
+<!-- HORIZONTAL DIVIDER -->
+<div class="w-full hairline-t"></div>
+<!-- BUSINESS TRANSFORMATION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-24">
+<h2 class="font-mono-data text-mono-data uppercase text-outline mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">change_history</span> BUSINESS TRANSFORMATION
+            </h2>
+<h3 class="font-headline-lg text-headline-lg text-primary max-w-3xl">BUSINESS IS CHANGING.</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant">
+<!-- Col 1 -->
+<div class="p-8 hairline-r hairline-b md:hairline-b-0 flex flex-col items-center justify-center text-center h-64 hover:bg-surface-variant transition-colors group">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4 group-hover:-translate-y-2 transition-transform">MANUAL</span>
+<span class="material-symbols-outlined text-outline mb-4">arrow_downward</span>
+<span class="font-headline-md text-headline-md text-primary">AUTOMATED</span>
+</div>
+<!-- Col 2 -->
+<div class="p-8 hairline-r hairline-b md:hairline-b-0 flex flex-col items-center justify-center text-center h-64 hover:bg-surface-variant transition-colors group">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4 group-hover:-translate-y-2 transition-transform">SLOW</span>
+<span class="material-symbols-outlined text-outline mb-4">arrow_downward</span>
+<span class="font-headline-md text-headline-md text-primary">INTELLIGENT</span>
+</div>
+<!-- Col 3 -->
+<div class="p-8 flex flex-col items-center justify-center text-center h-64 hover:bg-surface-variant transition-colors group">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4 group-hover:-translate-y-2 transition-transform">REACTIVE</span>
+<span class="material-symbols-outlined text-outline mb-4">arrow_downward</span>
+<span class="font-headline-md text-headline-md text-primary">AUTONOMOUS</span>
+</div>
+</div>
+<div class="mt-24 text-center">
+<h3 class="font-headline-lg text-headline-lg text-primary">THE FUTURE OF BUSINESS IS INTELLIGENT.</h3>
+</div>
+</section>
+<!-- HORIZONTAL DIVIDER -->
+<div class="w-full hairline-t"></div>
+<!-- MEET TASHA -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-tertiary text-on-tertiary relative overflow-hidden">
+<!-- Subtle background texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#D4D4D4 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<h2 class="font-mono-data text-mono-data uppercase text-outline-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">memory</span> MEET TASHA
+                </h2>
+<h3 class="font-display-xl-mobile md:font-headline-lg text-display-xl-mobile md:text-headline-lg text-surface mb-8">
+                    OUR AUTONOMOUS<br/>AI AGENT.
+                </h3>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-12 max-w-md">
+                    Tasha doesn't just respond; she reasons. Operating seamlessly across your business infrastructure to manage inquiries, qualify leads, and execute workflows without manual intervention.
+                </p>
+<button class="font-label-caps text-label-caps tracking-widest border border-outline-variant px-6 py-4 hover:bg-surface hover:text-tertiary transition-colors flex items-center gap-2">
+                    DISCOVER TASHA'S CAPABILITIES
+                </button>
+</div>
+<div class="flex items-center justify-center">
+<!-- Abstract Representation of TASHA -->
+<div class="w-full max-w-sm aspect-square border border-outline-variant relative flex items-center justify-center p-8 bg-tertiary-container/30 backdrop-blur-sm">
+<div class="absolute top-0 left-0 w-full h-full border-t border-l border-outline-variant opacity-20 transform -translate-x-4 -translate-y-4"></div>
+<div class="absolute bottom-0 right-0 w-full h-full border-b border-r border-outline-variant opacity-20 transform translate-x-4 translate-y-4"></div>
+<div class="tasha-seq flex flex-col gap-4 text-center font-mono-data text-mono-data tracking-widest">
+<span class="text-surface border border-outline-variant px-4 py-2">UNDERSTANDS CONTEXT</span>
+<span class="material-symbols-outlined text-outline-variant text-sm">south</span>
+<span class="text-surface border border-outline-variant px-4 py-2">QUALIFIES PROSPECTS</span>
+<span class="material-symbols-outlined text-outline-variant text-sm">south</span>
+<span class="text-surface border border-outline-variant px-4 py-2">EXECUTES WORKFLOWS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HORIZONTAL DIVIDER -->
+<div class="w-full hairline-t"></div>
+<!-- AI SOLUTIONS (Bento Grid) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
+<div>
+<h2 class="font-mono-data text-mono-data uppercase text-outline mb-4">AI SOLUTIONS</h2>
+<h3 class="font-headline-lg text-headline-lg text-primary max-w-2xl">INTELLIGENCE APPLIED ACROSS THE ENTERPRISE.</h3>
+</div>
+<a class="font-label-caps text-label-caps tracking-widest border-b border-primary pb-1 hover:text-outline transition-colors whitespace-nowrap" href="#">VIEW ALL SOLUTIONS</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 border border-outline-variant">
+<!-- Item 1 (Large) -->
+<div class="md:col-span-2 md:row-span-2 p-8 hairline-r hairline-b group hover:bg-surface-variant transition-colors relative overflow-hidden min-h-[400px] flex flex-col justify-end">
+<div class="absolute top-8 right-8 w-8 h-8 border border-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm">arrow_outward</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2 relative z-10">AI Customer Service</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm relative z-10">24/7 intelligent resolution of customer inquiries, reducing wait times to zero.</p>
+</div>
+<!-- Items Small -->
+<div class="p-8 hairline-r hairline-b group hover:bg-surface-variant transition-colors relative min-h-[200px] flex flex-col justify-end">
+<span class="material-symbols-outlined text-outline mb-4">query_stats</span>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">AI CRM</h4>
+</div>
+<div class="p-8 hairline-b group hover:bg-surface-variant transition-colors relative min-h-[200px] flex flex-col justify-end">
+<span class="material-symbols-outlined text-outline mb-4">account_balance</span>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">Loan Processing</h4>
+</div>
+<div class="p-8 hairline-r hairline-b md:hairline-b-0 group hover:bg-surface-variant transition-colors relative min-h-[200px] flex flex-col justify-end">
+<span class="material-symbols-outlined text-outline mb-4">security</span>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">Fraud Detection</h4>
+</div>
+<div class="p-8 group hover:bg-surface-variant transition-colors relative min-h-[200px] flex flex-col justify-end">
+<span class="material-symbols-outlined text-outline mb-4">receipt_long</span>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">Financial Ops</h4>
+</div>
+</div>
+</section>
+<!-- HORIZONTAL DIVIDER -->
+<div class="w-full hairline-t"></div>
+<!-- OUR PARTNERS -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<h2 class="font-mono-data text-mono-data uppercase text-outline mb-12 text-center tracking-widest">OUR PARTNERS</h2>
+<div class="ticker-wrap w-full opacity-60 hover:opacity-100 transition-opacity duration-500">
+<div class="ticker flex gap-32 items-center">
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<!-- Duplicates for loop -->
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+<span class="font-headline-md text-primary whitespace-nowrap font-bold">PARTNER LOGO</span>
+</div>
+</div>
+</section>
+<!-- HORIZONTAL DIVIDER -->
+<div class="w-full hairline-t"></div>
+<!-- LINUZVISION IN NUMBERS -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16">
+<h2 class="font-mono-data text-mono-data uppercase text-outline mb-4">LINUZVISION IN NUMBERS</h2>
+</div>
+<div class="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory hide-scrollbar">
+<div class="min-w-full md:min-w-[85%] flex-shrink-0 snap-center flex flex-col justify-center items-center py-32 border border-outline-variant bg-surface-variant hover:bg-surface transition-colors cursor-grab">
+<h3 class="font-display-xl-mobile md:font-display-xl text-primary font-bold mb-4">15+</h3>
+<p class="font-headline-md text-primary uppercase tracking-tight">YEARS OF EXPERIENCE</p>
+</div>
+<div class="min-w-full md:min-w-[85%] flex-shrink-0 snap-center flex flex-col justify-center items-center py-32 border border-outline-variant bg-surface-variant hover:bg-surface transition-colors cursor-grab">
+<h3 class="font-display-xl-mobile md:font-display-xl text-primary font-bold mb-4">2</h3>
+<p class="font-headline-md text-primary uppercase tracking-tight">CONTINENTS: AFRICA ↔ AMERICA</p>
+</div>
+<div class="min-w-full md:min-w-[85%] flex-shrink-0 snap-center flex flex-col justify-center items-center py-32 border border-outline-variant bg-surface-variant hover:bg-surface transition-colors cursor-grab">
+<h3 class="font-display-xl-mobile md:font-display-xl text-primary font-bold mb-4">24/7</h3>
+<p class="font-headline-md text-primary uppercase tracking-tight">AI-DRIVEN AUTOMATION</p>
+</div>
+</div>
+</section>
+<!-- HORIZONTAL DIVIDER -->
+<div class="w-full hairline-t"></div>
+<!-- FOOTER (from JSON) -->
+<footer class="bg-surface w-full mt-section-gap px-margin-desktop py-16 max-w-container-max mx-auto hairline-t grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 flex flex-col justify-between">
+<div class="font-headline-md text-headline-md text-primary font-bold">LINUZVISION</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-12 md:mt-0">© 2024 LINUZVISION. AFRICA ↔ AMERICA</div>
+</div>
+<div class="md:col-span-8 flex justify-end gap-12 font-body-md text-body-md">
+<a class="text-on-secondary-container hover:text-primary transition-all" href="#">INSIGHTS</a>
+<a class="text-on-secondary-container hover:text-primary transition-all" href="#">CYBERSECURITY</a>
+<a class="text-on-secondary-container hover:text-primary transition-all" href="#">TRAINING</a>
+<a class="text-on-secondary-container hover:text-primary transition-all font-bold" href="#">ABOUT</a>
+</div>
+</footer>
+<!-- Fixed WhatsApp -->
+<div class="fixed bottom-8 right-8 z-50 group">
+<button class="w-14 h-14 bg-tertiary text-surface rounded-none border border-outline flex items-center justify-center hover:bg-surface hover:text-tertiary transition-colors shadow-lg">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</button>
+<div class="absolute bottom-16 right-0 bg-surface border border-outline p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto w-48 text-center">
+<span class="font-label-caps text-label-caps tracking-widest text-primary">CHAT ON WHATSAPP</span>
+</div>
+</div>
+<script>
+        // Simple intersection observer for Tasha sequence
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const spans = entry.target.querySelectorAll('span');
+                    spans.forEach((span, index) => {
+                        setTimeout(() => {
+                            span.classList.add('in-view');
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.tasha-seq').forEach(seq => {
+            observer.observe(seq);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - LinuZvision, LLC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c4c7c7",
+                      "surface-dim": "#d7dbda",
+                      "outline": "#747878",
+                      "on-background": "#181c1d",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#e0e3e3",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#8a8380",
+                      "surface-bright": "#f7fafa",
+                      "inverse-surface": "#2d3131",
+                      "surface-container-low": "#f1f4f4",
+                      "on-tertiary-fixed": "#1f1b19",
+                      "secondary-container": "#e2e2e2",
+                      "background": "#FAF9F9",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-primary-fixed": "#1a1c1c",
+                      "primary-fixed": "#e2e3e2",
+                      "on-surface": "#181c1d",
+                      "on-surface-variant": "#434747",
+                      "on-primary-fixed-variant": "#454747",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#1f1b19",
+                      "tertiary-fixed-dim": "#cdc5c1",
+                      "surface-container": "#ebeeee",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#eef1f1",
+                      "surface-container-high": "#e5e9e8",
+                      "surface-variant": "#E3E2E2",
+                      "tertiary-fixed": "#eae1dd",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#010000",
+                      "on-secondary-fixed-variant": "#454747",
+                      "primary-fixed-dim": "#c6c7c6",
+                      "primary-container": "#1a1c1c",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-container": "#636564",
+                      "surface-tint": "#5d5f5f",
+                      "on-primary-container": "#828484",
+                      "primary": "#000000",
+                      "surface": "#FAF9F9",
+                      "inverse-primary": "#c6c7c6",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#4b4643",
+                      "secondary": "#5d5f5e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "section-gap": "160px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "margin-mobile": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "mono-data": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "display-xl": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-xl-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-data": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "120px",
+                              {
+                                      "lineHeight": "110px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl-mobile": [
+                              "56px",
+                              {
+                                      "lineHeight": "60px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom Styles for Brutalist Aesthetics */
+        .hairline-border { border: 1px solid #c4c7c7; }
+        .hairline-bottom { border-bottom: 1px solid #c4c7c7; }
+        .hairline-top { border-top: 1px solid #c4c7c7; }
+        
+        /* Reveal Animation */
+        .reveal-text span {
+            opacity: 0;
+            transform: translateY(20px);
+            display: inline-block;
+            animation: revealWord 1s forwards ease-out;
+        }
+        @keyframes revealWord {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal-text span:nth-child(1) { animation-delay: 0.2s; }
+        .reveal-text span:nth-child(2) { animation-delay: 0.6s; }
+        .reveal-text span:nth-child(3) { animation-delay: 1.0s; }
+        .reveal-text span:nth-child(4) { animation-delay: 1.4s; }
+        .reveal-text span:nth-child(5) { animation-delay: 1.8s; }
+
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .interactive-btn {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .interactive-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0%; height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+        .interactive-btn:hover::after { width: 100%; }
+        
+        .whatsapp-fab {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .whatsapp-fab:hover {
+            transform: scale(1.05);
+        }
+        
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #c4c7c7;
+            padding: 16px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #181c1d;
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: #181c1d;
+            box-shadow: none;
+        }
+        .form-input::placeholder {
+            color: #828484;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation (Shell) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 dark:bg-surface/95 backdrop-blur-sm border-b border-outline-variant transition-all duration-200 ease-in-out hidden md:flex">
+<div class="font-headline-md text-headline-md tracking-tighter font-bold text-primary dark:text-on-primary-fixed">LINUZVISION</div>
+<div class="flex items-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">TASHA</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">AI SOLUTIONS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">CLOUD</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">CYBERSECURITY</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">IT &amp; TRAINING</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">INSIGHTS</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-primary-fixed border-b-2 border-primary pb-1" href="#">CONTACT</a>
+</div>
+<button class="font-label-caps text-label-caps border border-on-background px-6 py-3 hover:bg-on-background hover:text-surface transition-colors duration-300">START A CONVERSATION</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20">
+<!-- 03 - Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop hairline-bottom">
+
+<div class="max-w-container-max mx-auto w-full text-center z-10 flex flex-col items-center gap-unit">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background uppercase reveal-text max-w-5xl leading-tight">
+<span>LET'S</span> <span>BUILD</span> <span>WHAT</span> <span>COMES</span> <span>NEXT.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-8">
+                    Tell us what you are trying to automate, improve, protect or build. Architecting the future requires vision and precision.
+                </p>
+<!-- Video Placeholder -->
+<div class="mt-16 w-full max-w-4xl aspect-video bg-surface-variant border border-outline flex items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-on-background/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-4xl text-on-background z-10 transition-transform duration-500 group-hover:scale-125">play_arrow</span>
+<p class="absolute bottom-4 left-4 font-mono-data text-mono-data text-on-surface-variant uppercase">Video Intro</p>
+</div>
+</div>
+</section>
+<!-- 03a - Global Network Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop hairline-bottom bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase mb-8">GLOBAL NETWORK</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Bridging innovation across continents. Our strategic 'AFRICA ↔ AMERICA' corridor enables unparalleled technological exchange and deployment.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<span class="font-label-caps text-label-caps border border-outline px-4 py-2">USA</span>
+<span class="font-label-caps text-label-caps border border-outline px-4 py-2">AFRICA</span>
+<span class="font-label-caps text-label-caps border border-outline px-4 py-2">EUROPE</span>
+<span class="font-label-caps text-label-caps border border-outline px-4 py-2">ASIA</span>
+</div>
+</div>
+<div class="h-64 md:h-96 border border-outline flex items-center justify-center bg-surface-variant">
+<span class="font-mono-data text-mono-data text-on-surface-variant uppercase">Interactive Map / Global Presence Visualization</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 03b - Strategic Sectors -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop hairline-bottom">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase mb-16">STRATEGIC SECTORS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 border border-outline hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-background mb-4">account_balance</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">BANKING &amp; FINANCE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Secure, scalable infrastructures for modern financial institutions.</p>
+</div>
+<div class="p-8 border border-outline hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-background mb-4">account_balance</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">GOVERNMENT</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Robust, compliant solutions for public sector resilience and service delivery.</p>
+</div>
+<div class="p-8 border border-outline hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-background mb-4">domain</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">PRIVATE ENTERPRISE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Agile technological transformations driving competitive advantage.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 04 - Contact Choice -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop hairline-bottom">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase mb-16">HOW WOULD YOU LIKE TO CONNECT?</h2>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<button class="flex-1 max-w-md p-12 border border-outline hover:bg-surface-variant transition-colors duration-300 flex flex-col items-center gap-4 group" onclick="document.getElementById('smart-form').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-4xl text-on-background transition-transform duration-300 group-hover:-translate-y-2">description</span>
+<span class="font-label-caps text-label-caps">START A PROJECT</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-center">Discuss your project in detail</span>
+</button>
+<button class="flex-1 max-w-md p-12 border border-outline hover:bg-surface-variant transition-colors duration-300 flex flex-col items-center gap-4 group">
+<span class="material-symbols-outlined text-4xl text-on-background transition-transform duration-300 group-hover:-translate-y-2">chat</span>
+<span class="font-label-caps text-label-caps">TALK TO US ON WHATSAPP</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-center">Direct messaging for quick queries</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 05 - Full Contact Form -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low hairline-bottom" id="smart-form">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase">INITIATE ENGAGEMENT</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Provide details about your vision, and our architects will connect with you.</p>
+</div>
+<form class="space-y-8" id="contactForm" onsubmit="event.preventDefault(); showSuccessState();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<input class="form-input focus:ring-0" id="fullName" name="fullName" placeholder="Full Name" required="" type="text"/>
+</div>
+<div>
+<input class="form-input focus:ring-0" id="email" name="email" placeholder="Enterprise Email" required="" type="email"/>
+</div>
+</div>
+<div>
+<input class="form-input focus:ring-0" id="subject" name="subject" placeholder="Subject / Project Focus" required="" type="text"/>
+</div>
+<div>
+<textarea class="form-input focus:ring-0 resize-none h-32" id="message" name="message" placeholder="Message / Vision" required=""></textarea>
+</div>
+<div class="pt-8">
+<button class="w-full font-label-caps text-label-caps px-6 py-4 bg-on-background text-surface hover:bg-surface-tint transition-colors uppercase tracking-widest" type="submit">
+                        START A CONVERSATION
+                    </button>
+</div>
+</form>
+<!-- Success State (Hidden initially) -->
+<div class="hidden text-center py-16 border border-outline bg-surface mt-8" id="success-state">
+<span class="material-symbols-outlined text-6xl text-on-background mb-6 block">check_circle</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">YOUR MESSAGE IS ON ITS WAY.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">We will review your inquiry and connect shortly.</p>
+<div class="flex justify-center gap-4">
+<a class="font-label-caps text-label-caps border border-on-background px-6 py-3 hover:bg-on-background hover:text-surface transition-colors" href="#">RETURN HOME</a>
+<a class="font-label-caps text-label-caps border border-transparent px-6 py-3 hover:underline text-on-surface-variant" href="#">EXPLORE TASHA</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 06 - SideNavBar (WhatsApp) Shell -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-4">
+<!-- Expanded Panel (Hidden initially) -->
+<div class="hidden bg-surface border border-outline p-6 shadow-2xl min-w-[300px]" id="whatsapp-panel">
+<div class="flex justify-between items-center mb-4 hairline-bottom pb-2">
+<span class="font-label-caps text-label-caps">Live Support</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-background" onclick="toggleWhatsAppPanel()">close</button>
+</div>
+<p class="font-body-md text-body-md mb-6">Connect with an architect to discuss your digital future.</p>
+<a class="block w-full text-center font-label-caps text-label-caps bg-on-background text-surface py-3 hover:bg-surface-tint transition-colors" href="#">CONTINUE ON WHATSAPP</a>
+</div>
+<button class="whatsapp-fab bg-surface border border-on-background text-on-background px-6 py-3 flex items-center gap-3 hover:bg-on-background hover:text-surface transition-all duration-300 rounded-none shadow-sm" onclick="toggleWhatsAppPanel()">
+<span class="font-label-caps text-label-caps">WhatsApp</span>
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center gap-unit max-w-container-max mx-auto bg-surface dark:bg-surface border-t border-outline">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">LINUZVISION</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-6 font-mono-data text-mono-data uppercase text-on-tertiary-container">
+<a class="hover:text-primary transition-colors" href="#">PRIVACY POLICY</a>
+<a class="hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a>
+<a class="hover:text-primary transition-colors" href="#">INFRASTRUCTURE STATUS</a>
+<a class="hover:text-primary transition-colors" href="#">GLOBAL REGIONS</a>
+</div>
+<div class="font-mono-data text-mono-data uppercase text-on-tertiary-container mt-4 md:mt-0 w-full text-center md:w-auto md:text-left">
+            © 2024 LINUZVISION, LLC. ARCHITECTING DIGITAL SOVEREIGNTY.
+        </div>
+</footer>
+<script>
+        function showSuccessState() {
+             document.getElementById('contactForm').classList.add('hidden');
+             document.getElementById('success-state').classList.remove('hidden');
+        }
+        
+        function toggleWhatsAppPanel() {
+            const panel = document.getElementById('whatsapp-panel');
+            panel.classList.toggle('hidden');
+        }
+    </script>
+</body></html>

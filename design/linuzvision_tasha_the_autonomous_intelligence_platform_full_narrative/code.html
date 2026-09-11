@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TASHA | SOVEREIGN AUTONOMOUS AGENT | LINUZVISION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3131",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5d5f5e",
+                        "surface": "#FAF9F9",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed": "#e2e3e2",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e3",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-surface": "#181c1d",
+                        "on-background": "#181c1d",
+                        "on-tertiary-container": "#8a8380",
+                        "tertiary-container": "#1f1b19",
+                        "surface-container": "#ebeeee",
+                        "background": "#FAF9F9",
+                        "surface-tint": "#5d5f5f",
+                        "surface-variant": "#E3E2E2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-fixed-dim": "#c6c7c6",
+                        "surface-container-high": "#e5e9e8",
+                        "on-secondary-container": "#636564",
+                        "primary": "#000000",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary-container": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#eae1dd",
+                        "on-primary-container": "#828484",
+                        "tertiary-fixed-dim": "#cdc5c1",
+                        "surface-dim": "#d7dbda",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#010000",
+                        "outline": "#747878",
+                        "inverse-primary": "#c6c7c6",
+                        "secondary-container": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f7fafa",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "surface-container-low": "#f1f4f4",
+                        "on-surface-variant": "#434747",
+                        "inverse-on-surface": "#eef1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "mono-data": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "mono-data": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FAF9F9;
+            color: #181c1d;
+        }
+        .hairline-b { border-bottom: 1px solid #c4c7c7; }
+        .hairline-t { border-top: 1px solid #c4c7c7; }
+        .hairline-l { border-left: 1px solid #c4c7c7; }
+        .hairline-r { border-right: 1px solid #c4c7c7; }
+        .hairline-all { border: 1px solid #c4c7c7; }
+        .nav-underline {
+            position: relative;
+        }
+        .nav-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #000000;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-underline:hover::after, .nav-underline.active::after {
+            width: 100%;
+        }
+        .btn-architectural {
+            border: 1px solid #181c1d;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            color: #181c1d;
+        }
+        .btn-architectural:hover {
+            background-color: #181c1d;
+            color: #FAF9F9;
+        }
+        .btn-architectural-dark {
+            border: 1px solid #FAF9F9;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            background-color: #181c1d;
+            color: #FAF9F9;
+        }
+        .btn-architectural-dark:hover {
+            background-color: #FAF9F9;
+            color: #181c1d;
+        }
+        .node-square {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #747878;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .node-dot {
+            width: 4px;
+            height: 4px;
+            background-color: #181c1d;
+        }
+        .node-square-dark {
+            border-color: #c4c7c7;
+        }
+        .node-dot-dark {
+            background-color: #FAF9F9;
+        }
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+    </style>
+<script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md dark:bg-background/90 fixed top-0 w-full z-50 border-b border-outline-variant dark:border-secondary transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md tracking-tighter text-on-surface dark:text-on-background" href="#">LINUZVISION</a>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed border-b border-primary transition-colors duration-300 nav-underline active" href="#">TASHA</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 nav-underline" href="#">SOLUTIONS</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 nav-underline" href="#">INFRASTRUCTURE</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 nav-underline" href="#">AI TRAINING</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 nav-underline" href="#">ABOUT</a>
+</div>
+<button class="font-label-caps text-label-caps text-primary dark:text-primary-fixed px-6 py-3 btn-architectural hidden md:block">
+                REQUEST A DEMO
+            </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- 1. Hero Section -->
+<section class="min-h-[90vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-24 md:mt-32 z-10 relative">
+<div class="col-span-1 md:col-span-10 reveal">
+<div class="flex items-center gap-4 mb-8">
+<div class="node-square"><div class="node-dot"></div></div>
+<span class="font-mono-data text-mono-data text-secondary uppercase tracking-widest">SOVEREIGN AUTONOMOUS AGENT // SYS.TSH</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-background mb-8 uppercase max-w-5xl">
+                        INTELLIGENCE<br/>QUE EXÉCUTE.
+                    </h1>
+</div>
+<div class="col-span-1 md:col-span-6 md:col-start-7 reveal delay-200">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl leading-relaxed">
+                        TASHA is not a conversational assistant. It is a sovereign autonomous agent designed to assume full operational command of complex business workflows. From multi-stage prospect qualification to definitive transactional execution, TASHA operates with zero human intervention.
+                    </p>
+<button class="font-label-caps text-label-caps text-primary px-8 py-4 btn-architectural flex items-center gap-2 group w-fit">
+                        INITIATE TASHA
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="absolute inset-0 z-0 pointer-events-none opacity-20 hidden md:block mix-blend-multiply">
+<div class="bg-cover bg-center w-full h-full" data-alt="Architectural grid lines overlaying a fluid, shifting neural network structure, creating a sense of calculated movement." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDpo_8gI5tlB3vW3Zsxv0Xm_b_FQWf5LEIjSV2__W-4GbpanxgyOoRcXh_rrdGvZ3vliBf7sPSRgHLvNHT6Ss4sg52k_7nE0dRn09iYedT3Q-K-85k225EqPXgAB66SN826vz6nnRMjYUgl4PfDsGeoOIR_olKNaYI0l-0EHUarNZZ_SGmslQhPy5SmijzFILBORTIomPcAerKCpsCjKDU0iHmreDHC2oFipsxcSAIOAYesr_T8ts_'); filter: grayscale(100%) contrast(1.2);"></div>
+</div>
+</section>
+<div class="w-full hairline-b"></div>
+<!-- 2. The Problem -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="col-span-1 md:col-span-5 reveal">
+<div class="flex items-center gap-4 mb-8">
+<div class="node-square"><div class="node-dot"></div></div>
+<h2 class="font-headline-md text-headline-md text-on-background uppercase tracking-tight">01. THE PARADIGM SHIFT</h2>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-8 uppercase leading-tight">BEYOND TOOLS.<br/>TOWARD AGENCY.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        The era of deterministic software and passive "copilots" is over. Enterprises are drowning in tools that require constant human prompting, monitoring, and hand-holding.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        True automation requires agency. TASHA represents the shift from <em>assistive</em> software to <em>executive</em> intelligence—systems that ingest high-level directives, formulate strategies, and act autonomously to achieve outcomes.
+                    </p>
+</div>
+<div class="col-span-1 md:col-span-6 md:col-start-7 mt-16 md:mt-0 reveal delay-200">
+<div class="hairline-all p-12 bg-surface relative overflow-hidden group">
+<div class="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiMwMDAiLz48L3N2Zz4=')]"></div>
+<div class="flex justify-between items-end border-b border-outline-variant pb-8 mb-8 relative z-10">
+<div>
+<span class="font-mono-data text-mono-data text-secondary block mb-2">LEGACY SYSTEMS</span>
+<span class="font-headline-md text-headline-md text-outline">ASSISTIVE</span>
+</div>
+<span class="material-symbols-outlined text-outline text-3xl">hourglass_empty</span>
+</div>
+<div class="flex justify-between items-end relative z-10">
+<div>
+<span class="font-mono-data text-mono-data text-primary block mb-2">TASHA ARCHITECTURE</span>
+<span class="font-headline-md text-headline-md text-on-background">AUTONOMOUS</span>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Architecture -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-4 mb-16 md:mb-24 reveal">
+<div class="node-square"><div class="node-dot"></div></div>
+<h2 class="font-headline-md text-headline-md text-on-background uppercase tracking-tight">02. EXECUTIVE ARCHITECTURE</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="hairline-all p-8 group hover:bg-surface-variant transition-colors duration-500 flex flex-col justify-between min-h-[400px] reveal">
+<div>
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-8 bg-surface group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-surface transition-colors" style="font-variation-settings: 'FILL' 0;">psychology</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-background mb-4 uppercase">Contextual Ingestion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            TASHA continuously ingests structural data, conversational history, and market signals, building a high-fidelity model of the operational environment without human supervision.
+                        </p>
+</div>
+<div class="font-mono-data text-mono-data text-secondary border-t border-outline-variant pt-4 mt-8 flex justify-between">
+<span>PHASE 1</span>
+<span>[PERCEPTION]</span>
+</div>
+</div>
+<div class="hairline-all p-8 group hover:bg-surface-variant transition-colors duration-500 flex flex-col justify-between min-h-[400px] reveal delay-100">
+<div>
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-8 bg-surface group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-surface transition-colors" style="font-variation-settings: 'FILL' 0;">target</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-background mb-4 uppercase">Strategic Qualification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Evaluates opportunities and edge cases against predefined corporate protocols. TASHA determines probability of success and allocates computational resources accordingly.
+                        </p>
+</div>
+<div class="font-mono-data text-mono-data text-secondary border-t border-outline-variant pt-4 mt-8 flex justify-between">
+<span>PHASE 2</span>
+<span>[REASONING]</span>
+</div>
+</div>
+<div class="hairline-all p-8 group hover:bg-surface-variant transition-colors duration-500 flex flex-col justify-between min-h-[400px] reveal delay-200">
+<div>
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-8 bg-surface group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-surface transition-colors" style="font-variation-settings: 'FILL' 0;">check_circle</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-background mb-4 uppercase">Definitive Execution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Triggers API actions, orchestrates multi-agent negotiations, and finalizes transactions. Operations are logged immutably for compliance and auditing.
+                        </p>
+</div>
+<div class="font-mono-data text-mono-data text-secondary border-t border-outline-variant pt-4 mt-8 flex justify-between">
+<span>PHASE 3</span>
+<span>[ACTION]</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Strategic Sectors (Dark Section) -->
+<section class="bg-[#1a1c1c] text-surface py-section-gap px-margin-mobile md:px-margin-desktop relative overflow-hidden">
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="flex items-center gap-4 mb-16 md:mb-24 reveal">
+<div class="node-square node-square-dark"><div class="node-dot node-dot-dark"></div></div>
+<h2 class="font-headline-md text-headline-md text-surface uppercase tracking-tight">03. STRATEGIC DEPLOYMENTS</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-gutter">
+<!-- Banking -->
+<div class="hairline-b border-outline/30 pb-12 reveal">
+<span class="font-mono-data text-mono-data text-surface-dim block mb-6 uppercase tracking-widest">Sector: Financial Services</span>
+<h3 class="font-headline-md text-headline-md mb-6 uppercase">Institutional Banking</h3>
+<p class="font-body-lg text-body-lg text-surface-dim mb-8">
+                            TASHA processes loan applications and detects fraudulent anomalies in real-time, matching transaction patterns against global datasets with zero latency.
+                        </p>
+<ul class="space-y-4 font-mono-data text-mono-data text-surface-dim">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-surface text-sm">arrow_right</span> Automated Risk Scoring Matrix</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-surface text-sm">arrow_right</span> KYC/AML Autonomous Verification</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-surface text-sm">arrow_right</span> High-Frequency Fraud Interdiction</li>
+</ul>
+</div>
+<!-- Government -->
+<div class="hairline-b border-outline/30 pb-12 md:mt-24 reveal delay-100">
+<span class="font-mono-data text-mono-data text-surface-dim block mb-6 uppercase tracking-widest">Sector: Public Sector</span>
+<h3 class="font-headline-md text-headline-md mb-6 uppercase">Government &amp; Sovereignty</h3>
+<p class="font-body-lg text-body-lg text-surface-dim mb-8">
+                            Deployments strictly enforcing data sovereignty. TASHA automates civic service requests, resource allocation, and bureaucratic workflows while maintaining air-gapped security protocols.
+                        </p>
+<ul class="space-y-4 font-mono-data text-mono-data text-surface-dim">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-surface text-sm">arrow_right</span> On-Premise Data Sovereignty</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-surface text-sm">arrow_right</span> Public Service Request Triage</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-surface text-sm">arrow_right</span> Resource Allocation Logistics</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Abstract background elements -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/50 to-transparent pointer-events-none"></div>
+</section>
+<!-- 5. Global Reach -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="reveal">
+<img alt="Abstract connection map" class="w-full h-auto grayscale filter contrast-125 border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0eG0tJ8u_ClHDmZSu2pJPFRJmk64xawxtISCaugs-zDbbmLW1aLPY7f9y9V3ECWr3bCbtMjhp5VSN777EexK648Y0BPhUAa_d1x-lCZd2RDPRIHhap2lDqKZ5uMc7Mr9IwiQXN_DFxFGM94e86kDHjDXJlmJ7bS_rbzwOQ_HjY42IuElorLpMSRCwmdjtWFY_E3pyoiPMn8u-QwvfhB4swjy__UxUMx2pZV00CBsusrbBhkCdqz9j"/>
+</div>
+<div class="md:pl-12 mt-12 md:mt-0 reveal delay-200">
+<div class="flex items-center gap-4 mb-8">
+<div class="node-square"><div class="node-dot"></div></div>
+<h2 class="font-headline-md text-headline-md text-on-background uppercase tracking-tight">04. OPERATIONAL CORRIDOR</h2>
+</div>
+<h3 class="font-display-xl-mobile text-display-xl-mobile text-on-background mb-8 uppercase leading-tight">AFRICA ↔ AMERICA<br/>AXIS.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        Intelligence recognizes no borders, only bandwidth and latency. TASHA is purpose-built to operate seamlessly across the Africa-Americas operational corridor.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                        We are bridging continents not with cables, but with synchronized, autonomous cognition—enabling enterprises on both sides of the Atlantic to execute strategies with unified precision and localized context.
+                    </p>
+<div class="flex gap-12 border-t border-outline-variant pt-8 font-mono-data text-mono-data">
+<div>
+<span class="text-secondary block mb-1">NODE ALPHA</span>
+<span class="text-primary text-lg">NEW YORK, US</span>
+</div>
+<div>
+<span class="text-secondary block mb-1">NODE OMEGA</span>
+<span class="text-primary text-lg">LAGOS, NG</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="w-full hairline-b"></div>
+<!-- 6. Trust & Proof -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface-container-low">
+<div class="flex flex-col items-center text-center mb-24 reveal">
+<span class="font-mono-data text-mono-data text-secondary uppercase tracking-widest mb-4 block">VALIDATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase tracking-tight">TRUSTED BY EXECUTIVE LEADERSHIP</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-24">
+<!-- Quote 1 -->
+<div class="hairline-all p-12 bg-surface reveal">
+<span class="material-symbols-outlined text-4xl text-outline-variant mb-8 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-md text-headline-md text-on-background mb-12 leading-tight">
+                        "TASHA completely redefined our risk assessment velocity. What previously required a team of analysts spanning three days is now executed definitively in under four seconds, with higher empirical accuracy."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary rounded-full overflow-hidden">
+<img alt="Executive portrait" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeGoZttxc0IGo_GGSZDh_a8S69oqgLV32asxMg3fN1rY470neLc7zbf0ARBoLcyuErECo1PLGcLmmnlJqDi0GT7ClFxiQGNkl0XJG54svTKK_HjREqoC-2BYrcpWjnpTnB_fs9rtNzq-I9kIBUAFx0aEtXfbzJGSWvQEm_gpBhUnOhki_wsmqFRsR0P6PTl8tZdblL-cB-krJiRx2dBeGVSNXeBrXy2ZTREefNwigT9OLkUhadFrSL"/>
+</div>
+<div>
+<span class="font-label-caps text-label-caps block text-on-background">JAMESON WARD</span>
+<span class="font-mono-data text-mono-data text-secondary">CEO, VANGUARD CAPITAL (US)</span>
+</div>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="hairline-all p-12 bg-surface reveal delay-200">
+<span class="material-symbols-outlined text-4xl text-outline-variant mb-8 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-md text-headline-md text-on-background mb-12 leading-tight">
+                        "In deploying civic automation, data sovereignty was non-negotiable. TASHA provided not just the operational efficiency we needed, but the on-premise security isolation required by federal mandate."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary rounded-full overflow-hidden">
+<img alt="Executive portrait" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt5tt4vsW-QU6viyKCUUJ3h5sN-cg0DqE8lTG7ZuecE9xBBe5XNwTaZsm6cI8dZ9BrUUnlJFpELWOOH-PJxdvwjG1fL-TA3x-xj9adk6LKsckNi9TNjFcemMGyj_3hrrlcAzd0ujMw5j4dzmZWFEktDJ42h_DHBzkvwgIl2ny1koj97liSucXNx9bHNhYKnBJQ5Gacdn1KCZngyq1-pOuD2e9ggBq69CO5pp00rHlnmLusUfQckIDG"/>
+</div>
+<div>
+<span class="font-label-caps text-label-caps block text-on-background">ADEBOLA OKONJO</span>
+<span class="font-mono-data text-mono-data text-secondary">DIRECTOR, PAN-AFRICAN CIVIC TECH</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fictional Logos -->
+<div class="flex flex-wrap justify-center gap-16 md:gap-32 opacity-40 grayscale reveal">
+<div class="font-display-xl-mobile text-2xl font-bold tracking-tighter uppercase">Vanguard</div>
+<div class="font-display-xl-mobile text-2xl font-light tracking-widest uppercase">Aetheris</div>
+<div class="font-display-xl-mobile text-2xl font-medium tracking-tight uppercase">Oculis Grp</div>
+<div class="font-display-xl-mobile text-2xl font-bold tracking-widest uppercase">NEXUS</div>
+</div>
+</section>
+<!-- 7. Final CTA -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-[#1a1c1c] text-surface flex flex-col items-center justify-center text-center">
+<h2 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-surface mb-8 uppercase max-w-4xl reveal">
+                CEASE PROMPTING.<br/>START EXECUTING.
+            </h2>
+<p class="font-body-lg text-body-lg text-surface-dim mb-12 max-w-xl reveal delay-100">
+                Integrate TASHA into your infrastructure and transition from manual oversight to autonomous sovereignty.
+            </p>
+<button class="font-label-caps text-label-caps px-12 py-5 btn-architectural-dark flex items-center gap-3 reveal delay-200">
+                START A CONVERSATION
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface w-full py-section-gap border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto items-end">
+<div class="col-span-1 md:col-span-4 mb-8 md:mb-0">
+<span class="font-headline-lg text-headline-lg text-on-surface dark:text-inverse-on-surface block mb-4">LINUZVISION</span>
+<span class="font-mono-data text-mono-data text-secondary dark:text-secondary-fixed uppercase">© 2024 LINUZVISION, LLC. ARCHITECTURAL INTELLIGENCE.</span>
+</div>
+<div class="col-span-1 md:col-span-8 flex flex-wrap gap-8 md:justify-end">
+<a class="font-mono-data text-mono-data text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">PRIVACY POLICY</a>
+<a class="font-mono-data text-mono-data text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">TERMS OF SERVICE</a>
+<a class="font-mono-data text-mono-data text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">ETHICS AI</a>
+<a class="font-mono-data text-mono-data text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">CONTACT</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>
