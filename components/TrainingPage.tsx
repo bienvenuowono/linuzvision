@@ -1,7 +1,6 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const services = [
   ["PROACTIVE MONITORING", "Detecting failures before they interrupt operations."],
@@ -27,5 +26,5 @@ export function TrainingPage() {
     <section className="programs"><div className="shell"><h2>TRAINING &amp;<br />TRANSFORMATION</h2><div><p>Adopting artificial intelligence is not merely a software update. It is a fundamental shift in expertise, operations and culture.</p>{training.map(([title,text])=><article key={title}><div><h3>{title}</h3><p>{text}</p></div><span>+</span></article>)}</div></div></section>
     <section className="training-benchmarks shell"><h2>TECHNICAL BENCHMARKS</h2><div><span><strong>&lt; 15m</strong><small>AVERAGE RESPONSE</small></span><span><strong>99.99%</strong><small>SYSTEM AVAILABILITY</small></span><span><strong>L3</strong><small>EXPERT SUPPORT TIER</small></span></div></section>
     <section className="training-final"><div className="shell"><h2><span>IT SYSTEMS...</span><span>INFRASTRUCTURE...</span><span>PEOPLE...</span><strong>INTELLIGENCE.</strong></h2><a className="button button-light" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>
-  </main><Footer /><WhatsappButton /></>;
+  </main><Footer /></>;
 }

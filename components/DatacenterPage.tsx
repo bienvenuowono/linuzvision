@@ -1,7 +1,6 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const regionalFootprint = [
   {
@@ -252,15 +251,11 @@ export function DatacenterPage() {
               <a className="button button-light" href="/contact">
                 CONSULT OUR ENGINEERS <ArrowIcon />
               </a>
-              <a className="button button-light" href="https://wa.me/message/YOUR_WHATSAPP" target="_blank" rel="noopener noreferrer">
-                TALK ON WHATSAPP <ArrowIcon />
-              </a>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-      <WhatsappButton />
     </>
   );
 }

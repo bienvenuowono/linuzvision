@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const sectors = [
   ["BANKING & FINANCE", "Secure, scalable infrastructure for modern financial institutions."],
@@ -36,7 +35,7 @@ export function ContactPage() {
       form.reset();
       setStatus("Thank you. Your project brief has been securely recorded. Our team will contact you shortly.");
     } catch {
-      setStatus("We could not record your message. Email linuzvisionllc@gmail.com or contact us on WhatsApp.");
+      setStatus("We could not record your message. Email support@linuzvision.com for assistance.");
     } finally { setSending(false); }
   }
 
@@ -64,11 +63,11 @@ export function ContactPage() {
         <section className="contact-network shell">
           <div>
             <h2>GLOBAL NETWORK</h2>
-            <p>Bridging innovation through the established <strong>AFRICA ↔ AMERICA</strong> strategic vision for technological exchange and deployment.</p>
-            <div className="contact-regions"><span>AFRICA</span><span>AMERICA</span></div>
+            <p>Bridging innovation through the established <strong>AMERICA ↔ AFRICA</strong> strategic vision for technological exchange and deployment.</p>
+            <div className="contact-regions"><span>AMERICA</span><span>AFRICA</span></div>
           </div>
-          <div className="contact-map" aria-label="Africa to America strategic corridor">
-            <span>AFRICA</span><i /><b>LZV</b><i /><span>AMERICA</span>
+          <div className="contact-map" aria-label="America to Africa strategic corridor">
+            <span>AMERICA</span><i /><b>LZV</b><i /><span>AFRICA</span>
           </div>
         </section>
 
@@ -93,13 +92,12 @@ export function ContactPage() {
               <strong>START A PROJECT</strong>
               <span>Discuss your project in detail</span>
             </a>
-            <a href="https://wa.me/14432488520" target="_blank" rel="noopener noreferrer" aria-label="Contact LinuZvision on WhatsApp at +1 443 248 8520">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 5h22v17H14l-7 6v-6H5V5Zm6 7h10m-10 5h7" /></svg>
-              <strong>WHATSAPP CHANNEL</strong>
-              <span>+1 (443) 248-8520</span>
+            <a href="mailto:support@linuzvision.com" aria-label="Contact LinuZvision Support at support@linuzvision.com">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h24v20H4V6Zm2 2v2.5l10 6.5 10-6.5V8H6Zm20 16V13l-10 6.5L6 13v11h20Z" /></svg>
+              <strong>SUPPORT CONTACT</strong>
+              <span>support@linuzvision.com</span>
             </a>
           </div>
-          <p className="contact-direct">EMAIL <a href="mailto:linuzvisionllc@gmail.com">linuzvisionllc@gmail.com</a></p>
         </section>
 
         <section className="contact-engagement" id="engagement">
@@ -123,7 +121,6 @@ export function ContactPage() {
         </section>
       </main>
       <Footer />
-      <WhatsappButton />
     </>
   );
 }

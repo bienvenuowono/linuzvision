@@ -111,11 +111,11 @@ The AI Solutions surface translates the same world into an operational transform
 
 The Cloud surface is comp-led by its dedicated Google Stitch composition. It develops the world through a deliberate infrastructure sequence: monumental promise, restrained explanatory rail, isometric topology, hybrid bridge, near-black hardware chamber, paired security and AI systems, technical specifications, then a terminal scale invitation. Its topology drawing is a new reusable material language: fine monochrome axonometric infrastructure, explicit connections, and component-level pictograms make complex systems inspectable without turning the page into a dashboard.
 
-The Cybersecurity surface is likewise comp-led by its pinned Google Stitch composition. It turns the system into an architectural defense narrative: a quiet monumental promise, zero-trust evidence, a distinct near-black autonomous-defense chamber, physical resilience, an orbital Africa-to-America corridor, numbered response protocols, governed specifications, and a final resilience invitation. Security is made legible through material infrastructure, strict label/content splits, spare line pictograms, and protocol-like sequences rather than generic shield graphics or dashboard chrome.
+The Cybersecurity surface is likewise comp-led by its pinned Google Stitch composition. It turns the system into an architectural defense narrative: a quiet monumental promise, zero-trust evidence, a distinct near-black autonomous-defense chamber, physical resilience, an orbital Africa-to-America corridor, numbered response protocols, governed specifications, and a final resilience invitation. Its flow diagram uses a strict vertical hierarchy: AMERICA and the subordinate `DATA SOVEREIGNTY · CLOUD EDGE` label above the central LZV core, with AFRICA below. Security is made legible through material infrastructure, strict label/content splits, spare line pictograms, and protocol-like sequences rather than generic shield graphics or dashboard chrome.
 
 The IT Support & Training surface is comp-led by its dedicated Google Stitch composition. It frames adoption as an architectural progression: a centered people-first promise, asymmetric support evidence, a ruled three-by-two services ecosystem, a near-black human-machine chamber, an Africa-to-America bridge, a disciplined program list, supplied technical benchmarks, and a terminal progression toward Intelligence. Editorial team photography and the technical synergy drawing distinguish human capability from machine augmentation without separating them into competing worlds.
 
-The About / Our Story surface is comp-led by its dedicated Google Stitch composition. It frames heritage and vision as an architectural timeline and global infrastructure narrative: a dark full-screen hero promise ("WE BUILD TECHNOLOGY FOR WHAT COMES NEXT."), a centered manifesto proposition with a 3-card hairline matrix, a 25+ years timeline grid tracing adaptation from 1999 hardware/networks through data centers and cloud to present/future agentic AI & automation, a global operational footprint, a dark Africa ↔ America core axis chamber, a TASHA technology feature, and a monumental dark closing statement.
+The About / Our Story surface is comp-led by its dedicated Google Stitch composition. It frames heritage and vision as an architectural timeline and global infrastructure narrative: a dark full-screen hero promise ("WE BUILD TECHNOLOGY FOR WHAT COMES NEXT."), a centered manifesto proposition with a 3-card hairline matrix, a 25+ years timeline grid tracing adaptation from 1999 hardware/networks through data centers and cloud to present/future agentic AI & automation, a global operational footprint, a dark core-axis chamber reading exactly `AMERICA - AFRICA - EUROPE`, a TASHA technology feature, and a monumental dark closing statement. Each continent and its leading separator remain an unbreakable group so responsive wrapping preserves the authored sequence.
 
 The Insights surface is comp-led by its dedicated Google Stitch composition. It treats the knowledge hub as a calm editorial threshold rather than a crowded article grid: a near-full-height hero rotates one monumental word after “FROM” over the original background image, and one featured report pairs structured editorial metadata with a technical evidence plate. The background keeps its source color and full presence without filter or mask; paper-colored hero type uses only glyph-local outline and shadow for legibility. The page establishes a reusable Read-mode grammar while remaining inside the same paper, ink, hairline, and square-corner system.
 
@@ -205,6 +205,8 @@ At 760px, Cloud becomes a single authored sequence. The hero rail stacks below t
 
 Cybersecurity preserves the pinned Stitch order without reordering: security promise, zero-trust framework, autonomous defense, architectural resilience, transatlantic flow, response protocols, system specifications, and resilience CTA. The first viewport is a quiet paper field with one monumental three-line promise, concise supporting copy, and two compact actions. Subsequent sections use a recurring narrow label/wide content split (`.42fr 1fr`) so the left rail names the protocol while the right plane carries its proposition, evidence, and system detail.
 
+Within the Cybersecurity transatlantic flow, label hierarchy is positional and semantic: `AMERICA` occupies the top, `DATA SOVEREIGNTY · CLOUD EDGE` is its subordinate metadata, LZV remains the centered core, and `AFRICA` anchors the bottom. Preserve this top-to-core-to-bottom relationship at every viewport.
+
 At 760px, every Cybersecurity split becomes one column while retaining that authored sequence. Zero-trust and resilience media crop to 400px; principle and defense grids become single-column ruled inventories; the resilience evidence plate stays superposed but expands between 18px side insets; the orbital corridor contracts to 330px; response rows retain their number/content relationship with a narrower 48px index rail; and the four specifications become a two-by-two matrix. The hero actions become full width and vertical separators become horizontal rules.
 
 Training preserves the pinned Stitch order without reordering: centered people-first promise, asymmetric support story, six-service ecosystem, human-machine synergy, Africa-to-America bridge, training programs, technical benchmarks, and the terminal Intelligence invitation. The hero remains centered and deliberately sparse. Support uses a `.55fr 1fr` split so the proposition sits apart from editorial team evidence; services form a three-by-two ruled matrix; the synergy chamber pairs the technical image and TASHA proposition; programs use a `.65fr 1fr` title/list split; benchmarks resolve into three equal cells.
@@ -218,6 +220,8 @@ Contact preserves its comp-led Persuade sequence: monumental invitation and wide
 **The Horizon Rule.** Use one-pixel horizontal rules to announce major changes of scene and to align content to a shared visual horizon.
 
 **The Home Hero Media-First Rule.** Place the Home hero media before its title, introduction, and CTA. From 761px upward, begin the `16 / 9` media at `y = 76px` and let it escape the shell to `100vw` with viewport recentering; give the copy beneath its own vertical padding. At 760px and below, keep the `4 / 5` media within the 24px shell edge, followed by the copy. The desktop bleed uses no inline borders and must never create horizontal overflow.
+
+**The Services Ecosystem Film Rule.** Open Services with the exact user-supplied ecosystem film as a full-width `16 / 9` frame, preserving its complete composition and source color before the title, explanation, actions, and scroll cue. It autoplays muted and loops, exposes an accessible manual play/pause control, and pauses on its first frame when reduced motion is preferred while keeping manual playback available.
 
 ## Elevation & Depth
 
@@ -267,6 +271,10 @@ The form language is strictly rectilinear. Buttons, cards, diagrams, navigation 
 - **Desktop:** Centered compact uppercase links with expanded tracking. Hover and active states grow a one-pixel underline outward from the center.
 - **Header:** Fixed, three-part grid with a near-opaque paper field and a bottom hairline.
 - **Mobile:** A square two-line menu control opens a full-width paper panel below the header. Links become larger sentence-scale entries for touch scanning.
+
+### Home TASHA Illustration
+
+On Home only, the six pipeline nodes are replaced by the exact user-approved `/images/tasha-multi-agent-system.jpeg` (1376 × 768). The illustration spans the full grid width and preserves its complete composition and source colors with `width: 100%` and `height: auto`, without cropping, filters, or overlays. Intrinsic dimensions reserve its aspect ratio; lazy loading and descriptive alt text identify the illustrated coordination of agents, documents, and connected workflows. Its human figure is an explicit user-requested exception for this asset only, not a change to TASHA's global visual identity or diagram rules.
 
 ### TASHA System Diagram
 
@@ -336,7 +344,7 @@ Architectural resilience pairs a full-width server-architecture image with a pap
 
 ### Transatlantic Security Corridor
 
-The Africa-to-America security corridor is a pale, bordered orbital diagram built from concentric circles, orthogonal axes, curved routes, endpoint nodes, and a square LZV core. Geographic labels occupy opposing corners and the encrypted-corridor label anchors the lower edge. It explains governed movement and data sovereignty; it is distinct from TASHA's photographic geographic corridor and must not imply offices, partners, or unsupported coverage.
+The Africa-to-America security corridor is a pale, bordered orbital diagram built from concentric circles, orthogonal axes, curved routes, endpoint nodes, and a square LZV core. Its hierarchy runs vertically: top `AMERICA`, then subordinate `DATA SOVEREIGNTY · CLOUD EDGE`, central `LZV`, and bottom `AFRICA`; the encrypted-corridor label anchors the lower edge. It explains governed movement and data sovereignty; it is distinct from TASHA's photographic geographic corridor and must not imply offices, partners, or unsupported coverage.
 
 ### Response Protocols
 

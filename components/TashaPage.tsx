@@ -2,7 +2,6 @@ import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { TashaHeroVideo } from "./TashaHeroVideo";
-import { WhatsappButton } from "./WhatsappButton";
 
 const specializedAgents = [
   ["LEADS AGENT", "Qualifies requests and prepares the next commercial action."],
@@ -61,7 +60,6 @@ export function TashaPage() {
         <section className="tasha-final"><div className="shell"><h2>FROM REQUEST.<br />TO RESPONSIBLE ACTION.</h2><p>Explore how TASHA could participate in your approved business workflows.</p><a className="button button-light" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>
       </main>
       <Footer />
-      <WhatsappButton />
     </>
   );
 }

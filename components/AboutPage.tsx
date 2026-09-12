@@ -3,7 +3,6 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const manifestoCards = [
   {
@@ -67,26 +66,85 @@ const globalLocations = [
   { region: "Asia", role: "Scaling Operations & Connectivity" },
 ];
 
+const leadershipTeam = [
+  {
+    code: "01",
+    name: "CEO",
+    role: "CEO",
+    title: "Chief Executive Officer",
+    image: "/images/CEO.jpg",
+    objectPosition: "center 20%",
+    alt: "CEO — Chief Executive Officer",
+    description:
+      "Strategic direction, enterprise growth, and executive governance across international infrastructure and technology programs.",
+  },
+  {
+    code: "02",
+    name: "YANNICK",
+    role: "CTO",
+    title: "Chief Technology Officer",
+    image: "/images/yannick.jpg",
+    objectPosition: "center top",
+    alt: "Yannick — Chief Technology Officer",
+    description:
+      "Enterprise systems architecture, cloud infrastructure, datacenter engineering, and mission-critical cybersecurity frameworks.",
+  },
+  {
+    code: "03",
+    name: "BIENVENU",
+    role: "CPO",
+    title: "Chief Product Officer",
+    image: "/images/bienvenu.jpg",
+    objectPosition: "center center",
+    alt: "Bienvenu — Chief Product Officer",
+    description:
+      "Product innovation, TASHA autonomous AI multi-agent platform engineering, and enterprise solutions architecture.",
+  },
+];
+
 export function AboutPage() {
   return (
     <>
       <Header active="ABOUT" />
       <main className="about-page">
-        {/* Hero Section */}
-        <section className="about-hero shell">
-          <h1>WE BUILD TECHNOLOGY FOR WHAT COMES NEXT.</h1>
-          <div className="video-preview-frame">
-            <img
-              src="/images/about-datacenter-hero.png"
-              alt="High-contrast architectural data center interior preview"
-            />
-            <div className="play-overlay">
-              <button type="button" aria-label="Play introduction video">
-                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </button>
+        {/* Executive Leadership & Personnel (Hero Replacement) */}
+        <section className="about-leadership shell" id="leadership">
+          <div className="leadership-heading">
+            <div>
+              <span className="micro-label">EXECUTIVE PERSONNEL</span>
+              <h1>LEADERSHIP &amp;<br />EXECUTIVE TEAM.</h1>
             </div>
+            <p className="leadership-intro">
+              Architectural vision, engineering rigor, and product stewardship driving high-performance technology operations.
+            </p>
+          </div>
+
+          <div className="leadership-grid">
+            {leadershipTeam.map((member) => (
+              <article
+                key={member.role}
+                className="leadership-card"
+              >
+                <div className="leadership-photo-wrap">
+                  <img
+                    src={member.image}
+                    alt={member.alt}
+                    className="leadership-photo"
+                    style={{ objectPosition: member.objectPosition }}
+                  />
+                  <span className="leadership-badge">{member.role}</span>
+                </div>
+                <div className="leadership-meta">
+                  <div className="leadership-header">
+                    <span className="leadership-role-tag">{member.role} · {member.title}</span>
+                    <span className="leadership-index">{member.code}</span>
+                  </div>
+                  <h3 className="leadership-name">{member.name}</h3>
+                  <p className="leadership-function">{member.title}</p>
+                  <p className="leadership-desc">{member.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -174,8 +232,10 @@ export function AboutPage() {
         <section className="about-bridge">
           <div className="shell">
             <span className="mono-label">CORE AXIS</span>
-            <h2>
-              AFRICA <span className="axis-sep">↔</span> AMERICA
+            <h2 className="about-axis-title">
+              <span>AMERICA</span>
+              <span><span className="axis-sep">-</span> AFRICA</span>
+              <span><span className="axis-sep">-</span> EUROPE</span>
             </h2>
             <p>
               Bridging our primary continents through unyielding architectural intelligence and infrastructural
@@ -227,7 +287,6 @@ export function AboutPage() {
         </section>
       </main>
       <Footer />
-      <WhatsappButton />
     </>
   );
 }

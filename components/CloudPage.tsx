@@ -1,7 +1,6 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const layers = [
   ["SERVERS", "High-density compute nodes optimized for intensive workloads, virtualized for dynamic resource allocation."],
@@ -38,6 +37,6 @@ export function CloudPage() {
 
       <section className="cloud-final"><div className="shell"><h2>LET’S SCALE<br />YOUR AMBITION</h2><a className="button button-light" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>
     </main>
-    <Footer /><WhatsappButton />
+    <Footer />
   </>;
 }

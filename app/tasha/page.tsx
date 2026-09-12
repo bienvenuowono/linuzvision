@@ -2,9 +2,40 @@ import type { Metadata } from "next";
 import { TashaPage } from "@/components/TashaPage";
 
 export const metadata: Metadata = {
-  title: "TASHA Autonomous Intelligence",
+  title: "TASHA Sovereign Autonomous Intelligence",
   alternates: { canonical: "/tasha" },
-  description: "Discover TASHA, LinuZvision's autonomous intelligence system for governed business workflows.",
+  description:
+    "Discover TASHA, LinuZvision's proprietary autonomous intelligence engine for secure, multi-agent orchestration and governed enterprise workflows.",
+  keywords: [
+    "TASHA",
+    "autonomous intelligence",
+    "agentic AI",
+    "multi-agent orchestration",
+    "enterprise AI governance",
+    "proprietary AI system",
+    "Africa America AI corridor",
+  ],
+  openGraph: {
+    title: "TASHA Sovereign Autonomous Intelligence | LinuZvision",
+    description:
+      "Proprietary autonomous intelligence engine for secure, multi-agent orchestration and governed enterprise workflows.",
+    url: "/tasha",
+    images: [
+      {
+        url: "/images/tasha-multi-agent-system.jpeg",
+        width: 1200,
+        height: 675,
+        alt: "TASHA Multi-Agent Autonomous Architecture",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TASHA Sovereign Autonomous Intelligence | LinuZvision",
+    description:
+      "Proprietary autonomous intelligence engine for multi-agent orchestration and governed enterprise workflows.",
+    images: ["/images/tasha-multi-agent-system.jpeg"],
+  },
 };
 
 export default function Page() {

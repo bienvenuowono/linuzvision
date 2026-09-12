@@ -6,6 +6,7 @@ import { WhatsappButton } from "./WhatsappButton";
 import type { Insight } from "@/lib/db";
 import { HeroVideo } from "./HeroVideo";
 import { HomeScrollNarrative } from "./HomeScrollNarrative";
+import { TechLogoSlider } from "./TechLogoSlider";
 
 const activities = [
   {
@@ -97,13 +98,41 @@ const solutionsBento = [
   },
 ];
 
-const tashaPipeline = [
-  { step: "01", name: "UNDERSTANDS CONTEXT", detail: "Semantic parsing & multi-modal intake" },
-  { step: "02", name: "ADAPTS TO WORKFLOWS", detail: "Dynamic process orchestration & routing" },
-  { step: "03", name: "ENGAGES NATURALLY", detail: "High-empathy conversational dialogue" },
-  { step: "04", name: "QUALIFIES PROSPECTS", detail: "Multi-dimensional lead scoring & triage" },
-  { step: "05", name: "GENERATES & REPORTS", detail: "Automated document assembly & CRM sync" },
-  { step: "06", name: "EXECUTES END-TO-END", detail: "Secure API invocation & autonomous execution" },
+
+const leadershipTeam = [
+  {
+    code: "01",
+    name: "CEO",
+    role: "CEO",
+    title: "Chief Executive Officer",
+    image: "/images/CEO.jpg",
+    objectPosition: "center 20%",
+    alt: "CEO — Chief Executive Officer",
+    description:
+      "Strategic direction, enterprise growth, and executive governance across international infrastructure and technology programs.",
+  },
+  {
+    code: "02",
+    name: "YANNICK",
+    role: "CTO",
+    title: "Chief Technology Officer",
+    image: "/images/yannick.jpg",
+    objectPosition: "center top",
+    alt: "Yannick — Chief Technology Officer",
+    description:
+      "Enterprise systems architecture, cloud infrastructure, datacenter engineering, and mission-critical cybersecurity frameworks.",
+  },
+  {
+    code: "03",
+    name: "BIENVENU",
+    role: "CPO",
+    title: "Chief Product Officer",
+    image: "/images/bienvenu.jpg",
+    objectPosition: "center center",
+    alt: "Bienvenu — Chief Product Officer",
+    description:
+      "Product innovation, TASHA autonomous AI multi-agent platform engineering, and enterprise solutions architecture.",
+  },
 ];
 
 function readTime(content: string) {
@@ -117,7 +146,7 @@ export function HomePage({ insights }: { insights: Insight[] }) {
       <main id="home">
         <HomeScrollNarrative />
 
-        {/* 1. HERO SCENE WITH VIDEO & DIRECT ACTIONS */}
+        {/* 1. HERO SCENE WITH VIDEO */}
         <section className="hero shell" data-home-scene="hero-scene">
           <div className="hero-media">
             <HeroVideo />
@@ -126,28 +155,11 @@ export function HomePage({ insights }: { insights: Insight[] }) {
               <i /> SYSTEM ACTIVE / LINUZVISION LLC
             </div>
           </div>
-          <div className="hero-heading" data-home-scene="hero-copy">
-            <h1 className="reveal-item">
-              YOU THINK.<br />WE BUILD, MAINTAIN,<br />AND SECURE.
-            </h1>
-            <div className="hero-intro reveal-item" style={{ "--reveal-order": 1 } as CSSProperties}>
-              <p>
-                Linuzvision LLC is a technology and infrastructure solutions company helping businesses, organizations, and government entities build, maintain, and secure modern IT environments — from physical datacenters to cloud and AI-powered platforms.
-              </p>
-              <div className="button-row">
-                <a className="button button-dark" href="/contact">
-                  START A CONVERSATION <ArrowIcon />
-                </a>
-                <a className="button" href="/services">
-                  EXPLORE OUR SERVICES <ArrowIcon />
-                </a>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* 2. OUR APPROACH / SLOGAN OPERATING MANIFESTO */}
         <section className="change-section section-rule" data-home-scene="transformation">
+          <TechLogoSlider />
           <div className="shell change-stage">
             <div className="change-signal" aria-hidden="true">
               <i />
@@ -155,9 +167,9 @@ export function HomePage({ insights }: { insights: Insight[] }) {
             </div>
             <div className="approach-intro reveal-item">
               <span className="micro-label">THE PHILOSOPHY</span>
-              <h3>
+              <h1>
                 At Linuzvision, we believe organizations should be able to focus on their ideas, missions, and business objectives while having a technology partner capable of turning those ideas into reliable solutions.
-              </h3>
+              </h1>
             </div>
             <div className="change-copy approach-grid" data-reveal-group>
               <div className="change-card" style={{ "--reveal-order": 0 } as CSSProperties}>
@@ -258,44 +270,6 @@ export function HomePage({ insights }: { insights: Insight[] }) {
           </div>
         </section>
 
-        {/* 5. AI MULTI-AGENT SYSTEM (TASHA) SPOTLIGHT */}
-        <section className="tasha section-rule" id="tasha" data-home-scene="tasha-system">
-          <div className="shell tasha-grid">
-            <div className="tasha-copy">
-              <span className="signal tasha-tag">PROPRIETARY MULTI-AGENT AI</span>
-              <h2>AI MULTI-AGENT<br />SYSTEM (TASHA).</h2>
-              <p>
-                TASHA is Linuzvision&apos;s proprietary autonomous multi-agent system engineered to adapt to complex enterprise environments, engage with prospects in natural dialogue, qualify opportunities, generate documents, and automate workflows under human direction.
-              </p>
-              <div className="tasha-actions">
-                <a className="button button-light" href="/tasha">
-                  MEET TASHA <ArrowIcon />
-                </a>
-              </div>
-            </div>
-            <div className="tasha-system-wrapper" data-reveal-group>
-              <div className="tasha-system-header">
-                <span className="signal tasha-name">TASHA MULTI-AGENT PIPELINE</span>
-                <span className="tasha-badge">AUTONOMOUS / LOW LATENCY</span>
-              </div>
-              <div className="tasha-pipeline-grid">
-                {tashaPipeline.map((item, index) => (
-                  <div
-                    className="pipeline-node"
-                    key={item.name}
-                    style={{ "--reveal-order": index } as CSSProperties}
-                  >
-                    <span className="pipeline-num">{item.step}</span>
-                    <div className="pipeline-body">
-                      <strong>{item.name}</strong>
-                      <span>{item.detail}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 6. FROM DATACENTER TO CLOUD INFRASTRUCTURE */}
         <section className="foundation section-rule" id="cloud" data-home-scene="foundation-split">
@@ -418,31 +392,46 @@ export function HomePage({ insights }: { insights: Insight[] }) {
           </div>
         </section>
 
-        {/* 9. BUSINESSES, ORGANIZATIONS & GOVERNMENT REACH */}
-        <section className="experience section-rule" id="about" data-home-scene="experience-bridge">
-          <div className="shell experience-grid">
-            <div className="years" data-reveal-item>
-              <strong>15+</strong>
-              <span>YEARS OF TECHNOLOGY EXPERIENCE</span>
-            </div>
-            <div className="bridge" data-reveal-item style={{ "--reveal-order": 1 } as CSSProperties}>
-              <span className="micro-label">GLOBAL EXECUTION</span>
-              <h2>BUILT FOR BUSINESSES,<br />ORGANIZATIONS & GOVERNMENT.</h2>
-              <p>
-                Helping businesses, organizations, and government entities build, maintain, and secure modern IT environments across international standards and dynamic global markets.
+        {/* 9. EXECUTIVE LEADERSHIP & PERSONNEL */}
+        <section className="experience section-rule" id="leadership" data-home-scene="leadership-team">
+          <div className="shell">
+            <div className="leadership-heading">
+              <div>
+                <span className="micro-label">EXECUTIVE PERSONNEL</span>
+                <h2>LEADERSHIP &amp;<br />EXECUTIVE TEAM.</h2>
+              </div>
+              <p className="leadership-intro">
+                Architectural vision, engineering rigor, and product stewardship driving high-performance technology operations.
               </p>
-              <div className="bridge-route">
-                <span>AFRICA</span>
-                <i />
-                <span>INFRASTRUCTURE, CLOUD & AI CORRIDOR</span>
-                <i />
-                <span>AMERICA</span>
-              </div>
-              <div className="bridge-cta">
-                <a className="button" href="/about">
-                  OUR STORY & VISION <ArrowIcon />
-                </a>
-              </div>
+            </div>
+
+            <div className="leadership-grid" data-reveal-group>
+              {leadershipTeam.map((member, idx) => (
+                <article
+                  key={member.role}
+                  className="leadership-card"
+                  style={{ "--reveal-order": idx } as CSSProperties}
+                >
+                  <div className="leadership-photo-wrap">
+                    <img
+                      src={member.image}
+                      alt={member.alt}
+                      className="leadership-photo"
+                      style={{ objectPosition: member.objectPosition }}
+                    />
+                    <span className="leadership-badge">{member.role}</span>
+                  </div>
+                  <div className="leadership-meta">
+                    <div className="leadership-header">
+                      <span className="leadership-role-tag">{member.role} · {member.title}</span>
+                      <span className="leadership-index">{member.code}</span>
+                    </div>
+                    <h3 className="leadership-name">{member.name}</h3>
+                    <p className="leadership-function">{member.title}</p>
+                    <p className="leadership-desc">{member.description}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

@@ -164,12 +164,151 @@ img { display: block; max-width: 100%; }
 .evolution strong { font-size: 30px; }
 
 .experience { padding-block: clamp(110px, 12vw, 185px); }
-.experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10vw; align-items: center; }
-.years { aspect-ratio: 1.18; background: #dedfdf; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.years strong { font-size: clamp(76px, 8vw, 96px); line-height: .8; letter-spacing: -.04em; }
-.years span { font-size: 9px; letter-spacing: .18em; margin-top: 35px; }
-.bridge > div { display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .15em; }
-.bridge i { height: 1px; width: clamp(24px, 4vw, 70px); background: var(--ink); }
+
+/* Executive Personnel / Leadership Showcase */
+.leadership-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: clamp(48px, 6vw, 76px);
+}
+.leadership-heading h1,
+.leadership-heading h2 {
+  margin: 12px 0 0;
+  font-size: clamp(38px, 4.5vw, 68px);
+  line-height: .95;
+  letter-spacing: -.035em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.leadership-intro {
+  max-width: 460px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 1050px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 760px) {
+  .leadership-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .leadership-heading h1,
+  .leadership-heading h2 {
+    font-size: clamp(32px, 9vw, 46px);
+  }
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+.leadership-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color .3s ease, transform .3s ease;
+}
+.leadership-card:hover {
+  border-color: var(--ink);
+  transform: translateY(-4px);
+}
+.leadership-photo-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.leadership-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+}
+.leadership-card:hover .leadership-photo {
+  transform: scale(1.03);
+}
+.leadership-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  padding: 8px 14px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.leadership-meta {
+  padding: clamp(22px, 2.4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--paper);
+}
+.leadership-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.leadership-role-tag {
+  font-size: 8px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.leadership-index {
+  font-size: 9px;
+  font-family: monospace;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+.leadership-name {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.leadership-function {
+  margin: 0 0 16px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+}
+.leadership-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
 
 .human-ai, .final-cta { background: var(--ink); color: var(--paper); }
 .human-inner { padding-block: clamp(110px, 13vw, 200px); }
@@ -192,10 +331,22 @@ img { display: block; max-width: 100%; }
 .final-inner > div { margin-top: 80px; border-top: 1px solid #4c5050; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 .final-inner p { color: #b4b7b7; font-size: 15px; }
 
-.footer { border-top: 1px solid var(--line); padding: 68px var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
-.footer-brand{display:flex;flex-direction:column;gap:8px}.footer-brand>a:first-child{width:210px;height:76px;overflow:hidden}.footer-brand img{width:100%;height:100%;object-fit:contain}.footer-brand>a:not(:first-child),.footer-brand address{font-size:10px;color:var(--muted)}.footer-brand address{font-style:normal}.footer-brand p a{text-decoration:underline;text-underline-offset:3px}
-.footer p { margin: 28px 0 0; color: var(--muted); font-size: 8px; letter-spacing: .12em; }
-.footer nav{display:flex;gap:50px;flex-wrap:wrap;justify-content:flex-end}.footer nav section{display:flex;flex-direction:column;gap:12px}.footer nav strong,.footer nav a{font-size:8px;letter-spacing:.12em}.footer nav strong{margin-bottom:5px;color:var(--muted)}
+.footer { border-top: 1px solid var(--line); padding: clamp(56px, 7vw, 84px) var(--pad); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px; }
+.footer-logo { display: inline-block; width: 230px; height: 72px; overflow: hidden; }
+.footer-logo img { width: 100%; height: 100%; object-fit: contain; }
+.footer-nav { display: flex; gap: clamp(10px, 1.8vw, 24px); flex-wrap: wrap; justify-content: center; align-items: center; max-width: 920px; }
+.footer-nav a { font-size: 9px; letter-spacing: .14em; color: var(--ink); text-transform: uppercase; font-weight: 500; padding: 4px 6px; transition: color .2s; }
+.footer-nav a:hover { color: var(--muted); }
+.footer-credits { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.footer-credits p { margin: 0; color: var(--muted); font-size: 9px; letter-spacing: .12em; }
+.footer-credits p a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); font-weight: 600; }
+.footer-credits a.footer-email { font-size: 11px; letter-spacing: .1em; color: var(--ink); text-decoration: none; transition: color .2s; }
+.footer-credits a.footer-email:hover { color: var(--muted); }
+.footer-credits address { margin-top: 2px; font-size: 9px; color: var(--muted); font-style: normal; letter-spacing: .08em; }
+.footer-socials { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 2px; }
+.footer-social-link { width: 38px; height: 38px; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; color: var(--ink); background: transparent; transition: background .2s, color .2s, border-color .2s; }
+.footer-social-link:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.footer-social-link svg { width: 17px; height: 17px; fill: currentColor; }
 .whatsapp { position: fixed; right: 22px; bottom: 22px; width: 240px; height: 46px; background: var(--ink); color: var(--paper); display: flex; align-items: center; gap: 12px; z-index: 30; overflow: hidden; padding: 0 14px; transform: translateX(194px); transition: transform .35s cubic-bezier(.16,1,.3,1); }
 .whatsapp span { font-size: 8px; letter-spacing: .14em; white-space: nowrap; opacity: 0; transition: opacity .2s; }
 .whatsapp:hover { transform: translateX(0); background: var(--action-hover); color: var(--action-hover-text); }
@@ -251,7 +402,7 @@ img { display: block; max-width: 100%; }
   .insight-list article { padding-block: 25px; grid-template-columns: 1fr 40px; gap: 14px; }
   .insight-list article > span:not(.insight-index) { display: none; }
   .final-inner > div { align-items: flex-start; flex-direction: column; }
-  .footer { grid-template-columns: 1fr; }
+  .footer { gap: 24px; padding-block: 48px; }
   .whatsapp { width: 46px; transform: none; gap: 0; }
   .whatsapp span { display: none; }
 }
@@ -676,6 +827,10 @@ img { display: block; max-width: 100%; }
 
 /* About / Our Story */
 .about-page { padding-top: 76px; }
+.about-leadership {
+  padding-block: clamp(80px, 9vw, 150px);
+  border-bottom: 1px solid var(--line);
+}
 .about-hero { min-height: calc(100vh - 76px); padding-block: clamp(100px,12vw,180px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--ink); color: var(--paper); }
 .about-hero h1 { margin: 0 0 45px; font-size: clamp(56px,7.5vw,115px); line-height: .88; letter-spacing: -.04em; font-weight: 700; text-transform: uppercase; max-width: 1200px; }
 .video-preview-frame { width: 100%; max-width: 960px; aspect-ratio: 16 / 9; position: relative; border: 1px solid #4a4a4a; overflow: hidden; background: #000; }
@@ -885,6 +1040,86 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   background: var(--panel);
 }
+
+/* Home — Tech & Infrastructure Ecosystem Logo Ticker */
+.logo-ticker-strip {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  padding: 22px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.logo-ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logoTickerSlide 36s linear infinite;
+  will-change: transform;
+}
+
+.logo-ticker-strip:hover .logo-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes logoTickerSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-ticker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(24px, 3.5vw, 42px);
+  color: var(--ink);
+  opacity: 0.62;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.logo-ticker-item:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.logo-ticker-item svg {
+  height: 20px;
+  width: auto;
+  max-width: 160px;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .logo-ticker-strip {
+    padding: 18px 0;
+  }
+  .logo-ticker-item {
+    padding: 0 20px;
+  }
+  .logo-ticker-item svg {
+    height: 17px;
+  }
+  .logo-ticker-track {
+    animation-duration: 28s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-ticker-track {
+    animation-duration: 120s;
+  }
+}
 .change-stage {
   min-height: min(820px, 82vh);
   padding-block: clamp(90px, 11vw, 165px);
@@ -909,6 +1144,7 @@ img { display: block; max-width: 100%; }
 .approach-intro {
   margin-bottom: clamp(50px, 6vw, 80px);
 }
+.approach-intro h1,
 .approach-intro h3 {
   margin: 14px 0 0;
   font-size: clamp(24px, 3vw, 40px);
@@ -1595,19 +1831,23 @@ img { display: block; max-width: 100%; }
   transform: none;
 }
 
-/* Experience Bridge */
-.home-motion-ready [data-home-scene="experience-bridge"] .years {
+/* Executive Leadership Scene */
+.home-motion-ready [data-home-scene="leadership-team"] .leadership-heading {
   opacity: 0;
-  transform: translateX(-45px);
-  transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+  transform: translateY(32px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
 }
-.home-motion-ready [data-home-scene="experience-bridge"] .bridge {
+.home-motion-ready [data-home-scene="leadership-team"].is-visible .leadership-heading {
+  opacity: 1;
+  transform: none;
+}
+.home-motion-ready [data-home-scene="leadership-team"] .leadership-card {
   opacity: 0;
-  transform: translateX(45px);
-  transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+  transform: translateY(36px);
+  transition: opacity .75s cubic-bezier(.16, 1, .3, 1), transform .75s cubic-bezier(.16, 1, .3, 1);
+  transition-delay: calc(var(--reveal-order, 0) * 120ms + 100ms);
 }
-.home-motion-ready [data-home-scene="experience-bridge"].is-visible .years,
-.home-motion-ready [data-home-scene="experience-bridge"].is-visible .bridge {
+.home-motion-ready [data-home-scene="leadership-team"].is-visible .leadership-card {
   opacity: 1;
   transform: none;
 }
@@ -1674,6 +1914,9 @@ img { display: block; max-width: 100%; }
   .bento-card.bento-large {
     grid-column: span 2;
   }
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 760px) {
@@ -1703,6 +1946,15 @@ img { display: block; max-width: 100%; }
   .tasha-pipeline-grid { grid-template-columns: 1fr; }
   .bento-grid { grid-template-columns: 1fr; }
   .bento-card.bento-large { grid-column: auto; }
+  .leadership-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
   .home-security-grid { grid-template-columns: 1fr; gap: 50px; }
   .security-visual, .security-visual img { min-height: 440px; }
   .human-cta { flex-direction: column; align-items: flex-start; gap: 24px; margin-top: 50px; }

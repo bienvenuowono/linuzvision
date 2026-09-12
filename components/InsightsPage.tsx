@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 import type { Insight } from "@/lib/db";
 
 const rotatingWords = ["INSIGHTS", "IDEAS", "KNOWLEDGE", "EXPERIENCE", "INTELLIGENCE", "ACTION"];
@@ -91,7 +90,6 @@ export function InsightsPage({ insights }: { insights: Insight[] }) {
         </section>}
       </main>
       <Footer />
-      <WhatsappButton />
     </>
   );
 }

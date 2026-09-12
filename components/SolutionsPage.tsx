@@ -1,7 +1,6 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const solutions = [
   ["AI CUSTOMER SERVICE", "Understand requests, answer routine questions, trigger actions and escalate complex situations to people."],
@@ -55,7 +54,6 @@ export function SolutionsPage() {
         <section className="solutions-final"><div className="shell"><h2>WHAT SHOULD YOUR BUSINESS STOP DOING MANUALLY?</h2><p>Show us the workflow. We’ll explore where intelligence and automation can create meaningful operational value.</p><a className="button button-light" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>
       </main>
       <Footer />
-      <WhatsappButton />
     </>
   );
 }

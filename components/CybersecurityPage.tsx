@@ -1,7 +1,6 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { WhatsappButton } from "./WhatsappButton";
 
 const principles = [
   ["IDENTITY-BASED ACCESS", "Every request is authenticated and continuously evaluated."],
@@ -24,11 +23,11 @@ export function CybersecurityPage() {
 
     <section className="resilience shell cyber-split"><h2>ARCHITECTURAL<br />RESILIENCE</h2><div className="resilience-media"><img src="/images/server-architecture.png" alt="Resilient infrastructure architecture" /><aside><strong>HARDWARE-ROOTED SECURITY</strong><span>Physical trust foundations protect critical infrastructure from the ground up.</span></aside><div className="resilience-stats"><span><strong>99.999%</strong><small>UPTIME SLA</small></span><span><strong>TIER IV</strong><small>DATA CENTER</small></span><span><strong>N+2</strong><small>REDUNDANCY</small></span></div></div></section>
 
-    <section className="transatlantic"><div className="shell"><div><h2>SECURING THE<br />TRANSATLANTIC DATA FLOW</h2><p>Navigating the complex regulatory landscape of international data transfer. We architect secure bridges ensuring strict compliance with local data sovereignty laws while maintaining seamless continuity between Africa and the Americas.</p><ul><li>Localized Data Residency Options</li><li>Cross-Border Compliance Auditing</li><li>Latency-Optimized Encrypted Routing</li></ul></div><div className="flow-diagram"><svg aria-hidden="true" viewBox="0 0 500 430"><circle cx="250" cy="215" r="58"/><circle cx="250" cy="215" r="112"/><path d="M30 215h440M250 25v380M70 115c95 65 265 65 360 0M70 315c95-65 265-65 360 0"/><circle cx="70" cy="115" r="5"/><circle cx="430" cy="115" r="5"/><circle cx="70" cy="315" r="5"/><circle cx="430" cy="315" r="5"/></svg><b>LZV</b><span className="flow-africa">AFRICA · DATA SOVEREIGNTY</span><span className="flow-america">AMERICA · CLOUD EDGE</span><small>ENCRYPTED TRANSATLANTIC CORRIDOR</small></div></div></section>
+    <section className="transatlantic"><div className="shell"><div><h2>SECURING THE<br />TRANSATLANTIC DATA FLOW</h2><p>Navigating the complex regulatory landscape of international data transfer. We architect secure bridges ensuring strict compliance with local data sovereignty laws while maintaining seamless continuity between Africa and the Americas.</p><ul><li>Localized Data Residency Options</li><li>Cross-Border Compliance Auditing</li><li>Latency-Optimized Encrypted Routing</li></ul></div><div className="flow-diagram"><svg aria-hidden="true" viewBox="0 0 500 430"><circle cx="250" cy="215" r="58"/><circle cx="250" cy="215" r="112"/><path d="M30 215h440M250 25v380M70 115c95 65 265 65 360 0M70 315c95-65 265-65 360 0"/><circle cx="70" cy="115" r="5"/><circle cx="430" cy="115" r="5"/><circle cx="70" cy="315" r="5"/><circle cx="430" cy="315" r="5"/></svg><b>LZV</b><div className="flow-region flow-america"><strong>AMERICA</strong><span>DATA SOVEREIGNTY · CLOUD EDGE</span></div><div className="flow-region flow-africa"><strong>AFRICA</strong></div><small>ENCRYPTED TRANSATLANTIC CORRIDOR</small></div></div></section>
 
     <section className="response shell cyber-split"><h2>RESPONSE<br />PROTOCOLS</h2><div><p>Precision execution when milliseconds matter. Our incident response framework is a structured, automated and software-led recovery model.</p>{response.map(([title,text],i)=><article key={title}><strong>{String(i+1).padStart(2,"0")}</strong><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></section>
 
     <section className="cyber-specs"><div className="shell"><header><h2>SYSTEM SPECIFICATIONS</h2><span>LIVE TELEMETRY · GOVERNED</span></header><div>{[["AES-256-GCM","ENCRYPTION STANDARD"],["65 Tpps","THREAT DETECTION"],["ISO 27001","CONTROL FRAMEWORK"],["< 15 MIN","RESPONSE SLA"]].map(([v,l])=><span key={l}><small>{l}</small><strong>{v}</strong></span>)}</div></div></section>
     <section className="cyber-final"><div className="shell"><h2>THREATS EVOLVE. YOUR SECURITY<br />SHOULD TOO. BUILD FOR RESILIENCE.</h2><a className="button" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>
-  </main><Footer /><WhatsappButton /></>;
+  </main><Footer /></>;
 }
