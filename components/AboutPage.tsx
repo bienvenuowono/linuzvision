@@ -152,10 +152,7 @@ export function AboutPage() {
         <section className="about-mission shell" id="mission">
           <div className="mission-content">
             <span className="mono-label">MISSION &amp; MANIFESTO</span>
-            <h2>
-              To empower businesses, organizations and governments with secure, intelligent, and innovative
-              technology solutions that simplify operations, accelerate growth, and prepare them for the future.
-            </h2>
+            <h2>EMPOWERING ORGANIZATIONS WITH SMART TECHNOLOGY FOR GROWTH.</h2>
             <p>
               We are committed to being a trusted partner, delivering secure, scalable, and affordable
               technologies—from AI and Cloud to Automation and Cybersecurity. Our goal is to make advanced technology

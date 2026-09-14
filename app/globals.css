@@ -1,13 +1,20 @@
 :root {
   --paper: #eff2f2;
-  --ink: #0A3874;
+  --ink: #0000FF;
   --action-hover: #0190A5;
-  --action-hover-text: #060707;
-  --muted: #626767;
+  --action-hover-text: #000000;
+  --muted: #000000;
   --line: #d0d5d5;
   --panel: #e2e6e6;
   --max: 1440px;
   --pad: clamp(24px, 4.5vw, 72px);
+  /* Unified type scale: authoritative across every public surface. */
+  --type-display: clamp(52px, 6.2vw, 84px);
+  --type-headline: clamp(36px, 4.25vw, 60px);
+  --type-title: clamp(22px, 2vw, 28px);
+  --type-body: 16px;
+  --type-small: 13px;
+  --type-label: 10px;
 }
 
 /* Contact / Strategic Engagement */
@@ -68,11 +75,13 @@ body {
   margin: 0;
   background-color: var(--paper);
   background-image:
-    linear-gradient(to right, rgba(10, 56, 116, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 56, 116, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 255, 0.02) 1px, transparent 1px);
   background-size: 64px 64px;
   color: var(--ink);
   font-family: "Inter Variable", "Inter", sans-serif;
+  font-size: var(--type-body);
+  line-height: 1.65;
   overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
@@ -670,12 +679,41 @@ img { display: block; max-width: 100%; }
 .services-closing .shell { display: flex; flex-direction: column; align-items: center; }
 .services-closing h2 { margin: 0 0 50px; font-size: clamp(34px,4.7vw,66px); line-height: .95; letter-spacing: -.045em; }
 
+/* Services hero film: replace the legacy fixed-height ecosystem canvas. */
+.services-ecosystem-film {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-inline: 0;
+}
+
+.services-ecosystem-video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  margin-inline: auto;
+}
+
+.services-ecosystem-video-frame video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.services-ecosystem-film + .services-hero {
+  margin-top: clamp(32px, 4vw, 64px);
+}
+
 @media (max-width:760px) {
   .services-page { padding-top: 66px; }
   .services-hero { min-height: calc(100vh - 66px); padding-top: 80px; }
   .services-hero h1 { font-size: clamp(45px,13.2vw,64px); }
   .services-hero .button { width: 100%; justify-content: space-between; }
   .ecosystem-map { height: 620px; }
+  .services-ecosystem-film { height: auto; }
   .ecosystem-map svg { display: none; }
   .ecosystem-core { width: 90px; height: 90px; }
   .eco-node { min-width: 135px; min-height: 48px; font-size: 7px; }
@@ -937,7 +975,7 @@ img { display: block; max-width: 100%; }
 .insights-publications{padding-block:clamp(90px,11vw,160px);border-top:1px solid var(--line)}
 .insights-publications>header{margin-bottom:52px}.insights-publications>header p{font-size:8px;letter-spacing:.16em;color:var(--muted)}.insights-publications>header h2{margin:0;font-size:clamp(42px,5vw,76px);letter-spacing:-.04em}
 .insights-empty{min-height:420px;display:grid;place-items:center}.insights-empty h2{max-width:760px;text-align:center}
-.insight-article{padding-top:clamp(150px,15vw,230px);padding-bottom:120px}.insight-article>header{max-width:1080px;margin-bottom:70px}.insight-article>header>p,.insight-article time{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.insight-article h1{margin:20px 0 30px;font-size:clamp(54px,7.5vw,110px);line-height:.9;letter-spacing:-.045em;text-transform:uppercase}.insight-article figure{height:min(65vw,720px);margin:0 0 80px;overflow:hidden;border:1px solid var(--line)}.insight-article figure img{width:100%;height:100%;object-fit:cover;filter: none;}.insight-article>article{max-width:760px;margin:0 auto 70px}.insight-article>article p{font-size:17px;line-height:1.8;color:#414444}.insight-article .insight-article-lead{font-size:clamp(23px,2.3vw,34px);line-height:1.35;color:var(--ink);letter-spacing:-.02em}
+.insight-article{padding-top:clamp(150px,15vw,230px);padding-bottom:120px}.insight-article>header{max-width:1080px;margin-bottom:70px}.insight-article>header>p,.insight-article time{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.insight-article h1{margin:20px 0 30px;font-size:clamp(54px,7.5vw,110px);line-height:.9;letter-spacing:-.045em;text-transform:uppercase}.insight-article figure{height:min(65vw,720px);margin:0 0 80px;overflow:hidden;border:1px solid var(--line)}.insight-article figure img{width:100%;height:100%;object-fit:cover;filter: none;}.insight-article>article{max-width:760px;margin:0 auto 70px}.insight-article>article p{font-size:17px;line-height:1.8;color:#000000}.insight-article .insight-article-lead{font-size:clamp(23px,2.3vw,34px);line-height:1.35;color:var(--ink);letter-spacing:-.02em}
 .contact-direct{display:flex;justify-content:center;gap:16px;margin:28px 0 0;font-size:10px;letter-spacing:.12em}.contact-direct a{min-height:auto!important;padding:0!important;border:0!important;text-decoration:underline!important}
 @keyframes insights-word-in{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
 @media(prefers-reduced-motion:reduce){.insights-active-word{animation:none}}
@@ -2451,4 +2489,161 @@ img { display: block; max-width: 100%; }
 /* Ensure all images and videos strictly preserve their full, vibrant, authentic original colors without any grayscale filter or dark veil */
 img, video {
   filter: none !important;
+}
+
+/* Unified public typography — September 2026
+   Keeps the architectural contrast while removing oversized display type and
+   illegibly small interface copy across the complete marketing experience. */
+main:is(
+  #home,
+  .tasha-page,
+  .solutions-page,
+  .services-page,
+  .cloud-page,
+  .cyber-page,
+  .training-page,
+  .about-page,
+  .insights-page,
+  .contact-page,
+  .datacenter-page
+) h1 {
+  max-width: 18ch;
+  font-size: var(--type-display);
+  line-height: .92;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+main:is(
+  #home,
+  .tasha-page,
+  .solutions-page,
+  .services-page,
+  .cloud-page,
+  .cyber-page,
+  .training-page,
+  .about-page,
+  .insights-page,
+  .contact-page,
+  .datacenter-page
+) h2 {
+  font-size: var(--type-headline);
+  line-height: 1;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+
+main:is(
+  #home,
+  .tasha-page,
+  .solutions-page,
+  .services-page,
+  .cloud-page,
+  .cyber-page,
+  .training-page,
+  .about-page,
+  .insights-page,
+  .contact-page,
+  .datacenter-page
+) :is(h3, h4) {
+  text-wrap: balance;
+}
+
+main:is(
+  #home,
+  .tasha-page,
+  .solutions-page,
+  .services-page,
+  .cloud-page,
+  .cyber-page,
+  .training-page,
+  .about-page,
+  .insights-page,
+  .contact-page,
+  .datacenter-page
+) p {
+  text-wrap: pretty;
+}
+
+.desktop-nav a,
+.nav-group > button,
+.button,
+.text-link,
+.micro-label,
+.mono-label,
+.footer-nav a,
+.footer-credits p,
+.footer-credits address,
+.contact-engagement label span,
+.insight-label,
+.insight-meta {
+  font-size: var(--type-label);
+  line-height: 1.35;
+}
+
+.hero-intro p,
+.tasha-hero-grid p,
+.solutions-hero-copy p,
+.contact-hero > p,
+.featured-summary,
+.cta-inner p {
+  font-size: var(--type-body);
+}
+
+.service p,
+.capability-row p,
+.training-services article p,
+.programs article p,
+.manifesto-card p,
+.evolution-card p,
+.spec-card p {
+  font-size: var(--type-small);
+}
+
+.insight-article h1 {
+  max-width: 16ch;
+  font-size: clamp(46px, 5.5vw, 76px);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --type-display: clamp(40px, 10.5vw, 54px);
+    --type-headline: clamp(32px, 8.75vw, 46px);
+    --type-title: clamp(21px, 6vw, 26px);
+  }
+
+  main:is(
+    #home,
+    .tasha-page,
+    .solutions-page,
+    .services-page,
+    .cloud-page,
+    .cyber-page,
+    .training-page,
+    .about-page,
+    .insights-page,
+    .contact-page,
+    .datacenter-page
+  ) h1 {
+    max-width: 14ch;
+    line-height: .95;
+  }
+
+  .insight-article h1 {
+    font-size: clamp(38px, 10vw, 50px);
+  }
+}
+
+/* About mission: concise supporting statement, intentionally below headline scale. */
+.about-page .mission-content h2 {
+  max-width: 24ch;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+}
+
+@media (max-width: 760px) {
+  .about-page .mission-content h2 {
+    font-size: clamp(24px, 7.5vw, 30px);
+  }
 }

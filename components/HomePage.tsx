@@ -168,7 +168,7 @@ export function HomePage({ insights }: { insights: Insight[] }) {
             <div className="approach-intro reveal-item">
               <span className="micro-label">THE PHILOSOPHY</span>
               <h1>
-                At Linuzvision, we believe organizations should be able to focus on their ideas, missions, and business objectives while having a technology partner capable of turning those ideas into reliable solutions.
+                We turn ideas into technology.
               </h1>
             </div>
             <div className="change-copy approach-grid" data-reveal-group>

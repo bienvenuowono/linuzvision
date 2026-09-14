@@ -3,10 +3,10 @@ name: LinuZvision — Void and Form
 description: Infrastructure-grade intelligence expressed through an architectural system with a disciplined blue-teal identity.
 colors:
   paper: "#eff2f2"
-  ink: "#0A3874"
+  ink: "#0000FF"
   action-hover: "#0190A5"
-  action-hover-text: "#060707"
-  muted: "#626767"
+  action-hover-text: "#000000"
+  muted: "#000000"
   line: "#d0d5d5"
   panel: "#e2e6e6"
   void: "#060707"
@@ -15,32 +15,37 @@ colors:
 typography:
   display:
     fontFamily: "Inter Variable, Inter, sans-serif"
-    fontSize: "clamp(64px, 7vw, 96px)"
+    fontSize: "clamp(52px, 6.2vw, 84px)"
     fontWeight: 700
     lineHeight: 0.88
     letterSpacing: "-0.04em"
   headline:
     fontFamily: "Inter Variable, Inter, sans-serif"
-    fontSize: "clamp(42px, 5vw, 76px)"
+    fontSize: "clamp(36px, 4.25vw, 60px)"
     fontWeight: 600
     lineHeight: 0.95
     letterSpacing: "-0.04em"
   title:
     fontFamily: "Inter Variable, Inter, sans-serif"
-    fontSize: "clamp(20px, 2vw, 28px)"
+    fontSize: "clamp(22px, 2vw, 28px)"
     fontWeight: 500
     lineHeight: 1
     letterSpacing: "-0.035em"
   body:
     fontFamily: "Inter Variable, Inter, sans-serif"
-    fontSize: "15px"
+    fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.65
+  small:
+    fontFamily: "Inter Variable, Inter, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.65
   label:
     fontFamily: "Inter Variable, Inter, sans-serif"
-    fontSize: "9px"
+    fontSize: "10px"
     fontWeight: 700
-    lineHeight: 1
+    lineHeight: 1.35
     letterSpacing: "0.11em"
 rounded:
   none: "0px"
@@ -142,19 +147,19 @@ The palette is materially precise: warm paper, blue Structural Ink, a restrained
 
 ### Primary
 
-- **Structural Ink** (`#0A3874`): The principal text, border, filled-control, and structural brand color; it gives the system its weighted architectural presence.
+- **Structural Ink** (`#0000FF`): The principal text, border, filled-control, and structural brand color; it gives the system its vivid technological presence.
 
 ### Secondary
 
 - **Action Teal** (`#0190A5`): Reserved for hover and actionable emphasis rather than decorative fields.
-- **Action Hover Text** (`#060707`): Text on Action Teal; this pairing provides a WCAG contrast ratio of 5.31:1.
+- **Action Hover Text** (`#000000`): Pure-black text on Action Teal for maximum clarity and accessible contrast.
 - **System Void:** The deepest chamber surface, reserved for TASHA and other immersive technical moments.
 - **Quiet Panel:** A cool-gray field for featured cards and restrained dimensional contrast.
 
 ### Neutral
 
 - **Gallery Paper:** The default canvas and inverse text color.
-- **Operational Gray:** Secondary copy and subdued metadata on light surfaces.
+- **Operational Black:** Secondary copy and metadata on light surfaces use pure black for maximum clarity.
 - **Hairline Gray:** Dividers, grids, and low-emphasis container edges.
 - **Void Text:** Primary copy on the deepest technical chamber.
 - **Void Muted:** Supporting copy on dark fields.
@@ -173,11 +178,12 @@ The palette is materially precise: warm paper, blue Structural Ink, a restrained
 
 ### Hierarchy
 
-- **Display:** Bold, tightly tracked, and monumental; reserved for the hero and terminal calls to action. Mobile scales deliberately to a compact but still dominant block.
-- **Headline:** Semibold architectural section statements with tight line height and tracking.
-- **Title:** Medium-weight service and editorial titles; compact, direct, and structurally aligned.
-- **Body:** Regular-weight explanatory copy with generous line height, generally constrained to roughly 420–520px for readable measure.
-- **Label:** Very small uppercase interface and metadata text with expanded tracking; use for navigation, buttons, system states, and reading metadata.
+- **Display:** Bold, tightly tracked, and monumental (`clamp(52px, 6.2vw, 84px)`); reserved for the hero and terminal calls to action. At 760px and below it uses `clamp(40px, 10.5vw, 54px)`, remaining dominant without overwhelming the viewport.
+- **Headline:** Semibold architectural section statements (`clamp(36px, 4.25vw, 60px)`) with tight line height and tracking. At 760px and below they use `clamp(32px, 8.75vw, 46px)`.
+- **Title:** Medium-weight service and editorial titles (`clamp(22px, 2vw, 28px)`); compact, direct, and structurally aligned. At 760px and below they use `clamp(21px, 6vw, 26px)`.
+- **Body:** Regular-weight explanatory copy (`16px`, line-height `1.65`), generally constrained to roughly 420–520px for readable measure.
+- **Small:** Supporting copy (`13px`) for compact descriptions that remain readable without competing with body text.
+- **Label:** Small uppercase interface and metadata text (`10px`, line-height `1.35`) with expanded tracking; use for navigation, buttons, system states, and reading metadata.
 
 ### Named Rules
 
@@ -221,7 +227,7 @@ Contact preserves its comp-led Persuade sequence: monumental invitation and wide
 
 **The Home Hero Media-First Rule.** Place the Home hero media before its title, introduction, and CTA. From 761px upward, begin the `16 / 9` media at `y = 76px` and let it escape the shell to `100vw` with viewport recentering; give the copy beneath its own vertical padding. At 760px and below, keep the `4 / 5` media within the 24px shell edge, followed by the copy. The desktop bleed uses no inline borders and must never create horizontal overflow.
 
-**The Services Ecosystem Film Rule.** Open Services with the exact user-supplied ecosystem film as a full-width `16 / 9` frame, preserving its complete composition and source color before the title, explanation, actions, and scroll cue. It autoplays muted and loops, exposes an accessible manual play/pause control, and pauses on its first frame when reduced motion is preferred while keeping manual playback available.
+**The Services Ecosystem Film Rule.** Open Services with the exact user-supplied ecosystem film inside a responsive `16 / 9` frame at `width: 100%` with `overflow: hidden`. Center the video with `object-fit: contain` and `object-position: center` so its complete composition and source color remain visible. Separate the film from `.services-hero` with fluid spacing from `32px` to `64px`, and preserve the same contained frame on mobile without horizontal overflow. It autoplays muted and loops, exposes an accessible manual play/pause control, and pauses on its first frame when reduced motion is preferred while keeping manual playback available.
 
 ## Elevation & Depth
 
@@ -254,7 +260,7 @@ The form language is strictly rectilinear. Buttons, cards, diagrams, navigation 
 
 - **Shape:** Compact rectangular controls with square corners, a one-pixel border, and a minimum height of 42px.
 - **Primary:** Structural Ink fill with Gallery Paper text; horizontal padding follows the control spacing token.
-- **Hover / Focus:** Action controls fill with Action Teal and use Action Hover Text (`#060707`, 5.31:1 contrast). Arrow icons translate 4px. Keyboard focus uses a two-pixel Structural Ink outline offset by 4px.
+- **Hover / Focus:** Action controls fill with Action Teal and use pure-black Action Hover Text (`#000000`). Arrow icons translate 4px. Keyboard focus uses a two-pixel Structural Ink outline offset by 4px.
 - **Light:** Transparent on dark fields with a Gallery Paper border and text; actionable hover uses the shared Action Teal treatment.
 
 ### Cards / Containers
