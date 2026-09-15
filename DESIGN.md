@@ -191,6 +191,8 @@ The palette is materially precise: warm paper, blue Structural Ink, a restrained
 
 **The Scale-Contrast Rule.** Pair very large, tightly composed statements with small, widely tracked labels; avoid middling editorial typography that weakens the architecture.
 
+**The Selected Half-Scale Rule.** Only the public-surface headings explicitly allowlisted in the final title-scale block of `app/globals.css` use half of the canonical title scale: selected `h1` headings use `clamp(26px, 3.1vw, 42px)` and selected `h2` headings use `clamp(18px, 2.125vw, 30px)`; at `760px` and below they use `clamp(20px, 5.25vw, 27px)` and `clamp(16px, 4.375vw, 23px)` respectively. This is a targeted hierarchy, not a global reduction. The exact exceptions are the About mission `h2` at `clamp(13px, 1.5vw, 20px)` (`clamp(12px, 3.75vw, 15px)` on mobile) and the Framework plus Autonomous Defense content `h3` headings on Cybersecurity at `clamp(21px, 2.5vw, 36px)` (`clamp(19.5px, 5.5vw, 27px)` on mobile).
+
 ## Layout
 
 The system uses a fixed-fluid canvas capped at 1440px, with responsive horizontal padding that grows from 24px to 72px. Desktop compositions behave like a 12-column architectural grid, expressed through asymmetric two-column statements, three-column service matrices, and paired image/copy planes.

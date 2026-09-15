@@ -155,14 +155,14 @@ export function DatacenterPage() {
           </div>
         </section>
 
-        {/* 3. AMERICA <-> AFRICA TRANSCONTINENTAL CORRIDOR */}
+        {/* 3. AMERICA <-> AFRICA <-> EUROPE TRANSCONTINENTAL CORRIDOR */}
         <section className="transcontinental-corridor section-rule">
           <div className="shell corridor-split">
             <div className="corridor-copy">
               <span className="micro-label">TRANSCONTINENTAL SYNERGY</span>
-              <h2>AMERICA ↔ AFRICA.<br />ENGINEERED FOR<br />CONTINUITY.</h2>
+              <h2>AMERICA ↔ AFRICA ↔ EUROPE<br />ENGINEERED FOR<br />CONTINUITY.</h2>
               <p>
-                We bridge American technological rigor, certified Tier compliance methodologies, and high-density hardware supply chains with sovereign data residency and mission-critical operational requirements in Africa.
+                We bridge American technological rigor, certified Tier compliance methodologies, and high-density hardware supply chains with sovereign data residency and mission-critical operational requirements in europe and Africa.
               </p>
               <div className="corridor-points">
                 <div>
@@ -190,7 +190,7 @@ export function DatacenterPage() {
                 <i></i>
                 <b>LZV CORRIDOR</b>
                 <i></i>
-                <span>AFRICA</span>
+                <span>AFRICA AND EUROPE</span>
               </div>
             </div>
           </div>

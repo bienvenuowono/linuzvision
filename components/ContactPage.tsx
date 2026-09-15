@@ -63,7 +63,7 @@ export function ContactPage() {
         <section className="contact-network shell">
           <div>
             <h2>GLOBAL NETWORK</h2>
-            <p>Bridging innovation through the established <strong>AMERICA ↔ AFRICA</strong> strategic vision for technological exchange and deployment.</p>
+            <p>Bridging innovation through the established <strong>AMERICA ↔ AFRICA ↔ EUROPE</strong> strategic vision for technological exchange and deployment.</p>
             <div className="contact-regions"><span>AMERICA</span><span>AFRICA</span></div>
           </div>
           <div className="contact-map" aria-label="America to Africa strategic corridor">

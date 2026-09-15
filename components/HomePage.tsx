@@ -311,7 +311,7 @@ export function HomePage({ insights }: { insights: Insight[] }) {
               <span className="micro-label">MISSION-CRITICAL PROTECTION</span>
               <h2>PROTECTION AS A<br />CONTINUOUS DISCIPLINE.</h2>
               <p>
-                We secure the environments that protect your business. Linuzvision implements Zero-Trust architectures, continuous monitoring, Linux & Windows hardening, and rapid disaster recovery to ensure your systems remain resilient.
+                We secure the environments that protect your business. Linuzvision implements Zero-Trust architectures, continuous monitoring, system hardening, and rapid disaster recovery to ensure your systems remain resilient.
               </p>
               <div className="security-matrix-bars" data-reveal-group>
                 <div className="sec-bar" style={{ "--reveal-order": 0 } as CSSProperties}>
