@@ -1,0 +1,11 @@
+import { DatabaseSync } from "node:sqlite";
+import fs from "node:fs";
+import path from "node:path";
+const file = path.join(process.cwd(), "data", "linuzvision.db");
+if (!fs.existsSync(file)) throw new Error("Database has not been initialized. Start or build the application first.");
+const db = new DatabaseSync(file, { readOnly: true });
+const integrity = db.prepare("PRAGMA integrity_check").get();
+const insights = db.prepare("SELECT COUNT(*) AS count FROM insights").get();
+const inquiries = db.prepare("SELECT COUNT(*) AS count FROM inquiries").get();
+const administrators = db.prepare("SELECT COUNT(*) AS count FROM admin_accounts").get();
+console.log(JSON.stringify({ integrity: integrity.integrity_check, insights: insights.count, inquiries: inquiries.count, administrators: administrators.count }, null, 2));
