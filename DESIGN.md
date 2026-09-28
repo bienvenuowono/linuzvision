@@ -101,6 +101,12 @@ components:
 
 ## Workflow Governance
 
+### Public Delivery and Media Caching
+
+Home and Insights use 60-second incremental static regeneration so their public HTML can be delivered from the CDN edge while published content refreshes on a bounded cadence. TASHA's hero video uses metadata preload. Versioned, managed MP4 and WebM assets use one day of browser caching, one year of shared CDN caching, and one day of stale-while-revalidate.
+
+These delivery rules do not alter visual composition, selected assets, or media encoding. Video files retain their original source quality.
+
 Ce système visuel est maintenu avec le protocole Impeccable. Toute nouvelle surface ou modification matérielle doit être comparée à son autorité Stitch, inspectée aux formats desktop et mobile, soumise à une revue indépendante et documentée ici uniquement après le verdict `ship`.
 
 L'agent constructeur ne s'auto-certifie pas. Un reviewer Impeccable frais juge la fidélité, le responsive, le craft floor et le plafond de qualité ; un documenter Impeccable frais enregistre ensuite les vérités réutilisables dans ce fichier et `.impeccable/design.json`. En l'absence technique de ces sous-agents, les deux responsabilités doivent être reproduites dans des passes séparées et explicitement signalées.

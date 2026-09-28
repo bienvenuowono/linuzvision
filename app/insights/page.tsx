@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { InsightsPage } from "@/components/InsightsPage";
 import { listInsights } from "@/lib/db";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "AI, Cloud & Cybersecurity Insights",

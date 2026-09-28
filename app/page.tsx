@@ -29,7 +29,9 @@ export const metadata: Metadata = {
     images: ["/images/server-architecture.png"],
   },
 };
-export const dynamic = "force-dynamic";
+// Keep the public landing page at the CDN edge while refreshing editorial
+// content frequently enough for the administration workflow.
+export const revalidate = 60;
 
 export default function Page() {
   return <HomePage insights={listInsights(false).slice(0, 3)} />;

@@ -53,7 +53,7 @@ export function TashaHeroVideo() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-label="TASHA autonomous intelligence system"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
