@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowIcon } from "./ArrowIcon";
+import { LanguageSelector } from "./LanguageSelector";
 
 type NavLink = {
   type: "link";
@@ -107,9 +108,12 @@ export function Header({ active = "HOME" }: { active?: string }) {
           );
         })}
       </nav>
-      <a className="button button-small header-cta" href="/contact">
-        START A CONVERSATION <ArrowIcon />
-      </a>
+      <div className="header-actions">
+        <a className="button button-small header-cta" href="/contact">
+          START A CONVERSATION <ArrowIcon />
+        </a>
+        <LanguageSelector />
+      </div>
       <button
         className="menu-toggle"
         type="button"
