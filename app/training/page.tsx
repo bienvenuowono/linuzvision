@@ -1,37 +1,37 @@
 import type { Metadata } from "next";
 import { TrainingPage } from "../../components/TrainingPage";
 export const metadata: Metadata = {
-  title: "Enterprise IT Support & Technology Training",
+  title: "AI Training for Organizations",
   alternates: { canonical: "/training" },
   description:
-    "Practical enterprise IT support, technical workforce training, and skills development built to strengthen teams, systems, and institutional capability.",
+    "Practical AI training for institutions, government, education, and business, delivered through complete modular courses in American English.",
   keywords: [
-    "IT support",
-    "technology training",
-    "workforce development",
-    "technical certifications",
-    "enterprise IT training",
-    "systems administration",
+    "AI training",
+    "responsible AI course",
+    "AI for government",
+    "AI for education",
+    "enterprise AI training",
+    "organizational AI adoption",
   ],
   openGraph: {
-    title: "Enterprise IT Support & Technology Training | LinuZvision",
+    title: "AI Training for Organizations | LinuZvision",
     description:
-      "Practical enterprise IT support and technology training built to strengthen teams and institutional capability.",
+      "Complete modular AI learning for institutions, government, education, and business.",
     url: "/training",
     images: [
       {
         url: "/images/human-machine-synergy.png",
         width: 1376,
         height: 768,
-        alt: "Enterprise IT Support and Training",
+        alt: "AI Training for Organizations",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enterprise IT Support & Technology Training | LinuZvision",
+    title: "AI Training for Organizations | LinuZvision",
     description:
-      "Practical enterprise IT support and technology training built to strengthen teams.",
+      "Complete modular AI learning for institutions, government, education, and business.",
     images: ["/images/human-machine-synergy.png"],
   },
 };

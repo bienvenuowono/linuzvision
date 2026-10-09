@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/cybersecurity", changeFrequency: "monthly" as const, priority: 0.9, image: "/images/zero-trust-datacenter.png" },
     { path: "/services", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/fiber-network.png" },
     { path: "/training", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/enterprise-training.png" },
+    { path: "/training/ai-essentials", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/human-machine-synergy.png" },
     { path: "/about", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/about-global-network-map.png" },
     { path: "/insights", changeFrequency: "weekly" as const, priority: 0.8, image: "/images/human-machine-synergy.png" },
     { path: "/contact", changeFrequency: "yearly" as const, priority: 0.7, image: "/images/server-architecture.png" },

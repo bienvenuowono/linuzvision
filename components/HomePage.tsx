@@ -8,6 +8,7 @@ import type { Insight } from "@/lib/db";
 import { HeroVideo } from "./HeroVideo";
 import { HomeScrollNarrative } from "./HomeScrollNarrative";
 import { TechLogoSlider } from "./TechLogoSlider";
+import { CourseCard } from "./CourseCard";
 
 const activities = [
   {
@@ -321,42 +322,20 @@ export function HomePage({ insights }: { insights: Insight[] }) {
           </div>
         </section>
 
-        {/* 8. TRAINING & TECHNOLOGY ENABLEMENT */}
-        <section className="human-ai section-rule" id="training" data-home-scene="human-synergy">
-          <div className="shell human-inner">
-            <span className="signal tasha-tag">TRAINING & TECHNOLOGY ENABLEMENT</span>
-            <h2>
-              TECHNOLOGY DELIVERS GREATER VALUE<br />WHEN TEAMS MASTER IT.<br /><em>PRACTICAL SKILLS FOR MODERN TECH.</em>
-            </h2>
-            <div className="equation" data-reveal-group>
-              <div className="eq-item" style={{ "--reveal-order": 0 } as CSSProperties}>
-                <span>MODERN INFRASTRUCTURE</span>
-                <small>LINUX, WINDOWS & DATACENTER</small>
+        {/* 8. FEATURED COURSES */}
+        <section className="home-featured-courses section-rule" id="training" data-home-scene="featured-courses">
+          <div className="shell">
+            <div className="featured-courses-heading">
+              <div>
+                <span className="micro-label">FEATURED COURSES</span>
+                <h2>Develop the judgment to use AI responsibly</h2>
               </div>
-              <b style={{ "--reveal-order": 1 } as CSSProperties}>+</b>
-              <div className="eq-item" style={{ "--reveal-order": 2 } as CSSProperties}>
-                <span>CLOUD COMPUTING</span>
-                <small>ARCHITECTURE & DEPLOYMENT</small>
-              </div>
-              <b style={{ "--reveal-order": 3 } as CSSProperties}>+</b>
-              <div className="eq-item" style={{ "--reveal-order": 4 } as CSSProperties}>
-                <span>AI & AUTOMATION</span>
-                <small>MULTI-AGENT & WORKFLOWS</small>
-              </div>
-              <b style={{ "--reveal-order": 5 } as CSSProperties}>=</b>
-              <div className="eq-item highlight" style={{ "--reveal-order": 6 } as CSSProperties}>
-                <strong>ORGANIZATIONAL MASTERY</strong>
-                <small>INDEPENDENT CAPABILITY</small>
+              <div>
+                <p>Complete, focused learning for leaders and teams working across institutions, government, education, and business.</p>
+                <a className="text-link" href="/training">VIEW ALL COURSES <ArrowIcon /></a>
               </div>
             </div>
-            <div className="human-cta">
-              <p>
-                Linuzvision provides technology and AI training designed to help professionals, businesses, and organizations develop practical skills in modern infrastructure, cloud computing, artificial intelligence, automation, cybersecurity, and emerging technologies.
-              </p>
-              <a className="button button-light" href="/training">
-                EXPLORE TRAINING & SUPPORT <ArrowIcon />
-              </a>
-            </div>
+            <CourseCard featured />
           </div>
         </section>
 
