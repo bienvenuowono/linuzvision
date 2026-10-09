@@ -392,7 +392,7 @@ export function HomePage({ insights }: { insights: Insight[] }) {
         {/* 11. STRATEGIC CONVERSATION / FINAL CTA & SLOGAN */}
         <section className="final-cta section-rule" id="contact" data-home-scene="final-cta">
           <div className="shell final-inner">
-            <span className="signal tasha-tag">YOU THINK. WE BUILD, MAINTAIN, AND SECURE.</span>
+            <span className="signal tasha-tag">you bring idea , we design and build , we maintain, we secure</span>
             <h2>YOU BRING THE VISION.<br />WE BUILD, MAINTAIN & SECURE THE TECHNOLOGY BEHIND IT.</h2>
             <div className="final-prompt">
               <p>
