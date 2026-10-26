@@ -68,6 +68,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -88,7 +91,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         email: "support@linuzvision.com",
         telephone: "+1-443-248-8520",
         sameAs: [
-          "https://linkedin.com/linuzvision",
+          "https://www.linkedin.com/company/linuzvision",
           "https://facebook.com/linuzvision",
         ],
         areaServed: ["Africa", "United States"],

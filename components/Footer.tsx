@@ -55,7 +55,7 @@ export function Footer() {
 
       <div className="footer-socials" aria-label="Réseaux sociaux LinuZvision">
         <a
-          href="https://linkedin.com/linuzvision"
+          href="https://www.linkedin.com/company/linuzvision"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-social-link"

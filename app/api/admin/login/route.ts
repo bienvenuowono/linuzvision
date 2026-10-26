@@ -8,7 +8,10 @@ export async function POST(request: Request) {
   if (!allowRequest(`login:${requestAddress(request)}`, 8, 15 * 60 * 1000)) return NextResponse.json({ error: "Too many attempts. Try again later." }, { status: 429 });
   const body = await request.json().catch(() => ({}));
   if (!process.env.ADMIN_SESSION_SECRET) return NextResponse.json({ error: "Admin session configuration is missing." }, { status: 503 });
-  const admin = validAdminCredentials(String(body.email || ""), String(body.password || ""));
+  const email = String(body.email || "").trim().toLowerCase().slice(0, 180);
+  // Per-account limit: holds even when an attacker rotates source addresses.
+  if (email && !allowRequest(`login-account:${email}`, 10, 15 * 60 * 1000)) return NextResponse.json({ error: "Too many attempts. Try again later." }, { status: 429 });
+  const admin = validAdminCredentials(email, String(body.password || ""));
   if (!admin) {
     return NextResponse.json({ error: "Invalid credentials or missing admin configuration." }, { status: 401 });
   }

@@ -163,47 +163,10 @@ function createDatabase(): DatabaseSync | null {
     }
     return db;
   } catch (err) {
+    // Never fall back to an in-memory database: inquiries would be acknowledged and then
+    // lost on restart, and no administrator could sign in. Callers report 503 instead.
     console.error("Failed to initialize SQLite database:", err);
-    try {
-      // Try in-memory fallback if file system database fails
-      const memoryDb = new DatabaseSync(":memory:");
-      memoryDb.exec(`
-        CREATE TABLE IF NOT EXISTS insights (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          slug TEXT NOT NULL UNIQUE,
-          title TEXT NOT NULL,
-          excerpt TEXT NOT NULL,
-          content TEXT NOT NULL,
-          category TEXT NOT NULL DEFAULT 'Intelligence',
-          image TEXT NOT NULL DEFAULT '/images/ai-security-matrix.png',
-          published INTEGER NOT NULL DEFAULT 0,
-          publishedAt TEXT NOT NULL,
-          createdAt TEXT NOT NULL,
-          updatedAt TEXT NOT NULL
-        );
-        CREATE TABLE IF NOT EXISTS inquiries (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          fullName TEXT NOT NULL,
-          email TEXT NOT NULL,
-          subject TEXT NOT NULL,
-          message TEXT NOT NULL,
-          status TEXT NOT NULL DEFAULT 'new',
-          createdAt TEXT NOT NULL
-        );
-        CREATE TABLE IF NOT EXISTS admin_accounts (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          email TEXT NOT NULL UNIQUE COLLATE NOCASE,
-          displayName TEXT NOT NULL,
-          passwordHash TEXT NOT NULL,
-          createdAt TEXT NOT NULL
-        );
-        CREATE TABLE IF NOT EXISTS app_metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
-        CREATE TABLE IF NOT EXISTS rate_limits (key TEXT PRIMARY KEY, count INTEGER NOT NULL, resetAt INTEGER NOT NULL);
-      `);
-      return memoryDb;
-    } catch {
-      return null;
-    }
+    return null;
   }
 }
 

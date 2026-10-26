@@ -125,6 +125,7 @@ export function HomePage({ insights }: { insights: Insight[] }) {
 
         {/* 1. HERO SCENE WITH VIDEO */}
         <section className="hero shell" data-home-scene="hero-scene">
+          <h1 className="visually-hidden">LinuZvision: AI automation, cloud and cybersecurity across America and Africa</h1>
           <div className="hero-media">
             <HeroVideo />
             <div className="scan-line" />
