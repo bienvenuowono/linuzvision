@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
-import { CourseCard } from "./CourseCard";
+import { ClassCatalog } from "./ClassCatalog";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { WhatsappButton } from "./WhatsappButton";
+import { courses } from "@/lib/training";
 
 export function TrainingPage() {
   return (
@@ -18,15 +19,9 @@ export function TrainingPage() {
           <a className="button button-dark" href="#available-courses">EXPLORE COURSES <ArrowIcon /></a>
         </section>
 
-        <section className="course-catalog shell" id="available-courses">
-          <header>
-            <div>
-              <h2>Available courses</h2>
-              <p>Complete learning programs designed as connected modules, with every lesson available in American English.</p>
-            </div>
-            <span>1 COMPLETE PROGRAM</span>
-          </header>
-          <div className="course-catalog-list"><CourseCard /></div>
+        <section className="class-catalog class-section shell" id="available-courses" aria-labelledby="all-courses">
+          <h2 id="all-courses">All Courses</h2>
+          <ClassCatalog courses={courses} />
         </section>
 
         <section className="course-catalog-closing">

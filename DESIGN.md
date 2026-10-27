@@ -561,3 +561,24 @@ Scoped to Home, the Approach scene preserves the owner-supplied copy verbatim, i
 The same title sequence is repeated as the semantic ordered list `.approach-flow`, immediately before `.change-footer`. Desktop presents four equal ruled columns connected by horizontal shared `ArrowIcon` SVGs. At `760px` and below, the list becomes one column with horizontal separators and the arrows rotate 90 degrees to point downward; the mobile rotation remains explicit under `prefers-reduced-motion` while arrow animation is disabled.
 
 The closing `FROM DEPLOYMENT TO LONG-TERM OPERATIONS, TECHNOLOGY YOU CAN DEPEND ON.` line is exactly half its former `clamp(18px, 2vw, 28px)` scale: `clamp(9px, 1vw, 14px)`, resolving to `9px` on mobile. Browser proof at 1440px and 390px confirmed the exact text, four-column and one-column layouts, 14px and 9px closing sizes, correct arrow direction, and no horizontal overflow. Evidence comprises the `home-approach-desktop*`, `home-approach-mobile*`, and `home-approach-hero-repro.png` captures in `.impeccable/review/`. The mechanical detector ran once and is recorded in `home-approach-detector.json`; the production build passed and fresh independent review returned `ship`.
+
+### Training Catalog and Course Landing — Owner-Requested Marketplace Pattern — 2026-10-27
+
+Scoped to `/training#available-courses` and `/training/<course>`, these surfaces follow owner-supplied references (a class-card catalog and a Udemy course landing page) rather than the Void and Form card rules. This is the one sanctioned exception to square corners and shadow-free cards; it stays inside the `.class-*`, `.course-landing-*`, `.course-content-*`, `.course-learn-*` and `.course-preview-*` namespaces.
+
+**Catalog (`ClassCard`, `ClassCatalog`)**: one card per course, never per module.
+- `.class-card`: white, `8px` radius, `10px` inset, two-layer soft shadow; hover swaps a transparent `1px` border to `var(--action-hover)`; `:focus-visible` draws a `3px` ink outline.
+- `.class-card-media`: `16 / 9`, `6px` radius, `next/image` cover with decorative `alt=""` (the `h3` carries the name).
+- `16px/700` title, `13px` creator line `#636b6c`, `12px` meta row `#565e5f` with stroked `14px` icons (module count, total runtime with a visually-hidden "Duration" prefix).
+- Grid: 3 / 2 (<=900px) / 1 (<=560px) columns; pagination (round `36px`, `44px` on mobile, `aria-live` "Page X of Y") appears only beyond nine courses. Section title "All Courses", sentence case `clamp(24px, 2.2vw, 32px)/700`.
+
+**Course landing (`CourseDetailPage`, `CoursePreview`)**:
+- Hero band `#0b1b33` with `--on-blue` text: breadcrumb (`#9fc0ff` links), `clamp(28px, 3vw, 40px)/700` sentence-case `h1`, `18px` subtitle, turquoise level badge, "Created by", icon facts. Desktop reserves `400px` on the right for the card.
+- Access card: `360px` column, `sticky; top: 96px`, `margin-top: -260px` to overlap the hero, `8px` radius, stronger shadow. Cover button with a white `64px` play disc opens the player on module 1; a single primary button (ink fill, `48px`, `6px` radius) reads "Start course", or "Continue course" once some modules are watched, and opens the first unwatched module; "This course includes" icon list. Under `900px` it becomes a static block after the hero (DOM order: card before the main column).
+- "What you'll learn": bordered white box, 2-column check list (1 column at <=560px).
+- "Course content": summary line + "Expand all sections" text button; one native `<details>` per module (`#f7f9fa` summary, rotating chevron, "1 lecture • Xm YYs"); lecture row = icon, the module title as an underlined button that opens the player, description, underlined Play button, runtime. A green `#0a6b4f` "Watched" badge with a filled check appears in the summary of watched modules, and the summary line adds "N of 13 watched".
+- Requirements, Description, Who this course is for: `24px/700` headings, `15px/1.65` body, max `700px`.
+- Popup player `<dialog>` (the only course player; there is no separate learn page): `#1c1d1f`, `min(640px, 100vw - 32px)`, `rgba(0,0,0,.75)` backdrop, "N of 13 modules watched" over the course title, video with the module title slide as poster, "Module NN of 13" status, and a module list with `96x54` thumbnails and `#7fd8ce` Watched badges. Playback starts only after a click; when a video ends the module is marked watched (saved in `localStorage`, key `linuzvision-course-<slug>-watched`, per browser) and the next module starts; closing pauses the video.
+
+
+**Truth rule**: no prices, ratings, enrolment counts, certificates, lifetime access or instructor bios. Course runtime is computed from the module durations (`totalDuration` in `lib/training.ts`), and the creator is "LinuZvision".
