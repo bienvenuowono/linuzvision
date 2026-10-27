@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
   { type: "link", label: "HOME", href: "/", activeKey: "HOME" },
   { type: "link", label: "TASHA", href: "/tasha", activeKey: "TASHA" },
   { type: "link", label: "AI SOLUTIONS", href: "/solutions", activeKey: "SOLUTIONS" },
-  { type: "link", label: "DATACENTER ENGINEERING", href: "/datacenter", activeKey: "DATACENTER" },
+  { type: "link", label: "DATACENTER", href: "/datacenter", activeKey: "DATACENTER" },
   { type: "link", label: "INSIGHTS", href: "/insights", activeKey: "INSIGHTS" },
   {
     type: "group",
@@ -58,7 +58,7 @@ export function Header({ active = "HOME" }: { active?: string }) {
   return (
     <header className="site-header">
       <a className="brand-logo" href="/" aria-label="LinuZvision home">
-        <Image src="/images/linuzvision-logo-color.png" alt="LinuZvision LLC" width={280} height={100} priority />
+        <Image src="/images/linuzvision-logo-transparent.png" alt="LinuZvision LLC" width={352} height={104} priority />
       </a>
       <nav className="desktop-nav themed-nav" aria-label="Primary navigation">
         {navItems.map((item) => {

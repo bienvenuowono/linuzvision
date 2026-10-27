@@ -21,7 +21,7 @@ const activities = [
   {
     href: "/services",
     code: "ACT-02",
-    title: "Enterprise Systems and Platform operations",
+    title: "ENTERPRISE SYSTEMS & PLATFORM OPERATIONS",
     text: "Comprehensive administration and support for enterprise systems, operating platforms, hybrid environments, automated patching, high availability, and ongoing infrastructure operations.",
     capabilities: ["LINUX SYSTEMS", "WINDOWS SERVER", "HYBRID DIRECTORY", "SYSTEM MAINTENANCE"],
   },
@@ -35,14 +35,14 @@ const activities = [
   {
     href: "/cybersecurity",
     code: "ACT-04",
-    title: "Cybersecurity and Zero-Trust Defense",
-    text: "Continous protection accross infrastructure and application through proactive defense, anomaly detection, zero trust architecture, identity controls, and rapid incident response.",
+    title: "CYBERSECURITY & ZERO-TRUST DEFENSE",
+    text: "Continuous protection across infrastructure and application through proactive defense, anomaly detection, zero trust architecture, identity controls, and rapid incident response.",
     capabilities: ["ZERO TRUST POSTURE", "THREAT DETECTION", "IDENTITY ACCESS", "COMPLIANCE & AUDIT"],
   },
   {
     href: "/tasha",
     code: "ACT-05",
-    title: "Artificial intelligence",
+    title: "ARTIFICIAL INTELLIGENCE",
     text: "proprietary AI multi -agent systems (TASHA) engineered to coordinate enterprise workflows, qualify leads, automate decisions, and execute business operations.",
     capabilities: ["MULTI-AGENT SYSTEMS", "TASHA AI", "NATURAL INTERACTION", "AUTONOMOUS EXECUTION"],
   },

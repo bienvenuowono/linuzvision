@@ -582,3 +582,14 @@ Scoped to `/training#available-courses` and `/training/<course>`, these surfaces
 
 
 **Truth rule**: no prices, ratings, enrolment counts, certificates, lifetime access or instructor bios. Course runtime is computed from the module durations (`totalDuration` in `lib/training.ts`), and the creator is "LinuZvision".
+
+### Professional Finish — Lot 1 — 2026-10-27
+
+Site-wide refinement inside the existing system (no new palette, typeface or layout language). CSS lives at the end of `app/globals.css` under `/* Professional finish (lot 1)`.
+
+- **Logo**: header and footer use `/images/linuzvision-logo-transparent.png` (background removed from the border inward, interior whites kept, trimmed). It is designed for light surfaces only. `/images/linuzvision-logo-color.png` stays the asset for Google verification-adjacent metadata, Open Graph, Twitter and JSON-LD and must not be replaced there.
+- **Header (>=1351px)**: grid `auto minmax(0, 1fr) auto`, `column-gap: clamp(24px, 2.4vw, 44px)`, centered navigation with `gap: clamp(12px, 1.3vw, 26px)` and `letter-spacing: .1em`. Nav labels stay short ("DATACENTER", not "DATACENTER ENGINEERING") so nothing touches the logo or the call to action; measured gaps are about 34px at 1440px and 32px at 1351px.
+- **Legibility floor**: `--type-label` is `11px`, and no visible text is set below `11px` (former 6–10.5px literals, including the video Pause control). The desktop navigation is pinned at `12px` bold. Verified on all 12 public routes at 1440, 1351 and 390px.
+- **Titles**: home service-ledger titles are uppercase and use "&" consistently. Owner-verbatim Approach copy is unchanged until the owner approves corrections.
+- **Footer**: a site map. Brand column (transparent logo at `200px`, email, PO box, square social buttons) beside three link columns titled Solutions, Infrastructure and Company (`11px/700` uppercase muted titles, `10px` row gap), then a bottom legal line above a `1px` rule. Content width `min(100%, 1296px)`. Under `760px`: one brand block, then two link columns.
+- **Radius**: the owner-requested Training marketplace surfaces use a single `4px` radius (cards, access card, learn box, curriculum list, buttons, preview dialog); circles remain only for the play disc and pagination targets. All other surfaces stay square.
