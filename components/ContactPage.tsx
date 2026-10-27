@@ -35,7 +35,7 @@ export function ContactPage() {
       form.reset();
       setStatus("Thank you. Your project brief has been securely recorded. Our team will contact you shortly.");
     } catch {
-      setStatus("We could not record your message. Email support@linuzvision.com for assistance.");
+      setStatus("We could not record your message. Email contact@linuzvision.com for assistance.");
     } finally { setSending(false); }
   }
 
@@ -92,10 +92,10 @@ export function ContactPage() {
               <strong>START A PROJECT</strong>
               <span>Discuss your project in detail</span>
             </a>
-            <a href="mailto:support@linuzvision.com" aria-label="Contact LinuZvision Support at support@linuzvision.com">
+            <a href="mailto:contact@linuzvision.com" aria-label="Email LinuZvision at contact@linuzvision.com">
               <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h24v20H4V6Zm2 2v2.5l10 6.5 10-6.5V8H6Zm20 16V13l-10 6.5L6 13v11h20Z" /></svg>
               <strong>SUPPORT CONTACT</strong>
-              <span>support@linuzvision.com</span>
+              <span>contact@linuzvision.com</span>
             </a>
           </div>
         </section>

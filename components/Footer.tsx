@@ -47,8 +47,8 @@ export function Footer() {
             BVO
           </a>
         </p>
-        <a className="footer-email" href="mailto:support@linuzvision.com">
-          support@linuzvision.com
+        <a className="footer-email" href="mailto:contact@linuzvision.com">
+          contact@linuzvision.com
         </a>
         <address>PO BOX 224, Aberdeen, MD 21001</address>
       </div>

@@ -88,7 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           width: 1400,
           height: 442,
         },
-        email: "support@linuzvision.com",
+        email: "contact@linuzvision.com",
         telephone: "+1-443-248-8520",
         sameAs: [
           "https://www.linkedin.com/company/linuzvision",
