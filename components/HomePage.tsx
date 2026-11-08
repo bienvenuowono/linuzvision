@@ -157,23 +157,23 @@ export function HomePage({ insights }: { insights: Insight[] }) {
               </div>
               <div className="change-card" style={{ "--reveal-order": 1 } as CSSProperties}>
                 <span className="change-tag">02 / BUILD</span>
-                <span>WE DESING AND BUILD</span>
+                <span>WE DESIGN AND BUILD</span>
                 <p>We engineer the physical datacenter infrastructure, cloud architectures, and intelligent software that bring your idea into life.</p>
               </div>
               <div className="change-card" style={{ "--reveal-order": 2 } as CSSProperties}>
                 <span className="change-tag">03 / MAINTAIN</span>
                 <span>WE MAINTAIN</span>
-                <p>We adminter and support enterprise IT infrastructure, manage cloud and datacenter workloads, and provide ongoing monitoring, maintenance, and technical support to keep operations secure, reliable, and running smoothly.</p>
+                <p>We administer and support enterprise IT infrastructure, manage cloud and datacenter workloads, and provide ongoing monitoring, maintenance, and technical support to keep operations secure, reliable, and running smoothly.</p>
               </div>
               <div className="change-card highlight" style={{ "--reveal-order": 3 } as CSSProperties}>
                 <span className="change-tag">04 / SECURE</span>
                 <strong>WE SECURE</strong>
-                <p>We apply Zero Trust achitecture and cybersecurity, governance, access controls, and security best practices to protect your infrastructure, platforms, data, and digital assets.</p>
+                <p>We apply Zero Trust architecture and cybersecurity, governance, access controls, and security best practices to protect your infrastructure, platforms, data, and digital assets.</p>
               </div>
             </div>
             <ol className="approach-flow" aria-label="From idea to secure technology operations">
               <li><span>YOU BRING IDEA</span><ArrowIcon /></li>
-              <li><span>WE DESING AND BUILD</span><ArrowIcon /></li>
+              <li><span>WE DESIGN AND BUILD</span><ArrowIcon /></li>
               <li><span>WE MAINTAIN</span><ArrowIcon /></li>
               <li><span>WE SECURE</span></li>
             </ol>

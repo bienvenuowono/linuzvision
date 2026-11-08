@@ -551,12 +551,12 @@ All four passages share the same authored right-to-left movement, scoped to the 
 
 ### Home Approach — Owner Copy and Operational Sequence — 2026-09-20
 
-Scoped to Home, the Approach scene preserves the owner-supplied copy verbatim, including `DESING`, `adminter`, and `achitecture`. Its four titles and paragraphs are:
+Scoped to Home, the Approach scene uses the owner-supplied copy. On 2026-10-27 the owner asked for the spelling to be corrected (`DESING` → `DESIGN`, `adminter` → `administer`, `achitecture` → `architecture`); the wording is otherwise unchanged. Its four titles and paragraphs are:
 
 - `YOU BRING IDEA` — “You focus on your goals, mission, and business needs. We turn your ideas into practical technology solutions.”
-- `WE DESING AND BUILD` — “We engineer the physical datacenter infrastructure, cloud architectures, and intelligent software that bring your idea into life.”
-- `WE MAINTAIN` — “We adminter and support enterprise IT infrastructure, manage cloud and datacenter workloads, and provide ongoing monitoring, maintenance, and technical support to keep operations secure, reliable, and running smoothly.”
-- `WE SECURE` — “We apply Zero Trust achitecture and cybersecurity, governance, access controls, and security best practices to protect your infrastructure, platforms, data, and digital assets.”
+- `WE DESIGN AND BUILD` — “We engineer the physical datacenter infrastructure, cloud architectures, and intelligent software that bring your idea into life.”
+- `WE MAINTAIN` — “We administer and support enterprise IT infrastructure, manage cloud and datacenter workloads, and provide ongoing monitoring, maintenance, and technical support to keep operations secure, reliable, and running smoothly.”
+- `WE SECURE` — “We apply Zero Trust architecture and cybersecurity, governance, access controls, and security best practices to protect your infrastructure, platforms, data, and digital assets.”
 
 The same title sequence is repeated as the semantic ordered list `.approach-flow`, immediately before `.change-footer`. Desktop presents four equal ruled columns connected by horizontal shared `ArrowIcon` SVGs. At `760px` and below, the list becomes one column with horizontal separators and the arrows rotate 90 degrees to point downward; the mobile rotation remains explicit under `prefers-reduced-motion` while arrow animation is disabled.
 
