@@ -445,6 +445,14 @@ Fresh independent review returned `ship`. `leadership-network-*` captures and `.
 - Course modules are bordered rectangles on a faint panel tint with MONTER / DESCENDRE / RETIRER controls; secondary and row controls are outlined, never filled.
 - Every interactive target in the administration is at least 44px high. Unsaved work is guarded: a confirmation before a draft is replaced and a browser warning before the page is left.
 
+### Editable Page Texts — 2026-11-12
+
+- Public wording lives in a typed registry (`lib/page-texts/`), one file per page; components render it through `<Text id>`, which outputs bare text and `<br />` only, so the DOM of every page is unchanged by the mechanism (verified by comparing the `<main>` HTML of all 11 pages before and after).
+- The text editor (`/dashboard/texts`) keeps the back-office language: a page switcher of outlined square buttons (the active page filled with ink), one accent- and punctuation-insensitive search over every page, fields grouped under small capitalised legends, each field set on a 1px left rule that becomes a 2px ink rule while unsaved.
+- A changed field shows its original wording and a RÉTABLIR L'ORIGINAL control; an empty field restores the original.
+- Saving happens in one fixed bottom bar ruled with a 1px ink top border; `scroll-padding-bottom` keeps the focused field clear of it.
+- Monumental titles keep their hand-tuned line breaks; no global word breaking was added, because it would split the existing Cloud hero word at 390px. The editor instead advises short words in large titles.
+
 ### Do:
 
 - **Do** build hierarchy with black-and-paper inversion, typographic scale, source-color media, and one-pixel structure.

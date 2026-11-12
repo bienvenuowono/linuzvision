@@ -10,108 +10,34 @@ import { HeroVideo } from "./HeroVideo";
 import { HomeScrollNarrative } from "./HomeScrollNarrative";
 import { TechLogoSlider } from "./TechLogoSlider";
 import { CourseCard } from "./CourseCard";
+import { Text } from "./Text";
 
+// Links and layout stay here; every wording of this page comes from lib/page-texts/home.ts.
 const activities = [
-  {
-    href: "/datacenter",
-    code: "ACT-01",
-    title: "DATACENTER INFRASTRUCTURE & SUPPORT",
-    text: "Physical server deployment, racking, cabling, hardware diagnostics, and mission-critical datacenter facility support.",
-    capabilities: ["DATACENTER DEPLOYMENT", "HARDWARE SUPPORT", "CABLING & POWER", "PHYSICAL RESILIENCE"],
-  },
-  {
-    href: "/services",
-    code: "ACT-02",
-    title: "ENTERPRISE SYSTEMS & PLATFORM OPERATIONS",
-    text: "Comprehensive administration and support for enterprise systems, operating platforms, hybrid environments, automated patching, high availability, and ongoing infrastructure operations.",
-    capabilities: ["LINUX SYSTEMS", "WINDOWS SERVER", "HYBRID DIRECTORY", "SYSTEM MAINTENANCE"],
-  },
-  {
-    href: "/cloud",
-    code: "ACT-03",
-    title: "CLOUD COMPUTING & INFRASTRUCTURE",
-    text: "Scalable cloud environments, hybrid multi-cloud platforms, infrastructure-as-code, and seamless enterprise workload migrations.",
-    capabilities: ["HYBRID CLOUD", "CLOUD MIGRATION", "INFRASTRUCTURE AS CODE", "SCALE & CONTINUITY"],
-  },
-  {
-    href: "/cybersecurity",
-    code: "ACT-04",
-    title: "CYBERSECURITY & ZERO-TRUST DEFENSE",
-    text: "Continuous protection across infrastructure and application through proactive defense, anomaly detection, zero trust architecture, identity controls, and rapid incident response.",
-    capabilities: ["ZERO TRUST POSTURE", "THREAT DETECTION", "IDENTITY ACCESS", "COMPLIANCE & AUDIT"],
-  },
-  {
-    href: "/tasha",
-    code: "ACT-05",
-    title: "ARTIFICIAL INTELLIGENCE",
-    text: "Proprietary AI multi-agent systems (TASHA) engineered to coordinate enterprise workflows, qualify leads, automate decisions, and execute business operations.",
-    capabilities: ["MULTI-AGENT SYSTEMS", "TASHA AI", "NATURAL INTERACTION", "AUTONOMOUS EXECUTION"],
-  },
-  {
-    href: "/solutions",
-    code: "ACT-06",
-    title: "AUTOMATION & BUSINESS SOLUTIONS",
-    text: "Intelligent lead management, workflow automation, document generation, reporting systems, and custom enterprise software.",
-    capabilities: ["WORKFLOW AUTOMATION", "LEAD MANAGEMENT", "REPORTING SYSTEMS", "DOCUMENT GENERATION"],
-  },
-];
+  { n: 1, href: "/datacenter", code: "ACT-01" },
+  { n: 2, href: "/services", code: "ACT-02" },
+  { n: 3, href: "/cloud", code: "ACT-03" },
+  { n: 4, href: "/cybersecurity", code: "ACT-04" },
+  { n: 5, href: "/tasha", code: "ACT-05" },
+  { n: 6, href: "/solutions", code: "ACT-06" },
+] as const;
 
-const securityOperations = [
-  "Physical Datacenter & Support.",
-  "Systems and infrastructure Operations",
-  "Scalable cloud platforms and Migration.",
-  "Cybersecurity and Zero Trust architecture.",
-  "AI multi-agent & Automation Systems",
-];
+const capabilities = [1, 2, 3, 4] as const;
 
-const infrastructureFlow = ["System", "Cloud", "Security", "AI"];
+const approach = [1, 2, 3, 4] as const;
+
+const securityOperations = [1, 2, 3, 4, 5] as const;
+
+const infrastructureFlow = [1, 2, 3, 4] as const;
 
 const solutionsBento = [
-  {
-    href: "/tasha",
-    title: "AI Multi-Agent System (TASHA)",
-    category: "PROPRIETARY INTELLIGENCE",
-    description: "Our proprietary autonomous AI multi-agent system that adapts to complex business environments, interacts in natural dialogue, qualifies prospects, and coordinates cross-functional tasks under human direction.",
-    isLarge: true,
-  },
-  {
-    href: "/solutions",
-    title: "Intelligent Lead Management",
-    category: "REVENUE AUTOMATION",
-    description: "Automated prospect qualification, real-time lead routing, and intelligent CRM pipeline acceleration.",
-    isLarge: false,
-  },
-  {
-    href: "/solutions",
-    title: "Workflow Automation",
-    category: "OPERATIONAL EFFICIENCY",
-    description: "End-to-end automation of manual routines, system bridges, API orchestrations, and event-driven task pipelines.",
-    isLarge: false,
-  },
-  {
-    href: "/solutions",
-    title: "Reporting Systems & Analytics",
-    category: "DECISION INTELLIGENCE",
-    description: "Data-grounded reporting frameworks that synthesize live business metrics into actionable decision support.",
-    isLarge: false,
-  },
-  {
-    href: "/solutions",
-    title: "Document Generation & Comms",
-    category: "DOCUMENT & COMMS AI",
-    description: "Automated document assembly, contract generation, transactional messaging, and unified communications integration.",
-    isLarge: false,
-  },
-  {
-    href: "/solutions",
-    title: "Cloud Apps & Custom Solutions",
-    category: "ENTERPRISE ENGINEERING",
-    description: "Tailored enterprise web applications and scalable cloud-native platforms built for specific organizational workflows.",
-    isLarge: false,
-  },
-];
-
-
+  { n: 1, href: "/tasha", isLarge: true },
+  { n: 2, href: "/solutions", isLarge: false },
+  { n: 3, href: "/solutions", isLarge: false },
+  { n: 4, href: "/solutions", isLarge: false },
+  { n: 5, href: "/solutions", isLarge: false },
+  { n: 6, href: "/solutions", isLarge: false },
+] as const;
 
 function readTime(content: string) {
   return `${Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 200))} MIN READ`;
@@ -126,12 +52,12 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
 
         {/* 1. HERO SCENE WITH VIDEO */}
         <section className="hero shell" data-home-scene="hero-scene">
-          <h1 className="visually-hidden">LinuZvision: AI automation, cloud and cybersecurity across America and Africa</h1>
+          <h1 className="visually-hidden"><Text id="home.hero.h1" /></h1>
           <div className="hero-media">
             <HeroVideo />
             <div className="scan-line" />
             <div className="media-status">
-              <i /> SYSTEM ACTIVE / LINUZVISION LLC
+              <i /> <Text id="home.hero.status" />
             </div>
           </div>
         </section>
@@ -142,44 +68,28 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
           <div className="shell change-stage">
             <div className="change-signal" aria-hidden="true">
               <i />
-              <span>OUR APPROACH &amp; OPERATING PHILOSOPHY</span>
+              <span><Text id="home.approach.signal" /></span>
             </div>
             <div className="approach-intro reveal-item">
-              <span className="micro-label">THE PHILOSOPHY</span>
+              <span className="micro-label"><Text id="home.approach.label" /></span>
               <h2>
-                We turn ideas into technology.
+                <Text id="home.approach.title" />
               </h2>
             </div>
             <div className="change-copy approach-grid" data-reveal-group>
-              <div className="change-card" style={{ "--reveal-order": 0 } as CSSProperties}>
-                <span className="change-tag">01 / VISION</span>
-                <span>YOU BRING IDEA</span>
-                <p>You focus on your goals, mission, and business needs. We turn your ideas into practical technology solutions.</p>
-              </div>
-              <div className="change-card" style={{ "--reveal-order": 1 } as CSSProperties}>
-                <span className="change-tag">02 / BUILD</span>
-                <span>WE DESIGN AND BUILD</span>
-                <p>We engineer the physical datacenter infrastructure, cloud architectures, and intelligent software that bring your idea into life.</p>
-              </div>
-              <div className="change-card" style={{ "--reveal-order": 2 } as CSSProperties}>
-                <span className="change-tag">03 / MAINTAIN</span>
-                <span>WE MAINTAIN</span>
-                <p>We administer and support enterprise IT infrastructure, manage cloud and datacenter workloads, and provide ongoing monitoring, maintenance, and technical support to keep operations secure, reliable, and running smoothly.</p>
-              </div>
-              <div className="change-card highlight" style={{ "--reveal-order": 3 } as CSSProperties}>
-                <span className="change-tag">04 / SECURE</span>
-                <strong>WE SECURE</strong>
-                <p>We apply Zero Trust architecture and cybersecurity, governance, access controls, and security best practices to protect your infrastructure, platforms, data, and digital assets.</p>
-              </div>
+              {approach.map((n, index) => (
+                <div className={n === 4 ? "change-card highlight" : "change-card"} style={{ "--reveal-order": index } as CSSProperties} key={n}>
+                  <span className="change-tag"><Text id={`home.approach.${n}.tag` as const} /></span>
+                  {n === 4 ? <strong><Text id="home.approach.4.title" /></strong> : <span><Text id={`home.approach.${n}.title` as const} /></span>}
+                  <p><Text id={`home.approach.${n}.text` as const} /></p>
+                </div>
+              ))}
             </div>
             <ol className="approach-flow" aria-label="From idea to secure technology operations">
-              <li><span>YOU BRING IDEA</span><ArrowIcon /></li>
-              <li><span>WE DESIGN AND BUILD</span><ArrowIcon /></li>
-              <li><span>WE MAINTAIN</span><ArrowIcon /></li>
-              <li><span>WE SECURE</span></li>
+              {approach.map((n) => <li key={n}><span><Text id={`home.approach.${n}.title` as const} /></span>{n < 4 && <ArrowIcon />}</li>)}
             </ol>
             <div className="change-footer">
-              <p className="change-close">FROM DEPLOYMENT TO LONG-TERM OPERATIONS, TECHNOLOGY YOU CAN DEPEND ON.</p>
+              <p className="change-close"><Text id="home.approach.close" /></p>
             </div>
           </div>
         </section>
@@ -188,11 +98,11 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
         <section className="solutions shell home-activities section-rule" id="services" data-home-scene="ledger">
           <div className="section-heading">
             <div>
-              <span className="micro-label">COMPLETE IT & INFRASTRUCTURE SPECTRUM</span>
-              <h2>Technology you can depend on.</h2>
+              <span className="micro-label"><Text id="home.activities.label" /></span>
+              <h2><Text id="home.activities.title" /></h2>
             </div>
             <p className="activities-intro">
-              From physical datacenter infrastructure to cloud and AI powered platforms, we design, build, maintain, and secure reliable technology that supports business operations and long-term growth.
+              <Text id="home.activities.text" />
             </p>
           </div>
           <div className="activity-ledger" data-reveal-group>
@@ -200,17 +110,17 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
               <a
                 href={activity.href}
                 className="activity-row"
-                key={activity.title}
+                key={activity.code}
                 style={{ "--reveal-order": index } as CSSProperties}
               >
                 <div className="activity-meta">
                   <span className="activity-code">{activity.code}</span>
-                  <h3>{activity.title}</h3>
+                  <h3><Text id={`home.activities.${activity.n}.title` as const} /></h3>
                 </div>
-                <p>{activity.text}</p>
+                <p><Text id={`home.activities.${activity.n}.text` as const} /></p>
                 <div className="activity-capabilities">
-                  {activity.capabilities.map((item) => (
-                    <span key={item}>{item}</span>
+                  {capabilities.map((c) => (
+                    <span key={c}><Text id={`home.activities.${activity.n}.cap${c}` as const} /></span>
                   ))}
                 </div>
                 <div className="activity-arrow">
@@ -225,11 +135,11 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
         <section className="home-solutions-bento shell section-rule" id="solutions" data-home-scene="bento">
           <div className="section-heading">
             <div>
-              <span className="micro-label">BUSINESS TECHNOLOGY SOLUTIONS</span>
-              <h2>CONNECTING INFRASTRUCTURE<br />WITH REAL BUSINESS REQUIREMENTS.</h2>
+              <span className="micro-label"><Text id="home.solutions.label" /></span>
+              <h2><Text id="home.solutions.title" /></h2>
             </div>
             <a href="/solutions" className="text-link">
-              VIEW ALL BUSINESS SOLUTIONS <ArrowIcon />
+              <Text id="home.solutions.link" /> <ArrowIcon />
             </a>
           </div>
           <div className="bento-grid" data-reveal-group>
@@ -237,18 +147,18 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
               <a
                 href={item.href}
                 className={`bento-card ${item.isLarge ? "bento-large" : ""}`}
-                key={item.title}
+                key={item.n}
                 style={{ "--reveal-order": index } as CSSProperties}
               >
                 <div className="bento-top">
-                  <span className="bento-category">{item.category}</span>
+                  <span className="bento-category"><Text id={`home.solutions.${item.n}.category` as const} /></span>
                   <div className="bento-icon">
                     <ArrowIcon />
                   </div>
                 </div>
                 <div className="bento-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <h3><Text id={`home.solutions.${item.n}.title` as const} /></h3>
+                  <p><Text id={`home.solutions.${item.n}.text` as const} /></p>
                 </div>
               </a>
             ))}
@@ -265,24 +175,24 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
                 alt="High-speed fiber optic network and datacenter infrastructure"
               />
               <div className="visual-caption">
-                <span>DATACENTER & CLOUD INFRASTRUCTURE</span>
+                <span><Text id="home.foundation.caption" /></span>
               </div>
             </div>
             <div className="foundation-copy" data-reveal-item style={{ "--reveal-order": 1 } as CSSProperties}>
-              <span className="micro-label">ROBUST DIGITAL FOUNDATIONS</span>
-              <h2>FROM THE DATACENTER<br />TO THE CLOUD.</h2>
+              <span className="micro-label"><Text id="home.foundation.label" /></span>
+              <h2><Text id="home.foundation.title" /></h2>
               <p>
-                From physical datacenter infrastructure to cloud and AI-powered platforms, Linuzvision LLC delivers reliable, scalable, and secure technology designed to support business operations and long-term growth.
+                <Text id="home.foundation.text" />
               </p>
               <div className="evolution">
-                <div className="evo-step"><span>01</span><b>PHYSICAL DATACENTER & SUPPORT</b></div>
-                <div className="evo-step"><span>02</span><b>SYSTEMS ADMINISTRATION</b></div>
-                <div className="evo-step"><span>03</span><b>SCALABLE CLOUD PLATFORMS & MIGRATION</b></div>
-                <div className="evo-step active"><span>04</span><strong>AI MULTI-AGENT & AUTOMATION SYSTEMS</strong></div>
+                <div className="evo-step"><span>01</span><b><Text id="home.foundation.step1" /></b></div>
+                <div className="evo-step"><span>02</span><b><Text id="home.foundation.step2" /></b></div>
+                <div className="evo-step"><span>03</span><b><Text id="home.foundation.step3" /></b></div>
+                <div className="evo-step active"><span>04</span><strong><Text id="home.foundation.step4" /></strong></div>
               </div>
               <div className="foundation-cta">
                 <a className="button" href="/cloud">
-                  EXPLORE CLOUD COMPUTING <ArrowIcon />
+                  <Text id="home.foundation.button" /> <ArrowIcon />
                 </a>
               </div>
             </div>
@@ -293,17 +203,17 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
         <section className="home-security-section section-rule" id="cybersecurity" data-home-scene="security-split">
           <div className="shell home-security-grid">
             <div className="security-copy" data-reveal-item>
-              <span className="micro-label">MISSION-CRITICAL PROTECTION</span>
-              <h2>PROTECTION AS A<br />CONTINUOUS DISCIPLINE.</h2>
+              <span className="micro-label"><Text id="home.security.label" /></span>
+              <h2><Text id="home.security.title" /></h2>
               <p>
-                We secure the environments that protect your business. Linuzvision implements Zero-Trust architectures, continuous monitoring, system hardening, and rapid disaster recovery to ensure your systems remain resilient.
+                <Text id="home.security.text" />
               </p>
               <ol className="home-security-operations" role="list">
-                {securityOperations.map((operation, index) => <li key={operation}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span>{operation}</span></li>)}
+                {securityOperations.map((n) => <li key={n}><span aria-hidden="true">{String(n).padStart(2, "0")}</span><span><Text id={`home.security.operation${n}` as const} /></span></li>)}
               </ol>
               <div className="security-cta">
                 <a className="button" href="/cybersecurity">
-                  EXPLORE CYBERSECURITY <ArrowIcon />
+                  <Text id="home.security.button" /> <ArrowIcon />
                 </a>
               </div>
             </div>
@@ -313,13 +223,13 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
                 alt="Continuous monitoring security center with holographic threat intelligence shield"
               />
               <div className="visual-caption">
-                <span>SECURITY ARCHITECTURE & THREAT INTELLIGENCE</span>
+                <span><Text id="home.security.caption" /></span>
               </div>
             </div>
           </div>
           <div className="shell">
             <ol className="home-infrastructure-flow" role="list" aria-label="Infrastructure sequence from system to AI">
-              {infrastructureFlow.map((step, index) => <li key={step}><span>{step}</span>{index < infrastructureFlow.length - 1 && <ArrowIcon />}</li>)}
+              {infrastructureFlow.map((n) => <li key={n}><span><Text id={`home.security.flow${n}` as const} /></span>{n < infrastructureFlow.length && <ArrowIcon />}</li>)}
             </ol>
           </div>
         </section>
@@ -329,12 +239,12 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
           <div className="shell">
             <div className="featured-courses-heading">
               <div>
-                <span className="micro-label">FEATURED COURSES</span>
-                <h2>Develop the judgment to use AI responsibly</h2>
+                <span className="micro-label"><Text id="home.courses.label" /></span>
+                <h2><Text id="home.courses.title" /></h2>
               </div>
               <div>
-                <p>Complete, focused learning for leaders and teams working across institutions, government, education, and business.</p>
-                <a className="text-link" href="/training">VIEW ALL COURSES <ArrowIcon /></a>
+                <p><Text id="home.courses.text" /></p>
+                <a className="text-link" href="/training"><Text id="home.courses.link" /> <ArrowIcon /></a>
               </div>
             </div>
             <CourseCard course={featuredCourse} featured />
@@ -346,11 +256,11 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
           <div className="shell">
             <div className="leadership-heading">
               <div>
-                <span className="micro-label">EXECUTIVE PERSONNEL</span>
-                <h2>LEADERSHIP &amp;<br />EXECUTIVE TEAM.</h2>
+                <span className="micro-label"><Text id="home.leadership.label" /></span>
+                <h2><Text id="home.leadership.title" /></h2>
               </div>
               <p className="leadership-intro">
-                Architectural vision, engineering rigor, and product stewardship driving high-performance technology operations.
+                <Text id="home.leadership.text" />
               </p>
             </div>
 
@@ -362,11 +272,11 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
         <section className="insights shell section-rule" id="insights" data-home-scene="insights-ledger">
           <div className="section-heading">
             <div>
-              <span className="micro-label">PERSPECTIVES</span>
-              <h2>IDEAS FOR THE<br />INTELLIGENT BUSINESS.</h2>
+              <span className="micro-label"><Text id="home.insights.label" /></span>
+              <h2><Text id="home.insights.title" /></h2>
             </div>
             <a href="/insights" className="text-link">
-              EXPLORE ALL INSIGHTS <ArrowIcon />
+              <Text id="home.insights.link" /> <ArrowIcon />
             </a>
           </div>
           <div className="insight-list" data-reveal-group>
@@ -386,7 +296,7 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
               </article>
             ))}
             {insights.length === 0 && (
-              <p className="home-insights-empty">New intelligence is being prepared.</p>
+              <p className="home-insights-empty"><Text id="home.insights.empty" /></p>
             )}
           </div>
         </section>
@@ -394,18 +304,18 @@ export function HomePage({ insights, featuredCourse }: { insights: Insight[]; fe
         {/* 11. STRATEGIC CONVERSATION / FINAL CTA & SLOGAN */}
         <section className="final-cta section-rule" id="contact" data-home-scene="final-cta">
           <div className="shell final-inner">
-            <span className="signal tasha-tag">you bring idea , we design and build , we maintain, we secure</span>
-            <h2>YOU BRING THE VISION.<br />WE BUILD, MAINTAIN & SECURE THE TECHNOLOGY BEHIND IT.</h2>
+            <span className="signal tasha-tag"><Text id="home.final.tag" /></span>
+            <h2><Text id="home.final.title" /></h2>
             <div className="final-prompt">
               <p>
-                From the datacenter to the cloud, from infrastructure to artificial intelligence, and from deployment to long-term operations, Linuzvision LLC helps organizations build technology they can depend on.
+                <Text id="home.final.text" />
               </p>
               <div className="button-row">
                 <a className="button button-light" href="/contact">
-                  START A CONVERSATION <ArrowIcon />
+                  <Text id="home.final.button1" /> <ArrowIcon />
                 </a>
                 <a className="button button-light" href="/services">
-                  EXPLORE OUR SERVICES <ArrowIcon />
+                  <Text id="home.final.button2" /> <ArrowIcon />
                 </a>
               </div>
             </div>

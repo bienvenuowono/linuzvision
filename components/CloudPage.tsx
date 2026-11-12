@@ -1,12 +1,10 @@
 import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { Text } from "./Text";
 
-const layers = [
-  ["SERVERS", "High-density compute nodes optimized for intensive workloads, virtualized for dynamic resource allocation."],
-  ["STORAGE", "NVMe arrays and distributed object storage offering resilient capacity with microsecond access times."],
-  ["NETWORK", "High-throughput architecture engineered to remove bottlenecks between every layer."],
-];
+const layers = [1, 2, 3] as const;
+const specs = [1, 2, 3, 4] as const;
 
 function HardwareIcon({ type }: { type: number }) {
   return <svg className="hardware-icon" aria-hidden="true" viewBox="0 0 32 32" fill="none">
@@ -21,21 +19,21 @@ export function CloudPage() {
     <Header active="CLOUD" />
     <main className="cloud-page">
       <section className="cloud-hero shell">
-        <h1>THE<br />INFRASTRUCTURE<br />BEHIND YOUR<br />BUSINESS.</h1>
-        <div><p>We architect, deploy, and manage high-performance cloud environments designed for extreme reliability, zero-trust security, and seamless scalability. Your operations, solidified across continents.</p><a className="button" href="#hybrid">INITIATE PROTOCOL <ArrowIcon /></a></div>
+        <h1><Text id="cloud.hero.title" /></h1>
+        <div><p><Text id="cloud.hero.text" /></p><a className="button" href="#hybrid"><Text id="cloud.hero.button" /> <ArrowIcon /></a></div>
       </section>
 
-      <section className="topology"><div className="shell"><header><h2>TOPOLOGY MAP</h2><span>LIVE VIEW · SYSTEM LZV</span></header><div className="topology-frame"><img src="/images/cloud-topology.png" alt="Cloud computing and infrastructure topology" /><div><span>COMPUTE</span><span>STORAGE</span><span>NETWORK</span></div></div></div></section>
+      <section className="topology"><div className="shell"><header><h2><Text id="cloud.topology.title" /></h2><span><Text id="cloud.topology.status" /></span></header><div className="topology-frame"><img src="/images/cloud-topology.png" alt="Cloud computing and infrastructure topology" /><div><span><Text id="cloud.topology.layer1" /></span><span><Text id="cloud.topology.layer2" /></span><span><Text id="cloud.topology.layer3" /></span></div></div></div></section>
 
-      <section className="hybrid shell" id="hybrid"><div><h2>BRIDGING ON-<br />PREMISES &amp; CLOUD</h2><p>Seamless integration across continents. Our hybrid architecture connects secure on-premises data centers in Africa with hyper-scalable cloud infrastructure in America, ensuring low latency, data sovereignty, and uncompromised performance.</p><div className="hybrid-stats"><span>LATENCY<strong>&lt; 50ms</strong></span><span>REDUNDANCY<strong>N+2</strong></span></div></div><div className="hybrid-diagram"><span>ON-PREM<br />AFRICA</span><span>CLOUD<br />AMERICA</span><i /></div></section>
+      <section className="hybrid shell" id="hybrid"><div><h2><Text id="cloud.hybrid.title" /></h2><p><Text id="cloud.hybrid.text" /></p><div className="hybrid-stats"><span><Text id="cloud.hybrid.stat1Label" /><strong><Text id="cloud.hybrid.stat1Value" /></strong></span><span><Text id="cloud.hybrid.stat2Label" /><strong><Text id="cloud.hybrid.stat2Value" /></strong></span></div></div><div className="hybrid-diagram"><span><Text id="cloud.hybrid.node1" /></span><span><Text id="cloud.hybrid.node2" /></span><i /></div></section>
 
-      <section className="hardware"><div className="shell"><h2>DEEP INFRASTRUCTURE. RAW POWER.</h2><div className="hardware-grid">{layers.map(([title,text],i)=><article key={title}><HardwareIcon type={i} /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+      <section className="hardware"><div className="shell"><h2><Text id="cloud.hardware.title" /></h2><div className="hardware-grid">{layers.map((n, i) => <article key={n}><HardwareIcon type={i} /><h3><Text id={`cloud.hardware.${n}.title` as const} /></h3><p><Text id={`cloud.hardware.${n}.text` as const} /></p></article>)}</div></div></section>
 
-      <section className="cloud-intelligence shell"><article><h2>ZERO-TRUST<br />PROTOCOL</h2><p>Security is not a layer; it is the foundation. Every request is verified. Every packet is encrypted. Our cloud architecture operates on a default-deny principle, fortified by automated threat response.</p><ul><li>EDGE ENCRYPTION</li><li>IDENTITY-AWARE ACCESS</li><li>MICROSEGMENTATION</li></ul></article><article className="ai-cloud"><h2>AI-OPTIMIZED<br />INFRASTRUCTURE</h2><p>TASHA continuously monitors telemetry data, predicts load spikes and automatically reallocates resources to ensure optimal performance and cost-efficiency.</p><span><i /> TASHA MONITORING ACTIVE</span></article></section>
+      <section className="cloud-intelligence shell"><article><h2><Text id="cloud.zeroTrust.title" /></h2><p><Text id="cloud.zeroTrust.text" /></p><ul><li><Text id="cloud.zeroTrust.item1" /></li><li><Text id="cloud.zeroTrust.item2" /></li><li><Text id="cloud.zeroTrust.item3" /></li></ul></article><article className="ai-cloud"><h2><Text id="cloud.ai.title" /></h2><p><Text id="cloud.ai.text" /></p><span><i /> <Text id="cloud.ai.status" /></span></article></section>
 
-      <section className="cloud-specs shell"><h2>TECHNICAL SPECIFICATIONS</h2><div>{[["99.99%","UPTIME SLA"],["10+","GLOBAL REGIONS"],["∞","AUTO-SCALABILITY"],["24/7","NOC SUPPORT"]].map(([value,label])=><span key={label}><strong>{value}</strong><small>{label}</small></span>)}</div></section>
+      <section className="cloud-specs shell"><h2><Text id="cloud.specs.title" /></h2><div>{specs.map((n) => <span key={n}><strong><Text id={`cloud.specs.${n}.value` as const} /></strong><small><Text id={`cloud.specs.${n}.label` as const} /></small></span>)}</div></section>
 
-      <section className="cloud-final"><div className="shell"><h2>LET’S SCALE<br />YOUR AMBITION</h2><a className="button button-light" href="/contact">START A CONVERSATION <ArrowIcon /></a></div></section>
+      <section className="cloud-final"><div className="shell"><h2><Text id="cloud.final.title" /></h2><a className="button button-light" href="/contact"><Text id="cloud.final.button" /> <ArrowIcon /></a></div></section>
     </main>
     <Footer />
   </>;

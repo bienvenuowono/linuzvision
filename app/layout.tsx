@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import { SiteDataProvider } from "@/components/SiteData";
-import { getSiteSettings, listTeam } from "@/lib/content";
+import { getSiteSettings, getTextOverrides, listTeam } from "@/lib/content";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://linuzvision.com";
 
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <SiteDataProvider value={{ settings, team: listTeam() }}>{children}</SiteDataProvider>
+        <SiteDataProvider value={{ settings, team: listTeam(), texts: getTextOverrides() }}>{children}</SiteDataProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

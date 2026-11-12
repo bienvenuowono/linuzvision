@@ -5,12 +5,9 @@ import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { useSiteData } from "./SiteData";
+import { Text, useText } from "./Text";
 
-const sectors = [
-  ["BANKING & FINANCE", "Secure, scalable infrastructure for modern financial institutions."],
-  ["GOVERNMENT", "Resilient technology systems designed around public-service continuity."],
-  ["PRIVATE ENTERPRISE", "Connected technology foundations for evolving business operations."],
-];
+const sectors = [1, 2, 3] as const;
 
 function SectorIcon({ index }: { index: number }) {
   return index < 2 ? (
@@ -22,6 +19,7 @@ function SectorIcon({ index }: { index: number }) {
 
 export function ContactPage() {
   const { contactEmail } = useSiteData().settings;
+  const success = useText("contact.form.success");
   const [status, setStatus] = useState("");
   const [sending, setSending] = useState(false);
 
@@ -35,7 +33,7 @@ export function ContactPage() {
       const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       if (!response.ok) throw new Error("Unable to submit");
       form.reset();
-      setStatus("Thank you. Your project brief has been securely recorded. Our team will contact you shortly.");
+      setStatus(success);
     } catch {
       setStatus(`We could not record your message. Email ${contactEmail} for assistance.`);
     } finally { setSending(false); }
@@ -54,49 +52,49 @@ export function ContactPage() {
           FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
         */}
         <section className="contact-hero shell">
-          <h1>LET&apos;S BUILD<br />WHAT COMES<br />NEXT.</h1>
-          <p>Tell us what you are trying to automate, improve, protect or build. Architecting the future requires vision and precision.</p>
+          <h1><Text id="contact.hero.title" /></h1>
+          <p><Text id="contact.hero.text" /></p>
           <figure className="contact-film">
             <img src="/images/about-datacenter-hero.png" alt="Architectural data center environment" />
-            <figcaption>INTRODUCTION / LINUZVISION</figcaption>
+            <figcaption><Text id="contact.hero.caption" /></figcaption>
           </figure>
         </section>
 
         <section className="contact-network shell">
           <div>
-            <h2>GLOBAL NETWORK</h2>
-            <p>Bridging innovation through the established <strong>AMERICA ↔ AFRICA ↔ EUROPE</strong> strategic vision for technological exchange and deployment.</p>
-            <div className="contact-regions"><span>AMERICA</span><span>AFRICA</span><span>EUROPE</span></div>
+            <h2><Text id="contact.network.title" /></h2>
+            <p><Text id="contact.network.textBefore" /> <strong><Text id="contact.network.textHighlight" /></strong> <Text id="contact.network.textAfter" /></p>
+            <div className="contact-regions"><span><Text id="contact.network.region1" /></span><span><Text id="contact.network.region2" /></span><span><Text id="contact.network.region3" /></span></div>
           </div>
           <div className="contact-map" aria-label="America, Africa and Europe strategic corridor">
-            <span>AMERICA</span><i aria-hidden="true" /><b>LinuZvision</b><i aria-hidden="true" /><span>AFRICA</span><i aria-hidden="true" /><span>EUROPE</span>
+            <span><Text id="contact.network.region1" /></span><i aria-hidden="true" /><b><Text id="contact.network.center" /></b><i aria-hidden="true" /><span><Text id="contact.network.region2" /></span><i aria-hidden="true" /><span><Text id="contact.network.region3" /></span>
           </div>
         </section>
 
         <section className="contact-sectors shell">
-          <h2>STRATEGIC SECTORS</h2>
+          <h2><Text id="contact.sectors.title" /></h2>
           <div>
-            {sectors.map(([title, description], index) => (
-              <article key={title}>
+            {sectors.map((n, index) => (
+              <article key={n}>
                 <SectorIcon index={index} />
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <h3><Text id={`contact.sectors.${n}.title` as const} /></h3>
+                <p><Text id={`contact.sectors.${n}.text` as const} /></p>
               </article>
             ))}
           </div>
         </section>
 
         <section className="contact-choice shell">
-          <h2>HOW WOULD YOU LIKE TO CONNECT?</h2>
+          <h2><Text id="contact.choice.title" /></h2>
           <div>
             <a href="#engagement">
               <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 3h11l6 6v20H8V3Zm11 0v7h6M12 16h9m-9 5h9" /></svg>
-              <strong>START A PROJECT</strong>
-              <span>Discuss your project in detail</span>
+              <strong><Text id="contact.choice.projectTitle" /></strong>
+              <span><Text id="contact.choice.projectText" /></span>
             </a>
             <a href={`mailto:${contactEmail}`} aria-label={`Email LinuZvision at ${contactEmail}`}>
               <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h24v20H4V6Zm2 2v2.5l10 6.5 10-6.5V8H6Zm20 16V13l-10 6.5L6 13v11h20Z" /></svg>
-              <strong>SUPPORT CONTACT</strong>
+              <strong><Text id="contact.choice.supportTitle" /></strong>
               <span>{contactEmail}</span>
             </a>
           </div>
@@ -105,18 +103,18 @@ export function ContactPage() {
         <section className="contact-engagement" id="engagement">
           <div className="shell">
             <header>
-              <h2>INITIATE ENGAGEMENT</h2>
-              <p>Provide details about your vision and prepare a structured project brief.</p>
+              <h2><Text id="contact.form.title" /></h2>
+              <p><Text id="contact.form.text" /></p>
             </header>
             <form onSubmit={handleSubmit}>
               <div className="contact-field-pair">
-                <label><span>FULL NAME</span><input name="fullName" autoComplete="name" required /></label>
-                <label><span>ENTERPRISE EMAIL</span><input name="email" type="email" autoComplete="email" required /></label>
+                <label><span><Text id="contact.form.name" /></span><input name="fullName" autoComplete="name" required /></label>
+                <label><span><Text id="contact.form.email" /></span><input name="email" type="email" autoComplete="email" required /></label>
               </div>
-              <label><span>SUBJECT / PROJECT FOCUS</span><input name="subject" required /></label>
-              <label><span>MESSAGE / VISION</span><textarea name="message" rows={5} required /></label>
-              <button className="button button-dark" type="submit" disabled={sending}>{sending ? "RECORDING…" : "SUBMIT PROJECT BRIEF"} <ArrowIcon /></button>
-              <p className="contact-form-note">Your message is transmitted securely and stored for follow-up by LinuZvision.</p>
+              <label><span><Text id="contact.form.subject" /></span><input name="subject" required /></label>
+              <label><span><Text id="contact.form.message" /></span><textarea name="message" rows={5} required /></label>
+              <button className="button button-dark" type="submit" disabled={sending}>{sending ? "RECORDING…" : <Text id="contact.form.button" />} <ArrowIcon /></button>
+              <p className="contact-form-note"><Text id="contact.form.note" /></p>
               <p className="contact-form-status" role="status" aria-live="polite">{status}</p>
             </form>
           </div>

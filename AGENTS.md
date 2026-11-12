@@ -289,13 +289,13 @@ Après `ship` :
 | Datacenter Engineering | `/datacenter` | `components/DatacenterPage.tsx` | validée `ship` |
 | Administration | `/dashboard` | `components/dashboard/Dashboard.tsx` + `AdminAccounts.tsx` | backend et comptes validés `ship` |
 | Administration — contenu | `/dashboard/courses`, `/dashboard/team`, `/dashboard/settings` | `components/dashboard/CourseManager.tsx`, `TeamManager.tsx`, `SettingsForm.tsx`, `MediaField.tsx`, `AdminNav.tsx` | formations, équipe et coordonnées gérées depuis le dashboard (interface en français) ; validée `ship` |
+| Administration — textes | `/dashboard/texts` | `components/dashboard/TextsEditor.tsx`, `lib/page-texts/`, `components/Text.tsx` | les 560 textes des 11 pages publiques sont modifiables depuis le dashboard ; validée `ship` |
 
 ## 10. Ordre recommandé pour la suite
 
 Toutes les surfaces prévues sont construites. La prochaine phase est l'intégration fonctionnelle des canaux officiels de contact et la correction des dettes connues :
 
 1. Configurer `DATABASE_DIRECTORY` et `UPLOADS_DIRECTORY` sur un dossier persistant, hors du dossier remplacé à chaque déploiement : la base et les fichiers envoyés depuis le dashboard (vidéos, images) y vivent.
-   Reste à construire : la modification des textes des pages publiques depuis le dashboard (demandée par le propriétaire, non commencée).
 2. Configurer la destination WhatsApp officielle sans inventer de coordonnées.
 3. Résoudre l'anomalie historique de capture de preuve de Services.
 4. Restaurer le dossier `design/` (maquettes Stitch) : il est absent du disque et du dépôt alors qu'il reste l'autorité visuelle.
@@ -304,6 +304,8 @@ Les liens temporaires du footer et les ancres `/#contact` ont été corrigés (v
 
 ## 11. Pièges connus
 
+- Les textes des pages publiques ne s'écrivent plus en dur dans les composants : chaque texte a un identifiant et sa version d'origine dans `lib/page-texts/<page>.ts`, et la page l'affiche avec `<Text id="..." />` (ou `useText` pour un attribut). Pour ajouter ou modifier un texte d'origine, éditer ce registre ; la version enregistrée depuis le dashboard (table `page_texts`) reste prioritaire. Un retour à la ligne dans un texte devient un `<br />`.
+- Supprimer ou renommer un identifiant du registre fait revenir la page au texte d'origine pour ce champ : la modification enregistrée devient orpheline et est ignorée.
 - Le contenu géré (formations, équipe, coordonnées) vit dans la base : `lib/content.ts`. `lib/training.ts` et `components/leadershipTeam.ts` ne servent plus qu'à l'amorçage initial et au repli sans base ; les modifier ne change pas un site déjà amorcé.
 - Les fichiers envoyés depuis le dashboard sont servis par `app/media/[name]/route.ts` (adresses `/media/...`), pas par `public/`.
 - `Footer`, `WhatsappButton`, `LeadershipSlider` et `ContactPage` lisent les coordonnées et l'équipe via `components/SiteData.tsx`, alimenté par `app/layout.tsx`.

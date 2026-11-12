@@ -6,6 +6,7 @@ const sections = [
   { key: "insights", label: "PUBLICATIONS", href: "/dashboard" },
   { key: "courses", label: "FORMATIONS", href: "/dashboard/courses" },
   { key: "team", label: "ÉQUIPE", href: "/dashboard/team" },
+  { key: "texts", label: "TEXTES", href: "/dashboard/texts" },
   { key: "settings", label: "COORDONNÉES", href: "/dashboard/settings" },
 ] as const;
 

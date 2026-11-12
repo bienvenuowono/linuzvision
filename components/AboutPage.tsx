@@ -4,11 +4,11 @@ import { ArrowIcon } from "./ArrowIcon";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { LeadershipSlider } from "./LeadershipSlider";
+import { Text } from "./Text";
 
 const manifestoCards = [
   {
-    title: "Secure & Scalable",
-    description: "Uncompromising protection for digital assets with infrastructure built to scale seamlessly.",
+    n: 1,
     icon: (
       <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -16,8 +16,7 @@ const manifestoCards = [
     ),
   },
   {
-    title: "Accelerate Growth",
-    description: "Streamlining operations and leveraging automation to propel organizations forward.",
+    n: 2,
     icon: (
       <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
@@ -26,8 +25,7 @@ const manifestoCards = [
     ),
   },
   {
-    title: "Accessible Innovation",
-    description: "Democratizing advanced technologies for entities of all scales and sectors.",
+    n: 3,
     icon: (
       <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />
@@ -35,37 +33,12 @@ const manifestoCards = [
       </svg>
     ),
   },
-];
+] as const;
 
-const evolutionStages = [
-  {
-    stage: "STAGE 01 | 1999",
-    title: "IT Systems",
-    description: "Foundational mastery of hardware and localized network architectures.",
-  },
-  {
-    stage: "STAGE 02",
-    title: "Infrastructure",
-    description: "Scaling robust, interconnected enterprise-grade backbones.",
-  },
-  {
-    stage: "STAGE 03",
-    title: "Data Centers",
-    description: "Architecting massive, high-availability physical storage and compute facilities.",
-  },
-  {
-    stage: "STAGE 04",
-    title: "Cloud",
-    description: "Virtualizing workloads for borderless scalability and resilience.",
-  },
-];
+// Manifesto icons stay here; every wording of this page comes from lib/page-texts/about.ts.
+const evolutionStages = [1, 2, 3, 4] as const;
+const globalLocations = [1, 2, 3, 4] as const;
 
-const globalLocations = [
-  { region: "United States", role: "Headquarters & Innovation Hub" },
-  { region: "Africa", role: "Strategic Expansion & Infrastructure" },
-  { region: "Europe", role: "Data Governance & Cloud Nodes" },
-  { region: "Asia", role: "Scaling Operations & Connectivity" },
-];
 
 
 export function AboutPage() {
@@ -77,11 +50,11 @@ export function AboutPage() {
         <section className="about-leadership shell" id="leadership">
           <div className="leadership-heading">
             <div>
-              <span className="micro-label">EXECUTIVE PERSONNEL</span>
-              <h1>LEADERSHIP &amp;<br />EXECUTIVE TEAM.</h1>
+              <span className="micro-label"><Text id="about.leadership.label" /></span>
+              <h1><Text id="about.leadership.title" /></h1>
             </div>
             <p className="leadership-intro">
-              Architectural vision, engineering rigor, and product stewardship driving high-performance technology operations.
+              <Text id="about.leadership.text" />
             </p>
           </div>
 
@@ -96,20 +69,18 @@ export function AboutPage() {
             <path d="M200 20V0m400 20V0m400 20V0" />
           </svg>
           <div className="mission-content">
-            <span className="mono-label">MISSION &amp; MANIFESTO</span>
-            <h2>EMPOWERING ORGANIZATIONS WITH SMART TECHNOLOGY FOR GROWTH.</h2>
+            <span className="mono-label"><Text id="about.mission.label" /></span>
+            <h2><Text id="about.mission.title" /></h2>
             <p>
-              We are committed to being a trusted partner, delivering secure, scalable, and affordable
-              technologies—from AI and Cloud to Automation and Cybersecurity. Our goal is to make advanced technology
-              accessible to organizations of all sizes, increasing productivity and protecting digital assets.
+              <Text id="about.mission.text" />
             </p>
           </div>
           <div className="manifesto-grid">
             {manifestoCards.map((card) => (
-              <article key={card.title} className="manifesto-card">
+              <article key={card.n} className="manifesto-card">
                 <div className="card-icon">{card.icon}</div>
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
+                <h3><Text id={`about.manifesto.${card.n}.title` as const} /></h3>
+                <p><Text id={`about.manifesto.${card.n}.text` as const} /></p>
               </article>
             ))}
           </div>
@@ -119,26 +90,24 @@ export function AboutPage() {
         <section className="about-evolution shell" id="evolution">
           <div className="evolution-split">
             <div className="evolution-intro">
-              <h2>25+ YEARS OF TECHNOLOGY EXPERIENCE</h2>
+              <h2><Text id="about.evolution.title" /></h2>
               <p>
-                A relentless trajectory of adaptation and mastery. Our deep heritage dates back to 1999, evolving
-                through every major paradigm shift in modern computing.
+                <Text id="about.evolution.text" />
               </p>
             </div>
             <div className="evolution-grid">
-              {evolutionStages.map((stage) => (
-                <div key={stage.title} className="evolution-card">
-                  <span className="mono-label">{stage.stage}</span>
-                  <h3>{stage.title}</h3>
-                  <p>{stage.description}</p>
+              {evolutionStages.map((n) => (
+                <div key={n} className="evolution-card">
+                  <span className="mono-label"><Text id={`about.evolution.${n}.stage` as const} /></span>
+                  <h3><Text id={`about.evolution.${n}.title` as const} /></h3>
+                  <p><Text id={`about.evolution.${n}.text` as const} /></p>
                 </div>
               ))}
               <div className="evolution-card evolution-present">
-                <span className="mono-label">PRESENT / FUTURE</span>
-                <h3>AI &amp; Automation</h3>
+                <span className="mono-label"><Text id="about.evolution.present.stage" /></span>
+                <h3><Text id="about.evolution.present.title" /></h3>
                 <p>
-                  Integrating agentic intelligence and cybersecurity to orchestrate complex infrastructural systems
-                  autonomously.
+                  <Text id="about.evolution.present.text" />
                 </p>
               </div>
             </div>
@@ -149,17 +118,16 @@ export function AboutPage() {
         <section className="about-global shell" id="global">
           <div className="global-split">
             <div className="global-text">
-              <span className="mono-label">THE GLOBAL NETWORK</span>
-              <h2>Unbounded Reach.</h2>
+              <span className="mono-label"><Text id="about.global.label" /></span>
+              <h2><Text id="about.global.title" /></h2>
               <p>
-                Our operational footprint spans continents, delivering unwavering infrastructural support and strategic
-                intelligence worldwide.
+                <Text id="about.global.text" />
               </p>
               <div className="locations-grid">
-                {globalLocations.map((loc) => (
-                  <div key={loc.region} className="location-item">
-                    <h4>{loc.region}</h4>
-                    <p>{loc.role}</p>
+                {globalLocations.map((n) => (
+                  <div key={n} className="location-item">
+                    <h4><Text id={`about.global.${n}.region` as const} /></h4>
+                    <p><Text id={`about.global.${n}.role` as const} /></p>
                   </div>
                 ))}
               </div>
@@ -173,15 +141,14 @@ export function AboutPage() {
         {/* Geographic Bridge */}
         <section className="about-bridge">
           <div className="shell">
-            <span className="mono-label">CORE AXIS</span>
+            <span className="mono-label"><Text id="about.axis.label" /></span>
             <h2 className="about-axis-title">
-              <span>AMERICA</span>
-              <span><span className="axis-sep">-</span> AFRICA</span>
-              <span><span className="axis-sep">-</span> EUROPE</span>
+              <span><Text id="about.axis.region1" /></span>
+              <span><span className="axis-sep">-</span> <Text id="about.axis.region2" /></span>
+              <span><span className="axis-sep">-</span> <Text id="about.axis.region3" /></span>
             </h2>
             <p>
-              Bridging our primary continents through unyielding architectural intelligence and infrastructural
-              precision, forming the spine of our global network.
+              <Text id="about.axis.text" />
             </p>
           </div>
         </section>
@@ -193,25 +160,24 @@ export function AboutPage() {
               <img src="/images/tasha-corridor-map.png" alt="TASHA central intelligence nodes" />
             </div>
             <div className="tasha-text">
-              <span className="mono-label">PROPRIETARY TECHNOLOGY</span>
-              <h2>Meet TASHA.</h2>
+              <span className="mono-label"><Text id="about.tasha.label" /></span>
+              <h2><Text id="about.tasha.title" /></h2>
               <p>
-                Our proprietary AI agentic technology. Designed not just to assist, but to operate, optimize, and
-                orchestrate complex infrastructural systems autonomously.
+                <Text id="about.tasha.text" />
               </p>
               <ul className="tasha-bullets">
                 <li>
-                  <span className="bullet-square" /> Autonomous Operations
+                  <span className="bullet-square" /> <Text id="about.tasha.item1" />
                 </li>
                 <li>
-                  <span className="bullet-square" /> Predictive Infrastructure
+                  <span className="bullet-square" /> <Text id="about.tasha.item2" />
                 </li>
                 <li>
-                  <span className="bullet-square" /> Unyielding Security
+                  <span className="bullet-square" /> <Text id="about.tasha.item3" />
                 </li>
               </ul>
               <a className="button button-dark" href="/tasha">
-                MEET TASHA <ArrowIcon />
+                <Text id="about.tasha.button" /> <ArrowIcon />
               </a>
             </div>
           </div>
@@ -220,10 +186,10 @@ export function AboutPage() {
         {/* Final Terminal Statement */}
         <section className="about-final">
           <div className="shell">
-            <p className="final-sub">25+ YEARS OF EXPERIENCE.</p>
-            <h2>ONE CONSTANT: EVOLUTION.</h2>
+            <p className="final-sub"><Text id="about.final.subtitle" /></p>
+            <h2><Text id="about.final.title" /></h2>
             <a className="button button-light" href="/contact">
-              START A CONVERSATION <ArrowIcon />
+              <Text id="about.final.button" /> <ArrowIcon />
             </a>
           </div>
         </section>

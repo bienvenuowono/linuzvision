@@ -2,6 +2,7 @@ import { db } from "@/lib/db";
 import { deleteUpload, sweepUploads } from "@/lib/media";
 import { seedCourses, totalDuration, type Course, type TrainingModule } from "@/lib/training";
 import { leadershipTeam } from "@/components/leadershipTeam";
+import { defaultTexts, isTextId, type TextId, type TextOverrides } from "@/lib/page-texts";
 
 /* Content managed from the dashboard: courses, site contact details and the leadership team. */
 
@@ -129,6 +130,11 @@ if (db) {
       CREATE TABLE IF NOT EXISTS site_settings (
         key TEXT PRIMARY KEY,
         value TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS page_texts (
+        id TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updatedAt TEXT NOT NULL
       );
       CREATE TABLE IF NOT EXISTS team_members (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -371,4 +377,32 @@ export function reorderTeam(ids: number[]) {
     const statement = db!.prepare("UPDATE team_members SET position = ? WHERE id = ?");
     ids.forEach((id, index) => statement.run(index, id));
   });
+}
+
+// Page texts changed from the dashboard. Rows for texts that no longer exist in the registry are ignored.
+export function getTextOverrides(): TextOverrides {
+  if (!db) return {};
+  try {
+    const rows = db.prepare("SELECT id,value FROM page_texts").all() as Array<{ id: string; value: string }>;
+    const overrides: TextOverrides = {};
+    for (const row of rows) if (isTextId(row.id) && row.value !== defaultTexts[row.id]) overrides[row.id] = row.value;
+    return overrides;
+  } catch (error) {
+    console.error("getTextOverrides error:", error);
+    return {};
+  }
+}
+
+// Saves new wordings; null (or the original wording) restores the original text.
+export function saveTextChanges(changes: Array<[TextId, string | null]>) {
+  const now = new Date().toISOString();
+  transaction(() => {
+    const save = db!.prepare("INSERT OR REPLACE INTO page_texts (id,value,updatedAt) VALUES (?,?,?)");
+    const reset = db!.prepare("DELETE FROM page_texts WHERE id = ?");
+    for (const [id, value] of changes) {
+      if (value === null || value === defaultTexts[id]) reset.run(id);
+      else save.run(id, value, now);
+    }
+  });
+  return getTextOverrides();
 }

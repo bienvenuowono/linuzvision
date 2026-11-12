@@ -3534,3 +3534,57 @@ main:is(#home, .training-page) .training-bridge h2 { font-size: calc(var(--type-
 @media (max-width: 600px) {
   .admin-shell > header.admin-top > div > a { display: inline-flex; }
 }
+
+/* Administration — page texts editor: page switcher, search, grouped fields, sticky save bar. */
+.admin-texts { padding-bottom: 120px; }
+.admin-texts-intro { padding: 60px var(--pad) 32px; border-bottom: 1px solid var(--line); display: grid; gap: 22px; }
+.admin-texts-intro h1 { margin: 0; font-size: 34px; }
+.admin-texts-intro .admin-hint { max-width: 78ch; font-size: 13px; }
+.admin-texts-search { display: grid; gap: 8px; max-width: 640px; }
+.admin-texts-search span { font-size: 11px; letter-spacing: .13em; color: var(--muted); }
+.admin-texts-search input { min-height: 44px; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; padding: 10px 0; background: transparent; font: inherit; color: inherit; }
+.admin-texts-pages { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-texts-pages button { min-height: 44px; padding: 0 16px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .12em; cursor: pointer; }
+.admin-texts-pages button span { font-weight: 500; }
+.admin-texts-pages button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.admin-texts-list { padding: 0 var(--pad); }
+.admin-texts-list > section { padding-block: 40px; border-bottom: 1px solid var(--line); }
+.admin-texts-page-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
+.admin-texts-page-head h2 { margin: 0; font-size: 28px; }
+.admin-texts-page-head a { min-height: 44px; display: inline-flex; align-items: center; font-size: 11px; letter-spacing: .13em; text-decoration: underline; text-underline-offset: 6px; }
+.admin-texts-group { margin: 0 0 32px; padding: 0; border: 0; display: grid; gap: 18px; min-width: 0; max-width: 980px; }
+.admin-texts-group > legend { margin-bottom: 6px; padding: 0; font-size: 12px; font-weight: 700; letter-spacing: .14em; }
+.admin-text-field { display: grid; gap: 8px; padding-left: 16px; border-left: 1px solid var(--line); min-width: 0; }
+.admin-text-field.is-unsaved { border-left: 2px solid var(--ink); padding-left: 15px; }
+.admin-text-field-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.admin-text-field-head label { font-size: 12px; letter-spacing: .06em; color: var(--muted); }
+.admin-text-field-head span { font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.admin-text-field textarea { width: 100%; min-height: 44px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 10px 0; background: transparent; font: inherit; font-size: 15px; line-height: 1.5; color: inherit; resize: vertical; }
+.admin-text-field textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.admin-text-original { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.admin-text-original p { margin: 0; flex: 1 1 320px; font-size: 12px; line-height: 1.5; white-space: pre-line; overflow-wrap: anywhere; }
+.admin-text-original p span { font-weight: 700; }
+.admin-text-original button { min-height: 44px; padding: 0 14px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 11px; letter-spacing: .1em; cursor: pointer; }
+.admin-texts-empty { padding-block: 40px; margin: 0; }
+.admin-texts-bar { position: fixed; z-index: 30; inset: auto 0 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 14px var(--pad); background: var(--paper); border-top: 1px solid var(--ink); }
+.admin-texts-bar p { margin: 0; font-size: 13px; font-weight: 600; }
+.admin-texts-bar > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-texts-bar button { min-height: 44px; padding: 0 20px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-size: 11px; font-weight: 700; letter-spacing: .12em; cursor: pointer; }
+.admin-texts-bar .admin-texts-cancel { background: transparent; color: var(--ink); }
+.admin-texts-bar button:disabled { opacity: .45; cursor: not-allowed; }
+@media (max-width: 600px) {
+  .admin-texts-intro { padding-block: 42px 24px; }
+  .admin-texts-bar { padding-block: 10px; }
+  .admin-texts-bar { gap: 8px; }
+  .admin-texts-bar p { font-size: 12px; }
+  .admin-texts-bar > div { flex: 1 1 100%; flex-wrap: nowrap; }
+  .admin-texts-bar button { padding-inline: 12px; letter-spacing: .08em; }
+  .admin-texts-bar .admin-texts-cancel { flex: 0 0 auto; }
+  .admin-texts-bar button:not(.admin-texts-cancel) { flex: 1 1 auto; }
+  .admin-text-field { padding-left: 12px; }
+  .admin-text-field.is-unsaved { padding-left: 11px; }
+}
+/* Page texts editor — review fixes: keep the focused field clear of the fixed save bar. */
+html:has(.admin-texts) { scroll-padding-bottom: 150px; }
+.admin-text-field textarea { scroll-margin-bottom: 150px; }
+
