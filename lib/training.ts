@@ -1,4 +1,5 @@
 export type TrainingModule = {
+  id?: number;
   number: number;
   title: string;
   description: string;
@@ -25,13 +26,13 @@ export const aiEssentialsModules: TrainingModule[] = [
 
 function seconds(duration: string) {
   const [minutes, rest] = duration.split(":").map(Number);
-  return minutes * 60 + rest;
+  return (Number.isFinite(minutes) ? minutes : 0) * 60 + (Number.isFinite(rest) ? rest : 0);
 }
 
 // "6:29" -> "6m 29s"
 export function moduleDuration(duration: string) {
-  const [minutes, rest] = duration.split(":");
-  return `${Number(minutes)}m ${rest}s`;
+  const total = seconds(duration);
+  return `${Math.floor(total / 60)}m ${String(total % 60).padStart(2, "0")}s`;
 }
 
 // Real runtime of a module list, rounded to the minute: "61 minutes".
@@ -71,6 +72,24 @@ export const aiEssentialsCourse = {
   ],
 };
 
-export type Course = typeof aiEssentialsCourse;
+export type Course = {
+  id?: number;
+  slug: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  duration: string;
+  level: string;
+  language: string;
+  creator: string;
+  cover: string;
+  modules: TrainingModule[];
+  outcomes: string[];
+  requirements: string[];
+  audience: string[];
+  about: string[];
+  published?: number;
+};
 
-export const courses: Course[] = [aiEssentialsCourse];
+// Built-in course: seeds the database on first start and stands in when the database is unavailable.
+export const seedCourses: Course[] = [aiEssentialsCourse];

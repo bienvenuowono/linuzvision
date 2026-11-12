@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HomePage } from "@/components/HomePage";
 import { listInsights } from "@/lib/db";
+import { listCourses } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: { absolute: "AI Automation, Cloud & Cybersecurity | LinuZvision" },
@@ -34,5 +35,5 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default function Page() {
-  return <HomePage insights={listInsights(false).slice(0, 3)} />;
+  return <HomePage insights={listInsights(false).slice(0, 3)} featuredCourse={listCourses()[0]} />;
 }

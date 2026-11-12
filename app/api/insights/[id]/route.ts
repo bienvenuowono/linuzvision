@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { isAdmin } from "@/lib/auth";
 import { deleteInsight, updateInsight } from "@/lib/db";
-import { cleanDate, cleanText, slugify, validPublicImage } from "@/lib/validation";
+import { validMedia } from "@/lib/media";
+import { cleanDate, cleanText, slugify } from "@/lib/validation";
 
 function insightId(value: string) {
   const id = Number(value);
@@ -11,13 +12,13 @@ function insightId(value: string) {
 export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!await isAdmin()) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const id = insightId((await params).id);
-  if (!id) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  if (!id) return NextResponse.json({ error: "Cette publication n'existe plus. Rechargez la page pour voir la liste à jour." }, { status: 404 });
   const body = await request.json().catch(() => ({}));
   const input: Record<string, string | number> = {};
   for (const [field, max] of [["title", 160], ["excerpt", 500], ["content", 20000]] as const) {
     if (body[field] === undefined) continue;
     const value = cleanText(body[field], max);
-    if (!value) return NextResponse.json({ error: "Title, excerpt and content cannot be empty." }, { status: 400 });
+    if (!value) return NextResponse.json({ error: "Le titre, le résumé et le contenu ne peuvent pas être vides." }, { status: 400 });
     input[field] = value;
   }
   if (body.slug !== undefined) {
@@ -28,23 +29,23 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   if (body.category !== undefined) input.category = cleanText(body.category, 80) || "Intelligence";
   if (body.image !== undefined) {
     const image = cleanText(body.image, 300);
-    if (!validPublicImage(image)) return NextResponse.json({ error: "Use an existing image from /public/images." }, { status: 400 });
+    if (!validMedia(image, "image")) return NextResponse.json({ error: "L'image est introuvable. Envoyez-la de nouveau." }, { status: 400 });
     input.image = image;
   }
   if (body.published !== undefined) input.published = body.published ? 1 : 0;
   if (body.publishedAt !== undefined) {
     const publishedAt = cleanDate(body.publishedAt);
-    if (!publishedAt) return NextResponse.json({ error: "The publication date is not valid." }, { status: 400 });
+    if (!publishedAt) return NextResponse.json({ error: "La date de publication n'est pas valide." }, { status: 400 });
     input.publishedAt = publishedAt;
   }
   try {
     const insight = updateInsight(id, input);
-    return insight ? NextResponse.json({ insight }) : NextResponse.json({ error: "Not found" }, { status: 404 });
-  } catch { return NextResponse.json({ error: "Unable to update this publication." }, { status: 409 }); }
+    return insight ? NextResponse.json({ insight }) : NextResponse.json({ error: "Cette publication n'existe plus. Rechargez la page pour voir la liste à jour." }, { status: 404 });
+  } catch { return NextResponse.json({ error: "La publication n'a pas pu être modifiée." }, { status: 409 }); }
 }
 
 export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!await isAdmin()) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const id = insightId((await params).id);
-  return id && deleteInsight(id) ? NextResponse.json({ ok: true }) : NextResponse.json({ error: "Not found" }, { status: 404 });
+  return id && deleteInsight(id) ? NextResponse.json({ ok: true }) : NextResponse.json({ error: "Cette publication n'existe plus. Rechargez la page pour voir la liste à jour." }, { status: 404 });
 }

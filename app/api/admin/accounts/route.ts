@@ -12,20 +12,20 @@ export async function GET() {
 export async function POST(request: Request) {
   if (!await getAdminSession()) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   if (!allowRequest(`admin-account:${requestAddress(request)}`, 10, 60 * 60 * 1000)) {
-    return NextResponse.json({ error: "Too many account changes. Try again later." }, { status: 429 });
+    return NextResponse.json({ error: "Trop de modifications de comptes. Réessayez plus tard." }, { status: 429 });
   }
   const body = await request.json().catch(() => ({}));
   const email = cleanText(body.email, 180).toLowerCase();
   const displayName = cleanText(body.displayName, 120);
   const password = typeof body.password === "string" ? body.password : "";
   if (!validEmail(email) || !displayName || password.length < 12 || password.length > 128) {
-    return NextResponse.json({ error: "Provide a valid email, a name, and a password of 12 to 128 characters." }, { status: 400 });
+    return NextResponse.json({ error: "Indiquez un e-mail valide, un nom et un mot de passe de 12 à 128 caractères." }, { status: 400 });
   }
   try {
     return NextResponse.json({ account: createAdminAccount(email, displayName, password) }, { status: 201 });
   } catch (error) {
     const message = error instanceof Error ? error.message : "";
-    if (message.includes("UNIQUE constraint failed")) return NextResponse.json({ error: "This email already exists." }, { status: 409 });
-    return NextResponse.json({ error: "The account could not be stored. Please try again." }, { status: 503 });
+    if (message.includes("UNIQUE constraint failed")) return NextResponse.json({ error: "Un compte utilise déjà cet e-mail." }, { status: 409 });
+    return NextResponse.json({ error: "Le compte n'a pas pu être enregistré. Réessayez." }, { status: 503 });
   }
 }

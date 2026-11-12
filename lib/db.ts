@@ -35,7 +35,7 @@ type StoredAdminAccount = AdminAccount & { passwordHash: string };
 
 const isVercel = Boolean(process.env.VERCEL);
 const defaultDataDir = isVercel ? "/tmp" : path.join(process.cwd(), "data");
-const dataDirectory = process.env.DATABASE_DIRECTORY ? path.resolve(process.env.DATABASE_DIRECTORY) : defaultDataDir;
+export const dataDirectory = process.env.DATABASE_DIRECTORY ? path.resolve(process.env.DATABASE_DIRECTORY) : defaultDataDir;
 const databasePath = path.join(dataDirectory, "linuzvision.db");
 
 declare global {

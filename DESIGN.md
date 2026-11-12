@@ -436,6 +436,15 @@ Fresh independent review returned `ship`. `leadership-network-*` captures and `.
 - Environment-based administrator bootstrap is one-shot and recorded in metadata. Shared rate limits live in SQLite rather than process memory.
 - A Vercel deployment without a persistent `DATABASE_DIRECTORY` fails explicitly with `503`; it must not silently fall back to ephemeral storage.
 
+### Back-Office Content Editors — 2026-11-12
+
+- The administration is written in French for its owner; the public site stays in English. Every status and error sentence says what to do next.
+- One section navigation (`AdminNav`) sits in the administration header: PUBLICATIONS, FORMATIONS, ÉQUIPE, COORDONNÉES. The active section carries a 2px ink underline.
+- Each editor keeps the incumbent two-column workspace: ruled list on the left, form on the right, stacked in DOM order below 900px. Opening an item scrolls to the form and focuses its first field.
+- Files are sent with `MediaField`: a bordered square control, a native progress bar, a 16:9 preview, then hint, notice and error lines. No drag-and-drop zone, no decorative card.
+- Course modules are bordered rectangles on a faint panel tint with MONTER / DESCENDRE / RETIRER controls; secondary and row controls are outlined, never filled.
+- Every interactive target in the administration is at least 44px high. Unsaved work is guarded: a confirmation before a draft is replaced and a browser warning before the page is left.
+
 ### Do:
 
 - **Do** build hierarchy with black-and-paper inversion, typographic scale, source-color media, and one-pixel structure.

@@ -1,8 +1,11 @@
-// The official number is configured per deployment; without it the button stays hidden
-// rather than pointing visitors to an unverified destination.
-const whatsappNumber = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "").replace(/\D/g, "");
+"use client";
 
+import { useSiteData } from "./SiteData";
+
+// The official number is set from the dashboard; without it the button stays hidden
+// rather than pointing visitors to an unverified destination.
 export function WhatsappButton() {
+  const whatsappNumber = useSiteData().settings.whatsappNumber;
   if (!whatsappNumber) return null;
   return (
     <a

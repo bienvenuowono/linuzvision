@@ -4,9 +4,10 @@ import { ClassCatalog } from "./ClassCatalog";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { WhatsappButton } from "./WhatsappButton";
-import { courses } from "@/lib/training";
+import type { Course } from "@/lib/training";
 
-export function TrainingPage() {
+export function TrainingPage({ courses }: { courses: Course[] }) {
+  const first = courses[0];
   return (
     <>
       <Header active="TRAINING" />
@@ -21,7 +22,7 @@ export function TrainingPage() {
 
         <section className="class-catalog class-section shell" id="available-courses" aria-labelledby="all-courses">
           <h2 id="all-courses">All Courses</h2>
-          <ClassCatalog courses={courses} />
+          {courses.length > 0 ? <ClassCatalog courses={courses} /> : <p className="class-catalog-empty">New courses are being prepared.</p>}
         </section>
 
         <section className="course-catalog-closing">
@@ -29,7 +30,7 @@ export function TrainingPage() {
             <h2>Learning designed for real organizational decisions</h2>
             <div>
               <p>Build shared understanding across leadership, operations, education, public service, research, and technology teams.</p>
-              <Link className="button button-light" href="/training/ai-essentials">VIEW AI ESSENTIALS <ArrowIcon /></Link>
+              {first && <Link className="button button-light" href={`/training/${first.slug}`}>VIEW {first.shortTitle.toUpperCase()} <ArrowIcon /></Link>}
             </div>
           </div>
         </section>

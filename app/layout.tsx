@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/inter";
 import "./globals.css";
+import { SiteDataProvider } from "@/components/SiteData";
+import { getSiteSettings, listTeam } from "@/lib/content";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://linuzvision.com";
 
@@ -74,6 +76,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const settings = getSiteSettings();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -88,12 +91,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           width: 1400,
           height: 442,
         },
-        email: "contact@linuzvision.com",
-        telephone: "+1-443-248-8520",
-        sameAs: [
-          "https://www.linkedin.com/company/linuzvision",
-          "https://facebook.com/linuzvision",
-        ],
+        email: settings.contactEmail,
+        ...(settings.phone ? { telephone: settings.phone } : {}),
+        sameAs: [settings.linkedinUrl, settings.facebookUrl].filter(Boolean),
         areaServed: ["Africa", "United States"],
         description:
           "LinuZvision builds intelligent AI, automation and technology solutions for businesses across Africa and America.",
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        {children}
+        <SiteDataProvider value={{ settings, team: listTeam() }}>{children}</SiteDataProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

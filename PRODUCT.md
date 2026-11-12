@@ -82,7 +82,8 @@ Si la plateforme ne fournit pas Impeccable ou les sous-agents, elle doit reprodu
 - Insights `/insights` : validée `ship`.
 - Contact `/contact` : validée `ship`.
 - Administration `/dashboard` : authentification persistante, gestion des publications, demandes de contact et comptes administrateurs validées `ship`.
+- Administration du contenu : formations (`/dashboard/courses`, avec envoi des vidéos et images), équipe dirigeante (`/dashboard/team`) et coordonnées du site (`/dashboard/settings`) se gèrent depuis le dashboard, en français, sans toucher au code. La modification des textes des pages publiques reste à construire.
 
-Le formulaire Contact enregistre désormais les demandes dans la base locale persistante configurée. L’administration utilise des mots de passe hachés, des sessions signées et une gestion authentifiée des comptes. Un déploiement multi-instance doit fournir `DATABASE_DIRECTORY` sur un volume persistant ; la destination WhatsApp officielle, les liens temporaires et la preuve de capture historique de Services restent à finaliser.
+Le formulaire Contact enregistre désormais les demandes dans la base locale persistante configurée. L’administration utilise des mots de passe hachés, des sessions signées et une gestion authentifiée des comptes. Tout déploiement doit fournir `DATABASE_DIRECTORY` et `UPLOADS_DIRECTORY` sur un dossier persistant, sinon les formations créées, les fichiers envoyés et les demandes de contact peuvent être perdus à la mise à jour suivante ; la destination WhatsApp officielle, les liens temporaires et la preuve de capture historique de Services restent à finaliser.
 
 Tout agent doit reconstruire et vérifier cet état depuis les routes, composants, briefs et captures avant de poursuivre. Il ne doit jamais recommencer une page marquée validée sauf demande explicite de l'utilisateur ou preuve matérielle d'une régression.

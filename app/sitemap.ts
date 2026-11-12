@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listInsights } from "@/lib/db";
+import { listCourses } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/cybersecurity", changeFrequency: "monthly" as const, priority: 0.9, image: "/images/zero-trust-datacenter.png" },
     { path: "/services", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/fiber-network.png" },
     { path: "/training", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/enterprise-training.png" },
-    { path: "/training/ai-essentials", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/human-machine-synergy.png" },
     { path: "/about", changeFrequency: "monthly" as const, priority: 0.8, image: "/images/about-global-network-map.png" },
     { path: "/insights", changeFrequency: "weekly" as const, priority: 0.8, image: "/images/human-machine-synergy.png" },
     { path: "/contact", changeFrequency: "yearly" as const, priority: 0.7, image: "/images/server-architecture.png" },
@@ -35,5 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [item.image.startsWith("http") ? item.image : `${site}${item.image}`],
   }));
 
-  return [...staticEntries, ...insightEntries];
+  const courseEntries = listCourses().map((course) => ({
+    url: `${site}/training/${course.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+    images: [`${site}${course.cover}`],
+  }));
+
+  return [...staticEntries, ...courseEntries, ...insightEntries];
 }

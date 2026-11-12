@@ -288,12 +288,14 @@ Après `ship` :
 | Contact | `/contact` | `components/ContactPage.tsx` | validée `ship` |
 | Datacenter Engineering | `/datacenter` | `components/DatacenterPage.tsx` | validée `ship` |
 | Administration | `/dashboard` | `components/dashboard/Dashboard.tsx` + `AdminAccounts.tsx` | backend et comptes validés `ship` |
+| Administration — contenu | `/dashboard/courses`, `/dashboard/team`, `/dashboard/settings` | `components/dashboard/CourseManager.tsx`, `TeamManager.tsx`, `SettingsForm.tsx`, `MediaField.tsx`, `AdminNav.tsx` | formations, équipe et coordonnées gérées depuis le dashboard (interface en français) ; validée `ship` |
 
 ## 10. Ordre recommandé pour la suite
 
 Toutes les surfaces prévues sont construites. La prochaine phase est l'intégration fonctionnelle des canaux officiels de contact et la correction des dettes connues :
 
-1. Configurer `DATABASE_DIRECTORY` sur un volume persistant pour tout déploiement multi-instance.
+1. Configurer `DATABASE_DIRECTORY` et `UPLOADS_DIRECTORY` sur un dossier persistant, hors du dossier remplacé à chaque déploiement : la base et les fichiers envoyés depuis le dashboard (vidéos, images) y vivent.
+   Reste à construire : la modification des textes des pages publiques depuis le dashboard (demandée par le propriétaire, non commencée).
 2. Configurer la destination WhatsApp officielle sans inventer de coordonnées.
 3. Résoudre l'anomalie historique de capture de preuve de Services.
 4. Restaurer le dossier `design/` (maquettes Stitch) : il est absent du disque et du dépôt alors qu'il reste l'autorité visuelle.
@@ -301,6 +303,11 @@ Toutes les surfaces prévues sont construites. La prochaine phase est l'intégra
 Les liens temporaires du footer et les ancres `/#contact` ont été corrigés (vérifié le 2026-11-12).
 
 ## 11. Pièges connus
+
+- Le contenu géré (formations, équipe, coordonnées) vit dans la base : `lib/content.ts`. `lib/training.ts` et `components/leadershipTeam.ts` ne servent plus qu'à l'amorçage initial et au repli sans base ; les modifier ne change pas un site déjà amorcé.
+- Les fichiers envoyés depuis le dashboard sont servis par `app/media/[name]/route.ts` (adresses `/media/...`), pas par `public/`.
+- `Footer`, `WhatsappButton`, `LeadershipSlider` et `ContactPage` lisent les coordonnées et l'équipe via `components/SiteData.tsx`, alimenté par `app/layout.tsx`.
+- L'interface d'administration est rédigée en français à la demande du propriétaire ; le site public reste en anglais.
 
 - Le navigateur intégré peut produire une capture pleine page blanche ou appliquer le mauvais viewport. Toujours vérifier les dimensions réelles dans la page et ouvrir le PNG enregistré.
 - Appliquer le viewport à un onglet déjà ouvert, recharger, attendre le rendu, capturer, écrire le fichier, puis seulement réinitialiser le viewport.

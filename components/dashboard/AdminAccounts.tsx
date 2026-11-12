@@ -18,44 +18,44 @@ export function AdminAccounts({ initialAccounts, currentAdminId }: { initialAcco
     try {
       const response = await fetch("/api/admin/accounts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const data = await response.json();
-      if (!response.ok) { setMessage(data.error || "Unable to create the account."); return; }
+      if (!response.ok) { setMessage(data.error || "Le compte n'a pas pu être créé."); return; }
       setAccounts((current) => [...current, data.account]);
       form.reset();
-      setMessage("Administrator account created.");
-    } catch { setMessage("The server could not be reached. Try again."); }
+      setMessage("Compte administrateur créé.");
+    } catch { setMessage("Le serveur est injoignable. Réessayez."); }
     finally { setBusy(false); }
   }
 
   async function removeAccount(id: number) {
-    if (!window.confirm("Remove this administrator account?")) return;
+    if (!window.confirm("Supprimer ce compte administrateur ?")) return;
     setDeletingId(id);
     setMessage("");
     try {
       const response = await fetch(`/api/admin/accounts/${id}`, { method: "DELETE" });
       const data = await response.json();
-      if (!response.ok) { setMessage(data.error || "Unable to remove the account."); return; }
+      if (!response.ok) { setMessage(data.error || "Le compte n'a pas pu être supprimé."); return; }
       setAccounts((current) => current.filter((account) => account.id !== id));
-      setMessage("Administrator account removed.");
-    } catch { setMessage("The server could not be reached. Try again."); }
+      setMessage("Compte administrateur supprimé.");
+    } catch { setMessage("Le serveur est injoignable. Réessayez."); }
     finally { setDeletingId(null); }
   }
 
   return <aside className="admin-accounts" aria-labelledby="admin-accounts-title">
     <div className="admin-accounts-list">
-      <h2 id="admin-accounts-title">ADMINISTRATOR ACCOUNTS</h2>
+      <h2 id="admin-accounts-title">COMPTES ADMINISTRATEURS</h2>
       {accounts.map((account) => <article key={account.id}>
         <div><strong>{account.displayName}</strong><span>{account.email}</span></div>
-        <button type="button" disabled={deletingId !== null || account.id === currentAdminId || accounts.length === 1} onClick={() => removeAccount(account.id)}>{account.id === currentAdminId ? "CURRENT" : deletingId === account.id ? "REMOVING…" : "REMOVE"}</button>
+        <button type="button" disabled={deletingId !== null || account.id === currentAdminId || accounts.length === 1} onClick={() => removeAccount(account.id)}>{account.id === currentAdminId ? "VOTRE COMPTE" : deletingId === account.id ? "SUPPRESSION…" : "SUPPRIMER"}</button>
       </article>)}
     </div>
     <div className="admin-account-create">
-      <h2>CREATE AN ACCOUNT</h2>
-      <p>Passwords are hashed before storage and are never displayed again.</p>
+      <h2>CRÉER UN COMPTE</h2>
+      <p>Le mot de passe est chiffré avant d&apos;être enregistré et n&apos;est plus jamais affiché. Il doit compter au moins 12 caractères.</p>
       <form onSubmit={createAccount}>
-        <label><span>DISPLAY NAME</span><input name="displayName" maxLength={120} autoComplete="name" required/></label>
-        <label><span>EMAIL</span><input name="email" type="email" maxLength={180} autoComplete="email" required/></label>
-        <label><span>PASSWORD</span><input name="password" type="password" minLength={12} maxLength={128} autoComplete="new-password" required/></label>
-        <button type="submit" disabled={busy}>{busy ? "CREATING…" : "CREATE ADMINISTRATOR"}</button>
+        <label><span>NOM AFFICHÉ</span><input name="displayName" maxLength={120} autoComplete="name" required/></label>
+        <label><span>E-MAIL</span><input name="email" type="email" maxLength={180} autoComplete="email" required/></label>
+        <label><span>MOT DE PASSE</span><input name="password" type="password" minLength={12} maxLength={128} autoComplete="new-password" required/></label>
+        <button type="submit" disabled={busy}>{busy ? "CRÉATION…" : "CRÉER LE COMPTE"}</button>
         <p role="status" aria-live="polite">{message}</p>
       </form>
     </div>

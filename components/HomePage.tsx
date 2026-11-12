@@ -5,6 +5,7 @@ import { Header } from "./Header";
 import { LeadershipSlider } from "./LeadershipSlider";
 import { WhatsappButton } from "./WhatsappButton";
 import type { Insight } from "@/lib/db";
+import type { Course } from "@/lib/training";
 import { HeroVideo } from "./HeroVideo";
 import { HomeScrollNarrative } from "./HomeScrollNarrative";
 import { TechLogoSlider } from "./TechLogoSlider";
@@ -116,7 +117,7 @@ function readTime(content: string) {
   return `${Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 200))} MIN READ`;
 }
 
-export function HomePage({ insights }: { insights: Insight[] }) {
+export function HomePage({ insights, featuredCourse }: { insights: Insight[]; featuredCourse?: Course }) {
   return (
     <>
       <Header />
@@ -324,7 +325,7 @@ export function HomePage({ insights }: { insights: Insight[] }) {
         </section>
 
         {/* 8. FEATURED COURSES */}
-        <section className="home-featured-courses section-rule" id="training" data-home-scene="featured-courses">
+        {featuredCourse && <section className="home-featured-courses section-rule" id="training" data-home-scene="featured-courses">
           <div className="shell">
             <div className="featured-courses-heading">
               <div>
@@ -336,9 +337,9 @@ export function HomePage({ insights }: { insights: Insight[] }) {
                 <a className="text-link" href="/training">VIEW ALL COURSES <ArrowIcon /></a>
               </div>
             </div>
-            <CourseCard featured />
+            <CourseCard course={featuredCourse} featured />
           </div>
-        </section>
+        </section>}
 
         {/* 9. EXECUTIVE LEADERSHIP & PERSONNEL */}
         <section className="experience section-rule" id="leadership" data-home-scene="leadership-team">

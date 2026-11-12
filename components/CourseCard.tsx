@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
-import { aiEssentialsCourse } from "@/lib/training";
+import type { Course } from "@/lib/training";
 
-export function CourseCard({ featured = false }: { featured?: boolean }) {
-  const course = aiEssentialsCourse;
-
+export function CourseCard({ course, featured = false }: { course: Course; featured?: boolean }) {
   return (
     <Link className={`course-card${featured ? " course-card-featured" : ""}`} href={`/training/${course.slug}`}>
       <div className="course-card-media">
-        <img src={course.cover} alt="AI connecting government, research, education, and business" />
+        <img src={course.cover} alt="" />
         <span>{course.modules.length} MODULES</span>
       </div>
       <div className="course-card-body">

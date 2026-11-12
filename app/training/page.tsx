@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { TrainingPage } from "../../components/TrainingPage";
+import { listCourses } from "@/lib/content";
+
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "AI Training for Organizations",
   alternates: { canonical: "/training" },
@@ -35,4 +39,4 @@ export const metadata: Metadata = {
     images: ["/images/human-machine-synergy.png"],
   },
 };
-export default function Page() { return <TrainingPage />; }
+export default function Page() { return <TrainingPage courses={listCourses()} />; }

@@ -4,7 +4,7 @@ import { CoursePlayerProvider, ExpandAllButton, PlayModuleButton, StartCourseBut
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { WhatsappButton } from "./WhatsappButton";
-import { aiEssentialsCourse, moduleDuration } from "@/lib/training";
+import { moduleDuration, type Course } from "@/lib/training";
 
 const icons = {
   check: <path d="m3 8.5 3.2 3L13 4.5" />,
@@ -19,9 +19,7 @@ function Icon({ name }: { name: keyof typeof icons }) {
   return <svg className="course-icon" viewBox="0 0 16 16" aria-hidden="true">{icons[name]}</svg>;
 }
 
-export function CourseDetailPage() {
-  const course = aiEssentialsCourse;
-
+export function CourseDetailPage({ course }: { course: Course }) {
   return (
     <>
       <Header active="TRAINING" />
