@@ -295,8 +295,10 @@ Toutes les surfaces prévues sont construites. La prochaine phase est l'intégra
 
 1. Configurer `DATABASE_DIRECTORY` sur un volume persistant pour tout déploiement multi-instance.
 2. Configurer la destination WhatsApp officielle sans inventer de coordonnées.
-3. Corriger les liens encore temporaires du footer et les ancres `/#contact` vers les routes réelles appropriées.
-4. Résoudre l'anomalie historique de capture de preuve de Services.
+3. Résoudre l'anomalie historique de capture de preuve de Services.
+4. Restaurer le dossier `design/` (maquettes Stitch) : il est absent du disque et du dépôt alors qu'il reste l'autorité visuelle.
+
+Les liens temporaires du footer et les ancres `/#contact` ont été corrigés (vérifié le 2026-11-12).
 
 ## 11. Pièges connus
 

@@ -9,6 +9,13 @@ export function slugify(value: string) {
   return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 100);
 }
 
+// Accepts "2026-10-27" or a full ISO date; returns a normalized ISO string, or null when unreadable.
+export function cleanDate(value: unknown) {
+  if (typeof value !== "string" || !value.trim() || value.length > 40) return null;
+  const date = new Date(value.trim());
+  return Number.isNaN(date.getTime()) ? null : date.toISOString();
+}
+
 export function validEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }

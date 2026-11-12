@@ -49,7 +49,7 @@ export function Footer() {
             </a>
             <address>PO BOX 224, Aberdeen, MD 21001</address>
           </div>
-          <div className="footer-socials" aria-label="Réseaux sociaux LinuZvision">
+          <div className="footer-socials" aria-label="LinuZvision social media">
             <a
               href="https://www.linkedin.com/company/linuzvision"
               target="_blank"

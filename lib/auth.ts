@@ -6,7 +6,8 @@ export const SESSION_COOKIE = "linuzvision_admin";
 const MAX_AGE = 60 * 60 * 8;
 
 function secret() {
-  return process.env.ADMIN_SESSION_SECRET || process.env.ADMIN_PASSWORD || "";
+  // Never fall back to the administrator password: a signing key must not double as a credential.
+  return process.env.ADMIN_SESSION_SECRET || "";
 }
 
 function signature(value: string) {

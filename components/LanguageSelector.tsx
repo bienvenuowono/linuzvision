@@ -137,7 +137,7 @@ export function LanguageSelector() {
       <button type="button" aria-pressed={language === "en"} onClick={() => selectLanguage("en")}>EN</button>
       <button type="button" aria-pressed={language === "fr"} onClick={() => selectLanguage("fr")}>FR</button>
       <span className="translation-status" aria-live="polite">
-        {translationState === "loading" ? "Translation en cours" : ""}
+        {translationState === "loading" ? "Traduction en cours" : ""}
       </span>
       <div id="google_translate_element" aria-hidden="true" />
       <Script

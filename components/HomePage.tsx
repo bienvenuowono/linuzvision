@@ -43,7 +43,7 @@ const activities = [
     href: "/tasha",
     code: "ACT-05",
     title: "ARTIFICIAL INTELLIGENCE",
-    text: "proprietary AI multi -agent systems (TASHA) engineered to coordinate enterprise workflows, qualify leads, automate decisions, and execute business operations.",
+    text: "Proprietary AI multi-agent systems (TASHA) engineered to coordinate enterprise workflows, qualify leads, automate decisions, and execute business operations.",
     capabilities: ["MULTI-AGENT SYSTEMS", "TASHA AI", "NATURAL INTERACTION", "AUTONOMOUS EXECUTION"],
   },
   {
@@ -59,8 +59,8 @@ const securityOperations = [
   "Physical Datacenter & Support.",
   "Systems and infrastructure Operations",
   "Scalable cloud platforms and Migration.",
-  "Cybersecurity and Zero Trust archictecture.",
-  "AI multi- agent & Automation Systems",
+  "Cybersecurity and Zero Trust architecture.",
+  "AI multi-agent & Automation Systems",
 ];
 
 const infrastructureFlow = ["System", "Cloud", "Security", "AI"];
